@@ -1,0 +1,218 @@
+@import 'tailwindcss';
+
+@import 'tw-animate-css';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-sans:
+        Instrument Sans, ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+
+    --color-sidebar: var(--sidebar-background);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+
+    /* Map Indigo color utilities to VOTREX Purple palette */
+    --color-indigo-50: #faf5ff;
+    --color-indigo-100: #f3e8ff;
+    --color-indigo-200: #e9d5ff;
+    --color-indigo-300: #d8b4fe;
+    --color-indigo-400: #c084fc;
+    --color-indigo-500: #a855f7;
+    --color-indigo-600: #9333ea;
+    --color-indigo-700: #7e22ce;
+    --color-indigo-800: #6b21a8;
+    --color-indigo-900: #581c87;
+    --color-indigo-950: #3b0764;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+}
+
+@layer utilities {
+    body,
+    html {
+        --font-sans:
+            'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
+            'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+            'Noto Color Emoji';
+    }
+}
+
+:root {
+    --background: hsl(210 20% 98%); /* Gray-50 background look */
+    --foreground: hsl(220 15% 10%);
+    --card: hsl(0 0% 100%);
+    --card-foreground: hsl(220 15% 10%);
+    --popover: hsl(0 0% 100%);
+    --popover-foreground: hsl(220 15% 10%);
+    --primary: hsl(271 81% 56%); /* VOTREX Purple-600 */
+    --primary-foreground: hsl(0 0% 100%);
+    --secondary: hsl(240 4.8% 95.9%);
+    --secondary-foreground: hsl(240 5.9% 10%);
+    --muted: hsl(240 4.8% 95.9%);
+    --muted-foreground: hsl(240 3.8% 46.1%);
+    --accent: hsl(270 100% 96%); /* Light purple active accent background */
+    --accent-foreground: hsl(271 81% 56%);
+    --destructive: hsl(0 84.2% 60.2%);
+    --destructive-foreground: hsl(0 0% 98%);
+    --border: hsl(214.3 31.8% 91.4%); /* slate-200 border */
+    --input: hsl(214.3 31.8% 91.4%);
+    --ring: hsl(271 81% 56%);
+    --chart-1: hsl(271 81% 56%);
+    --chart-2: hsl(173 58% 39%);
+    --chart-3: hsl(197 37% 24%);
+    --chart-4: hsl(43 74% 66%);
+    --chart-5: hsl(27 87% 67%);
+    --radius: 0.75rem; /* Smoother border radius */
+    --sidebar-background: hsl(0 0% 100%); /* VOTREX White sidebar */
+    --sidebar-foreground: hsl(240 5.3% 26.1%);
+    --sidebar-primary: hsl(271 81% 56%);
+    --sidebar-primary-foreground: hsl(0 0% 100%);
+    --sidebar-accent: hsl(270 100% 96%); /* VOTREX Light purple active */
+    --sidebar-accent-foreground: hsl(271 81% 56%);
+    --sidebar-border: hsl(220 13% 91%);
+    --sidebar-ring: hsl(271 81% 56%);
+    --sidebar: hsl(0 0% 100%);
+}
+
+.dark {
+    --background: hsl(222.2 84% 4.9%); /* VOTREX dark background */
+    --foreground: hsl(210 40% 98%);
+    --card: hsl(222.2 84% 7%);
+    --card-foreground: hsl(210 40% 98%);
+    --popover: hsl(222.2 84% 7%);
+    --popover-foreground: hsl(210 40% 98%);
+    --primary: hsl(270 95% 75%); /* Lighter purple for dark mode */
+    --primary-foreground: hsl(222.2 47.4% 11.2%);
+    --secondary: hsl(217.2 32.6% 17.5%);
+    --secondary-foreground: hsl(210 40% 98%);
+    --muted: hsl(217.2 32.6% 17.5%);
+    --muted-foreground: hsl(215 20.2% 65.1%);
+    --accent: hsl(270 50% 15%);
+    --accent-foreground: hsl(270 95% 75%);
+    --destructive: hsl(0 62.8% 30.6%);
+    --destructive-foreground: hsl(210 40% 98%);
+    --border: hsl(217.2 32.6% 17.5%);
+    --input: hsl(217.2 32.6% 17.5%);
+    --ring: hsl(270 95% 75%);
+    --sidebar-background: hsl(222.2 84% 7%);
+    --sidebar-foreground: hsl(210 40% 98%);
+    --sidebar-primary: hsl(270 95% 75%);
+    --sidebar-primary-foreground: hsl(222.2 47.4% 11.2%);
+    --sidebar-accent: hsl(270 50% 15%);
+    --sidebar-accent-foreground: hsl(270 95% 75%);
+    --sidebar-border: hsl(217.2 32.6% 17.5%);
+    --sidebar-ring: hsl(270 95% 75%);
+    --sidebar: hsl(222.2 84% 7%);
+}
+
+.semidark {
+    --sidebar-background: hsl(222.2 84% 7%);
+    --sidebar-foreground: hsl(210 40% 98%);
+    --sidebar-primary: hsl(270 95% 75%);
+    --sidebar-primary-foreground: hsl(222.2 47.4% 11.2%);
+    --sidebar-accent: hsl(270 50% 15%);
+    --sidebar-accent-foreground: hsl(270 95% 75%);
+    --sidebar-border: hsl(217.2 32.6% 17.5%);
+    --sidebar-ring: hsl(270 95% 75%);
+    --sidebar: hsl(222.2 84% 7%);
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+    
+    /* Custom scrollbar matching VOTREX */
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 10px;
+    }
+    .dark ::-webkit-scrollbar-thumb {
+        background: #475569;
+    }
+}
+
+@layer utilities {
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
