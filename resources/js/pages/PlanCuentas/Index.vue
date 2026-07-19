@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { Head, useForm } from '@inertiajs/vue3';
+import { Head, useForm, usePage } from '@inertiajs/vue3';
 
 import { 
     BookOpen, 
@@ -15,6 +15,9 @@ const props = defineProps<{
     cuentas: any[];
     errors: any;
 }>();
+
+const page = usePage();
+const isAdmin = computed(() => (page.props.auth?.user as any)?.id_rol === 1);
 
 const isModalOpen = ref(false);
 const searchQuery = ref('');
@@ -108,6 +111,7 @@ defineOptions({
                     </p>
                 </div>
                 <button
+                    v-if="isAdmin"
                     @click="openNewSubcuentaModal"
                     class="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 transition-colors"
                 >

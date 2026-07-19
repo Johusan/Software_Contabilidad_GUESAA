@@ -13,6 +13,7 @@ use App\Models\Producto;
 use App\Models\Venta;
 use App\Models\Compra;
 use App\Models\AsientoContable;
+use App\Http\Controllers\UsuarioController;
 use Inertia\Inertia;
 
 Route::inertia('/', 'Welcome')->name('home');
@@ -73,6 +74,12 @@ Route::middleware(['auth'])->group(function () {
     // Módulo Plan de Cuentas
     Route::get('/plan-cuentas', [PlanCuentasController::class, 'index'])->name('plan-cuentas.index');
     Route::post('/plan-cuentas/subcuenta', [PlanCuentasController::class, 'storeSubcuenta'])->name('plan-cuentas.store-subcuenta');
+
+    // Módulo Gestión de Usuarios y Roles (Administradores)
+    Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index');
+    Route::post('/usuarios', [UsuarioController::class, 'store'])->name('usuarios.store');
+    Route::put('/usuarios/{id}', [UsuarioController::class, 'update'])->name('usuarios.update');
+    Route::post('/usuarios/{id}/toggle', [UsuarioController::class, 'toggleEstado'])->name('usuarios.toggle');
 
 });
 

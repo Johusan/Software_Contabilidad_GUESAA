@@ -19,6 +19,10 @@ class PlanCuentasController extends Controller
 
     public function storeSubcuenta(Request $request)
     {
+        if ($request->user()->id_rol !== 1) {
+            return back()->withErrors(['error' => 'Solo los usuarios con rol Administrador pueden crear subcuentas.']);
+        }
+
         $request->validate([
             'codigo_cuenta' => 'required|string|max:10|unique:cuentas_pcge,codigo_cuenta',
             'denominacion' => 'required|string|max:150',
