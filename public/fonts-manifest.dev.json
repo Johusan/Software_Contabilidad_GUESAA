@@ -1,9 +1,9 @@
 {
   "version": 1,
   "style": {
-    "inline": "@font-face {\n  font-family: \"Instrument Sans\";\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"http://[::1]:5174/__laravel_vite_plugin__/fonts/5d90bc354954b7ce.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Instrument Sans\";\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"http://[::1]:5174/__laravel_vite_plugin__/fonts/93693dde6d3fb19c.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Instrument Sans\";\n  font-style: normal;\n  font-weight: 500;\n  font-display: swap;\n  src: url(\"http://[::1]:5174/__laravel_vite_plugin__/fonts/014911ee1bd0a018.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Instrument Sans\";\n  font-style: normal;\n  font-weight: 500;\n  font-display: swap;\n  src: url(\"http://[::1]:5174/__laravel_vite_plugin__/fonts/42b33ba9a3b167a2.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Instrument Sans\";\n  font-style: normal;\n  font-weight: 600;\n  font-display: swap;\n  src: url(\"http://[::1]:5174/__laravel_vite_plugin__/fonts/03dad58d6efd8483.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Instrument Sans\";\n  font-style: normal;\n  font-weight: 600;\n  font-display: swap;\n  src: url(\"http://[::1]:5174/__laravel_vite_plugin__/fonts/2c84ae6e70e81cd1.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n:root {\n  --font-instrument-sans: \"Instrument Sans\";\n}\n\n.font-instrument-sans {\n  font-family: var(--font-instrument-sans);\n}\n",
+    "inline": "@font-face {\n  font-family: \"Instrument Sans\";\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"http://[::1]:5175/__laravel_vite_plugin__/fonts/5d90bc354954b7ce.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Instrument Sans\";\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"http://[::1]:5175/__laravel_vite_plugin__/fonts/93693dde6d3fb19c.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Instrument Sans\";\n  font-style: normal;\n  font-weight: 500;\n  font-display: swap;\n  src: url(\"http://[::1]:5175/__laravel_vite_plugin__/fonts/014911ee1bd0a018.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Instrument Sans\";\n  font-style: normal;\n  font-weight: 500;\n  font-display: swap;\n  src: url(\"http://[::1]:5175/__laravel_vite_plugin__/fonts/42b33ba9a3b167a2.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Instrument Sans\";\n  font-style: normal;\n  font-weight: 600;\n  font-display: swap;\n  src: url(\"http://[::1]:5175/__laravel_vite_plugin__/fonts/03dad58d6efd8483.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Instrument Sans\";\n  font-style: normal;\n  font-weight: 600;\n  font-display: swap;\n  src: url(\"http://[::1]:5175/__laravel_vite_plugin__/fonts/2c84ae6e70e81cd1.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n:root {\n  --font-instrument-sans: \"Instrument Sans\";\n}\n\n.font-instrument-sans {\n  font-family: var(--font-instrument-sans);\n}\n",
     "familyStyles": {
-      "instrument-sans": "@font-face {\n  font-family: \"Instrument Sans\";\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"http://[::1]:5174/__laravel_vite_plugin__/fonts/5d90bc354954b7ce.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Instrument Sans\";\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"http://[::1]:5174/__laravel_vite_plugin__/fonts/93693dde6d3fb19c.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Instrument Sans\";\n  font-style: normal;\n  font-weight: 500;\n  font-display: swap;\n  src: url(\"http://[::1]:5174/__laravel_vite_plugin__/fonts/014911ee1bd0a018.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Instrument Sans\";\n  font-style: normal;\n  font-weight: 500;\n  font-display: swap;\n  src: url(\"http://[::1]:5174/__laravel_vite_plugin__/fonts/42b33ba9a3b167a2.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Instrument Sans\";\n  font-style: normal;\n  font-weight: 600;\n  font-display: swap;\n  src: url(\"http://[::1]:5174/__laravel_vite_plugin__/fonts/03dad58d6efd8483.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Instrument Sans\";\n  font-style: normal;\n  font-weight: 600;\n  font-display: swap;\n  src: url(\"http://[::1]:5174/__laravel_vite_plugin__/fonts/2c84ae6e70e81cd1.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n.font-instrument-sans {\n  font-family: var(--font-instrument-sans);\n}"
+      "instrument-sans": "@font-face {\n  font-family: \"Instrument Sans\";\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"http://[::1]:5175/__laravel_vite_plugin__/fonts/5d90bc354954b7ce.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Instrument Sans\";\n  font-style: normal;\n  font-weight: 400;\n  font-display: swap;\n  src: url(\"http://[::1]:5175/__laravel_vite_plugin__/fonts/93693dde6d3fb19c.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Instrument Sans\";\n  font-style: normal;\n  font-weight: 500;\n  font-display: swap;\n  src: url(\"http://[::1]:5175/__laravel_vite_plugin__/fonts/014911ee1bd0a018.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Instrument Sans\";\n  font-style: normal;\n  font-weight: 500;\n  font-display: swap;\n  src: url(\"http://[::1]:5175/__laravel_vite_plugin__/fonts/42b33ba9a3b167a2.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Instrument Sans\";\n  font-style: normal;\n  font-weight: 600;\n  font-display: swap;\n  src: url(\"http://[::1]:5175/__laravel_vite_plugin__/fonts/03dad58d6efd8483.woff2\") format(\"woff2\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n@font-face {\n  font-family: \"Instrument Sans\";\n  font-style: normal;\n  font-weight: 600;\n  font-display: swap;\n  src: url(\"http://[::1]:5175/__laravel_vite_plugin__/fonts/2c84ae6e70e81cd1.woff\") format(\"woff\");\n  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;\n}\n\n.font-instrument-sans {\n  font-family: var(--font-instrument-sans);\n}"
     },
     "variables": {
       "instrument-sans": "--font-instrument-sans: \"Instrument Sans\";"
@@ -15,7 +15,7 @@
       "family": "Instrument Sans",
       "weight": 400,
       "style": "normal",
-      "url": "http://[::1]:5174/__laravel_vite_plugin__/fonts/5d90bc354954b7ce.woff2",
+      "url": "http://[::1]:5175/__laravel_vite_plugin__/fonts/5d90bc354954b7ce.woff2",
       "as": "font",
       "type": "font/woff2",
       "crossorigin": "anonymous"
@@ -25,7 +25,7 @@
       "family": "Instrument Sans",
       "weight": 500,
       "style": "normal",
-      "url": "http://[::1]:5174/__laravel_vite_plugin__/fonts/014911ee1bd0a018.woff2",
+      "url": "http://[::1]:5175/__laravel_vite_plugin__/fonts/014911ee1bd0a018.woff2",
       "as": "font",
       "type": "font/woff2",
       "crossorigin": "anonymous"
@@ -35,7 +35,7 @@
       "family": "Instrument Sans",
       "weight": 600,
       "style": "normal",
-      "url": "http://[::1]:5174/__laravel_vite_plugin__/fonts/03dad58d6efd8483.woff2",
+      "url": "http://[::1]:5175/__laravel_vite_plugin__/fonts/03dad58d6efd8483.woff2",
       "as": "font",
       "type": "font/woff2",
       "crossorigin": "anonymous"
@@ -49,12 +49,12 @@
         "400:normal": {
           "files": [
             {
-              "url": "http://[::1]:5174/__laravel_vite_plugin__/fonts/5d90bc354954b7ce.woff2",
+              "url": "http://[::1]:5175/__laravel_vite_plugin__/fonts/5d90bc354954b7ce.woff2",
               "format": "woff2",
               "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
             },
             {
-              "url": "http://[::1]:5174/__laravel_vite_plugin__/fonts/93693dde6d3fb19c.woff",
+              "url": "http://[::1]:5175/__laravel_vite_plugin__/fonts/93693dde6d3fb19c.woff",
               "format": "woff",
               "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
             }
@@ -63,12 +63,12 @@
         "500:normal": {
           "files": [
             {
-              "url": "http://[::1]:5174/__laravel_vite_plugin__/fonts/014911ee1bd0a018.woff2",
+              "url": "http://[::1]:5175/__laravel_vite_plugin__/fonts/014911ee1bd0a018.woff2",
               "format": "woff2",
               "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
             },
             {
-              "url": "http://[::1]:5174/__laravel_vite_plugin__/fonts/42b33ba9a3b167a2.woff",
+              "url": "http://[::1]:5175/__laravel_vite_plugin__/fonts/42b33ba9a3b167a2.woff",
               "format": "woff",
               "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
             }
@@ -77,12 +77,12 @@
         "600:normal": {
           "files": [
             {
-              "url": "http://[::1]:5174/__laravel_vite_plugin__/fonts/03dad58d6efd8483.woff2",
+              "url": "http://[::1]:5175/__laravel_vite_plugin__/fonts/03dad58d6efd8483.woff2",
               "format": "woff2",
               "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
             },
             {
-              "url": "http://[::1]:5174/__laravel_vite_plugin__/fonts/2c84ae6e70e81cd1.woff",
+              "url": "http://[::1]:5175/__laravel_vite_plugin__/fonts/2c84ae6e70e81cd1.woff",
               "format": "woff",
               "unicodeRange": "U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD"
             }

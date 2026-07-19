@@ -21,53 +21,47 @@ import type { NavItem } from '@/types';
 const page = usePage();
 
 const mainNavItems = computed<NavItem[]>(() => {
-    const items: NavItem[] = [
+    const user = (page.props.auth?.user as any);
+    const roleId = user?.id_rol ?? 1;
+
+    const allItems: { item: NavItem; roles: number[] }[] = [
         {
-            title: 'Dashboard',
-            href: '/dashboard',
-            icon: LayoutGrid,
+            item: { title: 'Dashboard', href: '/dashboard', icon: LayoutGrid },
+            roles: [1, 2, 3]
         },
         {
-            title: 'Clientes y Prov.',
-            href: '/terceros',
-            icon: Users,
+            item: { title: 'Clientes y Prov.', href: '/terceros', icon: Users },
+            roles: [1, 2, 3]
         },
         {
-            title: 'Inventario / Kardex',
-            href: '/inventario',
-            icon: Package,
+            item: { title: 'Inventario / Kardex', href: '/inventario', icon: Package },
+            roles: [1, 3]
         },
         {
-            title: 'Registro Compras',
-            href: '/compras',
-            icon: ShoppingBag,
+            item: { title: 'Registro Compras', href: '/compras', icon: ShoppingBag },
+            roles: [1, 3]
         },
         {
-            title: 'Punto de Venta (POS)',
-            href: '/ventas',
-            icon: Receipt,
+            item: { title: 'Punto de Venta (POS)', href: '/ventas', icon: Receipt },
+            roles: [1, 2]
         },
         {
-            title: 'Caja Chica',
-            href: '/caja',
-            icon: Wallet,
+            item: { title: 'Caja Chica', href: '/caja', icon: Wallet },
+            roles: [1, 2]
         },
         {
-            title: 'Plan de Cuentas',
-            href: '/plan-cuentas',
-            icon: BookOpen,
+            item: { title: 'Plan de Cuentas', href: '/plan-cuentas', icon: BookOpen },
+            roles: [1]
+        },
+        {
+            item: { title: 'Usuarios y Roles', href: '/usuarios', icon: Shield },
+            roles: [1]
         },
     ];
 
-    if ((page.props.auth?.user as any)?.id_rol === 1) {
-        items.push({
-            title: 'Usuarios y Roles',
-            href: '/usuarios',
-            icon: Shield,
-        });
-    }
-
-    return items;
+    return allItems
+        .filter(entry => entry.roles.includes(roleId))
+        .map(entry => entry.item);
 });
 
 const footerNavItems: NavItem[] = [];
