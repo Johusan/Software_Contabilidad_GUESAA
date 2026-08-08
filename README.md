@@ -210,6 +210,3 @@ El seeder precarga los siguientes usuarios de prueba para verificar los permisos
 | **Almacenero** | `almacenero@guesaa.com` | `password` | Dashboard, Clientes/Prov., Inventario/Kardex y Compras |
 
 ---
-
-## 👨‍💻 Créditos
-Desarrollado para la empresa **GUESAA PERÚ E.I.R.L.**
