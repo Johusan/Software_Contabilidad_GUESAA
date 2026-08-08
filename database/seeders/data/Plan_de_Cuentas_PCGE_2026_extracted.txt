@@ -1,0 +1,896 @@
+--- Page 1 ---
+CUADRO DE CLASIFICACIÓN Y CATÁLOGO DE CUENTAS - PCGE 2020
+Curso: Sistemas de Información Contable
+ELEMENTO 1
+Activo disponible y 
+exigible
+ELEMENTO 2
+Activo realizable
+ELEMENTO 3
+Activo inmovilizado
+ELEMENTO 4
+Pasivo
+ELEMENTO 5
+Patrimonio neto
+ELEMENTO 6
+Gastos por naturaleza
+ELEMENTO 7
+Ingresos
+ELEMENTO 8
+Saldos intermediarios de 
+gestión y determinación 
+del resultado del ejercicio
+ELEMENTO 9
+Contabilidad analítica de 
+explotación: Costos de 
+producción y gastos por 
+función
+ELEMENTO 0
+Cuentas de orden
+10. Efectivo y 
+equivalentes de 
+efectivo
+20. Mercaderías 30. Inversiones 
+mobiliarias
+40. Tributos, 
+contraprestaciones 
+y aportes al 
+sistema de 
+pensiones y de 
+salud por pagar
+50. Capital 60. Compras 70. Ventas 80. Margen comercial −1. Cuentas de orden 
+deudoras ⬇︎
+11. Inversiones 
+financieras
+21. Productos 
+terminados
+31. Inversiones 
+inmobiliarias
+41. Remuneraciones y 
+participaciones 
+por pagar
+51. Acciones de 
+inversión
+61. Variación de 
+existencias
+71. Variación de la 
+producción 
+almacenada
+81. Producción del 
+ejercicio
+01. Bienes y valores 
+entregados
+12. Cuentas por cobrar 
+comerciales - 
+Terceros
+22. Subproductos, 
+desechos y 
+desperdicios
+32. Activos adquiridos 
+en arrendamiento 
+financiero
+42. Cuentas por pagar 
+comerciales - 
+Terceros
+52. Capital adicional 62. Gastos de 
+personal, 
+directores y 
+gerentes
+72. Producción de 
+activo 
+inmovilizado
+82. Valor agregado 02. Derechos sobre 
+instrumentos 
+financieros
+13. Cuentas por cobrar 
+comerciales - 
+Relacionadas
+23. Productos en 
+proceso
+33. Inmuebles, 
+maquinaria y 
+equipo
+43. Cuentas por pagar 
+comerciales - 
+Relacionadas
+63. Gastos de servicios 
+prestados por 
+terceros
+73. Descuentos, 
+rebajas y 
+bonificaciones 
+obtenidos
+83. Excedente bruto 
+(insuficiencia 
+bruta) de 
+explotación
+03. Otras cuentas de 
+orden deudoras
+14. Cuentas por cobrar 
+al personal, a los 
+accionistas 
+(socios), directores 
+y gerentes
+24. Materias primas 34. Intangibles 44. Cuentas por pagar 
+a los accionistas 
+(socios), directores 
+y gerentes
+64. Gastos por 
+tributos
+74. Descuentos, 
+rebajas y 
+bonificaciones 
+concedidos
+84. Resultado de 
+explotación
+04. Deudoras por 
+contra
+25. Materiales 
+auxiliares, 
+suministros y 
+repuestos
+35. Activos biológicos 45. Obligaciones 
+financieras
+65. Otros gastos de 
+gestión
+75. Otros ingresos de 
+gestión
+85. Resultado antes de 
+participaciones e 
+impuestos
+−1. Cuentas de orden 
+acreedoras ⬇︎
+16. Cuentas por cobrar 
+diversas - Terceros
+26. Envases y 
+embalajes
+36. Desvalorización de 
+activo 
+inmovilizado
+46. Cuentas por pagar 
+diversas – 
+Terceros
+56. Resultados no 
+realizados
+66. Pérdida por 
+medición de 
+activos no 
+financieros al valor 
+razonable
+76. Ganancia por 
+medición de 
+activos no 
+financieros al valor 
+razonable
+06. Bienes y valores 
+recibidos
+17. Cuentas por cobrar 
+diversas - 
+Relacionadas
+27. Activos no 
+corrientes 
+mantenidos para 
+la venta
+37. Activo diferido 47. Cuentas por pagar 
+diversas - 
+Relacionadas
+57. Excedente de 
+revaluación
+67. Gastos financieros 77. Ingresos 
+financieros
+87. Participaciones de 
+los trabajadores
+07. Compromisos 
+sobre 
+instrumentos 
+financieros
+18. Servicios y otros 
+contratados por 
+anticipado
+28. Existencias por 
+recibir
+38. Otros activos 48. Provisiones 58. Reservas 68. Valuación y 
+deterioro de 
+activos y 
+provisiones
+78. Cargas cubiertas 
+por provisiones
+88. Impuesto a la 
+renta
+08. Otras cuentas de 
+orden acreedoras
+Para ser estructurado 
+por cada entidad
+19. Estimación de 
+cuentas de 
+cobranza dudosa
+29. Desvalorización de 
+existencias
+39. Depreciación, 
+amortización y 
+agotamiento 
+acumulados
+49. Pasivo diferido 59. Resultados 
+acumulados
+69. Costo de ventas 79. Cargas imputables 
+a cuentas de 
+costos y gastos
+89. Determinación del 
+resultado del 
+ejercicio
+09. Acreedoras por 
+contra
+Elaborado por: Alonso Piscoya
+--- Page 2 ---
+ELEMENTO 1: ACTIVO 
+DISPONIBLE Y EXIGIBLE
+10 EFECTIVO Y EQUIVALENTES DE 
+EFECTIVO
+101 Caja
+102 Fondos fijos
+103 Efectivo en tránsito
+104 Cuentas corrientes en 
+instituciones financieras
+105 Otros equivalentes de efectivo
+106 Depósitos en instituciones 
+financieras
+107 Fondos sujetos a restricción
+11 INVERSIONES FINANCIERAS
+111 Inversiones mantenidas para 
+negociación
+112 Inversiones disponibles para 
+la venta
+113 Activos financieros – Acuerdo 
+de compra
+12 CUENTAS POR COBRAR 
+COMERCIALES – TERCEROS
+121 Facturas, boletas y otros 
+comprobantes por cobrar
+122 Anticipos de clientes
+123 Letras por cobrar
+13 CUENTAS POR COBRAR 
+COMERCIALES – RELACIONADAS
+131 Facturas, boletas y otros 
+comprobantes por cobrar
+132 Anticipos recibidos
+133 Letras por cobrar
+14 CUENTAS POR COBRAR AL 
+PERSONAL, A LOS ACCIONISTAS 
+(SOCIOS), DIRECTORES Y 
+GERENTES
+141 Personal
+142 Accionistas (o socios)
+143 Directores
+144 Gerentes
+148 Diversas
+16 CUENTAS POR COBRAR 
+DIVERSAS – TERCEROS
+161 Préstamos
+162 Reclamaciones a terceros
+163 Intereses, regalías y 
+dividendos
+164 Depósitos otorgados en 
+garantía
+165 Venta de activo inmovilizado
+166 Activos por instrumentos 
+financieros
+168 Otras cuentas por cobrar 
+diversas
+17 CUENTAS POR COBRAR 
+DIVERSAS – RELACIONADAS
+171 Préstamos
+173 Intereses, regalías y 
+dividendos
+174 Depósitos otorgados en 
+garantía
+175 Venta de activo inmovilizado
+176 Activos por instrumentos 
+financieros
+178 Otras cuentas por cobrar 
+diversas
+18 SERVICIOS Y OTROS 
+CONTRATADOS POR ANTICIPADO
+181 Costos financieros
+182 Seguros
+183 Alquileres
+184 Primas pagadas por opciones
+185 Mantenimiento de activos 
+inmovilizados
+189 Otros gastos contratados por 
+anticipado
+19 ESTIMACIÓN DE CUENTAS DE 
+COBRANZA DUDOSA
+191 Cuentas por cobrar 
+comerciales – Terceros
+192 Cuentas por cobrar 
+comerciales – Relacionadas
+193 Cuentas por cobrar al 
+personal, a los accionistas (socios), 
+directores y gerentes
+194 Cuentas por cobrar diversas – 
+Terceros
+195 Cuentas por cobrar diversas – 
+Relacionadas
+ELEMENTO 2: ACTIVO 
+REALIZABLE
+20 MERCADERÍAS
+201 Mercaderías manufacturadas
+202 Mercaderías de extracción
+203 Mercaderías agropecuarias y 
+piscícolas
+204 Mercaderías inmuebles
+208 Otras mercaderías
+21 PRODUCTOS TERMINADOS
+211 Productos manufacturados
+212 Productos de extracción 
+terminados
+213 Productos agropecuarios y 
+piscícolas terminados
+214 Productos inmuebles
+215 Existencias de servicios 
+terminados
+217 Otros productos terminados
+218 Costos de financiación – 
+Productos terminados
+22 SUBPRODUCTOS, DESECHOS Y 
+DESPERDICIOS
+221 Subproductos
+222 Desechos y desperdicios
+23 PRODUCTOS EN PROCESO
+231 Productos en proceso de 
+manufactura
+232 Productos extraídos en 
+proceso de transformación
+233 Productos agropecuarios y 
+piscícolas en proceso
+234 Productos inmuebles en 
+proceso
+235 Existencias de servicios en 
+proceso
+237 Otros productos en proceso
+238 Costos de financiación – 
+Productos en proceso
+24 MATERIAS PRIMAS
+241 Materias primas para 
+productos manufacturados
+242 Materias primas para 
+productos de extracción
+243 Materias primas para 
+productos agropecuarios y 
+piscícolas
+244 Materias primas para 
+productos inmuebles
+25 MATERIALES AUXILIARES, 
+SUMINISTROS Y REPUESTOS
+251 Materiales auxiliares
+252 Suministros
+253 Repuestos
+26 ENVASES Y EMBALAJES
+261 Envases
+262 Embalajes
+27 ACTIVOS NO CORRIENTES 
+MANTENIDOS PARA LA VENTA
+271 Inversiones inmobiliarias
+272 Inmuebles, maquinaria y 
+equipo
+273 Intangibles
+274 Activos biológicos
+275 Depreciación acumulada – 
+Inversión inmobiliaria
+276 Depreciación acumulada – 
+Inmuebles, maquinaria y equipo
+277 Amortización acumulada – 
+Intangibles
+278 Depreciación acumulada – 
+Activos biológicos
+279 Desvalorización acumulada
+28 EXISTENCIAS POR RECIBIR
+281 Mercaderías
+284 Materias primas
+285 Materiales auxiliares, 
+suministros y repuestos
+286 Envases y embalajes
+29 DESVALORIZACIÓN DE 
+EXISTENCIAS
+291 Mercaderías
+292 Productos terminados
+293 Subproductos, desechos y 
+desperdicios
+294 Productos en proceso
+295 Materias primas
+296 Materiales auxiliares, 
+suministros y repuestos
+297 Envases y embalajes
+298 Existencias por recibir
+ELEMENTO 3: ACTIVO 
+INMOVILIZADO
+30 INVERSIONES MOBILIARIAS
+301 Inversiones a ser mantenidas 
+hasta el vencimiento
+302 Instrumentos financieros 
+representativos de derecho 
+patrimonial
+308 Inversiones mobiliarias – 
+Acuerdos de compra
+31 INVERSIONES INMOBILIARIAS
+311 Terrenos
+312 Edificaciones
+32 ACTIVOS ADQUIRIDOS EN 
+ARRENDAMIENTO FINANCIERO
+321 Inversiones inmobiliarias
+322 Inmuebles, maquinaria y 
+equipo
+33 INMUEBLES, MAQUINARIA Y 
+EQUIPO
+331 Terrenos
+332 Edificaciones
+333 Maquinarias y equipos de 
+explotación
+334 Unidades de transporte
+335 Muebles y enseres
+336 Equipos diversos
+337 Herramientas y unidades de 
+reemplazo
+338 Unidades por recibir
+339 Construcciones y obras en 
+curso
+34 INTANGIBLES
+341 Concesiones, licencias y otros 
+derechos
+342 Patentes y propiedad 
+industrial
+343 Programas de computadora 
+(software)
+344 Costos de exploración y 
+desarrollo
+345 Fórmulas, diseños y 
+prototipos
+346 Reservas de recursos 
+extraíbles
+347 Plusvalía mercantil
+349 Otros activos intangibles
+35 ACTIVOS BIOLÓGICOS
+351 Activos biológicos en 
+producción
+352 Activos biológicos en 
+desarrollo
+36 DESVALORIZACIÓN DE ACTIVO 
+INMOVILIZADO
+361 Desvalorización de 
+inversiones inmobiliarias
+363 Desvalorización de inmuebles, 
+maquinaria y equipo
+364 Desvalorización de 
+intangibles
+365 Desvalorización de activos 
+biológicos
+366 Desvalorización de 
+inversiones mobiliarias
+37 ACTIVO DIFERIDO
+371 Impuesto a la renta diferido
+372 Participaciones de los 
+trabajadores diferidas
+373 Intereses diferidos
+38 OTROS ACTIVOS
+381 Bienes de arte y cultura
+382 Diversos
+39 DEPRECIACIÓN, 
+AMORTIZACIÓN Y AGOTAMIENTO 
+ACUMULADOS
+391 Depreciación acumulada
+392 Amortización acumulada
+393 Agotamiento acumulado
+ELEMENTO 4: PASIVO
+40 TRIBUTOS, 
+CONTRAPRESTACIONES Y 
+APORTES AL SISTEMA DE 
+PENSIONES Y DE SALUD POR 
+PAGAR
+401 Gobierno central
+402 Certificados tributarios
+403 Instituciones públicas
+405 Gobiernos regionales
+406 Gobiernos locales
+407 Administradoras de fondos de 
+pensiones
+408 Empresas prestadoras de 
+servicios de salud
+409 Otros costos administrativos e 
+intereses
+41 REMUNERACIONES Y 
+PARTICIPACIONES POR PAGAR
+411 Remuneraciones por pagar
+413 Participaciones de los 
+trabajadores por pagar
+415 Beneficios sociales de los 
+trabajadores por pagar
+419 Otras remuneraciones y 
+participaciones por pagar
+42 CUENTAS POR PAGAR 
+COMERCIALES – TERCEROS
+421 Facturas, boletas y otros 
+comprobantes por pagar
+422 Anticipos a proveedores
+423 Letras por pagar
+424 Honorarios por pagar
+43 CUENTAS POR PAGAR 
+COMERCIALES – RELACIONADAS
+431 Facturas, boletas y otros 
+comprobantes por pagar
+432 Anticipos otorgados
+433 Letras por pagar
+434 Honorarios por pagar
+44 CUENTAS POR PAGAR A LOS 
+ACCIONISTAS (SOCIOS), 
+DIRECTORES Y GERENTES
+441 Accionistas (o socios)
+442 Directores
+443 Gerentes
+45 OBLIGACIONES FINANCIERAS
+451 Préstamos de instituciones 
+financieras y otras entidades
+452 Contratos de arrendamiento 
+financiero
+453 Obligaciones emitidas
+454 Otros Instrumentos 
+financieros por pagar
+455 Costos de financiación por 
+pagar
+456 Préstamos con compromisos 
+de recompra
+46 CUENTAS POR PAGAR 
+DIVERSAS – TERCEROS
+461 Reclamaciones de terceros
+464 Pasivos por instrumentos 
+financieros
+465 Pasivos por compra de activo 
+inmovilizado
+467 Depósitos recibidos en 
+garantía
+469 Otras cuentas por pagar 
+diversas
+47 CUENTAS POR PAGAR 
+DIVERSAS – RELACIONADAS
+471 Préstamos
+472 Costos de financiación
+473 Anticipos recibidos
+474 Regalías
+475 Dividendos
+477 Pasivo por compra de activo 
+inmovilizado
+479 Otras cuentas por pagar 
+diversas
+48 PROVISIONES
+481 Provisión para litigios
+482 Provisión por 
+desmantelamiento, retiro o 
+rehabilitación del inmovilizado
+483 Provisión para 
+reestructuraciones
+484 Provisión para protección y 
+remediación del medio ambiente
+485 Provisión para gastos de 
+responsabilidad social
+486 Provisión para garantías
+489 Otras provisiones
+49 PASIVO DIFERIDO
+491 Impuesto a la renta diferido
+492 Participaciones de los 
+trabajadores diferidas
+493 Intereses diferidos
+494 Ganancia en venta con 
+arrendamiento financiero paralelo
+495 Subsidios recibidos diferidos
+496 Ingresos diferidos
+497 Costos diferidos
+ELEMENTO 5: PATRIMONIO 
+NETO
+50 CAPITAL
+501 Capital social
+502 Acciones en tesorería
+51 ACCIONES DE INVERSIÓN
+511 Acciones de inversión
+512 Acciones de inversión en 
+tesorería
+52 CAPITAL ADICIONAL
+521 Primas (descuento) de 
+acciones
+522 Capitalizaciones en trámite
+523 Reducciones de capital 
+pendientes de formalización
+56 RESULTADOS NO REALIZADOS
+561 Diferencia en cambio de 
+inversiones permanentes en 
+entidades extranjeras
+562 Instrumentos financieros – 
+Cobertura de flujo de efectivo
+563 Ganancia o pérdida en activos 
+o pasivos financieros disponibles 
+para la venta
+564 Ganancia o pérdida en activos 
+o pasivos financieros disponibles 
+para la venta – Compra o venta 
+convencional fecha de liquidación
+57 EXCEDENTE DE REVALUACIÓN
+571 Excedente de revaluación
+572 Excedente de revaluación – 
+Acciones liberadas recibidas
+573 Participación en excedente de 
+revaluación – Inversiones en 
+entidades relacionadas
+58 RESERVAS
+581 Reinversión
+582 Legal
+583 Contractuales
+584 Estatutarias
+585 Facultativas
+589 Otras reservas
+59 RESULTADOS ACUMULADOS
+591 Utilidades no distribuidas
+592 Pérdidas acumuladas
+ELEMENTO 6: GASTOS POR 
+NATURALEZA
+60 COMPRAS
+601 Mercaderías
+602 Materias primas
+603 Materiales auxiliares, 
+suministros y repuestos
+604 Envases y embalajes
+609 Costos vinculados con las 
+compras
+61 VARIACIÓN DE EXISTENCIAS
+611 Mercaderías
+612 Materias primas
+613 Materiales auxiliares, 
+suministros y repuestos
+614 Envases y embalajes
+62 GASTOS DE PERSONAL, 
+DIRECTORES Y GERENTES
+621 Remuneraciones
+622 Otras remuneraciones
+623 Indemnizaciones al personal
+624 Capacitación
+625 Atención al personal
+626 Gerentes
+627 Seguridad, previsión social y 
+otras contribuciones
+628 Retribuciones al directorio
+629 Beneficios sociales de los 
+trabajadores
+63 GASTOS DE SERVICIOS 
+PRESTADOS POR TERCEROS
+631 Transporte, correos y gastos 
+de viaje
+632 Asesoría y consultoría
+633 Producción encargada a 
+terceros
+634 Mantenimiento y 
+reparaciones
+635 Alquileres
+636 Servicios básicos
+637 Publicidad, publicaciones, 
+relaciones públicas
+638 Servicios de contratistas
+639 Otros servicios prestados por 
+terceros
+64 GASTOS POR TRIBUTOS
+641 Gobierno central
+642 Gobierno regional
+643 Gobierno local
+644 Otros gastos por tributos
+65 OTROS GASTOS DE GESTION
+651 Seguros
+652 Regalías
+653 Suscripciones
+654 Licencias y derechos de 
+vigencia
+655 Costo neto de enajenación de 
+activos inmovilizados y operaciones 
+discontinuadas
+656 Suministros
+658 Gestión medioambiental
+659 Otros gastos de gestión
+66 PERDIDA POR MEDICIÓN DE 
+ACTIVOS NO FINANCIEROS AL 
+VALOR RAZONABLE
+661 Activo realizable
+662 Activo inmovilizado
+67 GASTOS FINANCIEROS
+671 Gastos en operaciones de 
+endeudamiento y otros
+672 Pérdida por instrumentos 
+financieros derivados
+673 Intereses por préstamos y 
+otras obligaciones
+674 Gastos en operaciones de 
+factoraje (factoring)
+675 Descuentos concedidos por 
+pronto pago
+676 Diferencia de cambio
+677 Pérdida por medición de 
+activos y pasivos financieros al 
+valor razonable
+678 Participación en resultados de 
+entidades relacionadas
+679 Otros gastos financieros
+68 VALUACIÓN Y DETERIORO DE 
+ACTIVOS Y PROVISIONES
+681 Depreciación
+682 Amortización de intangibles
+683 Agotamiento
+684 Valuación de activos
+685 Deterioro del valor de los 
+activos
+686 Provisiones
+69 COSTO DE VENTAS
+691 Mercaderías
+692 Productos terminados
+693 Subproductos, desechos y 
+desperdicios
+694 Servicios
+695 Gastos por desvalorización de 
+existencias
+ELEMENTO 7: INGRESOS
+70 VENTAS
+701 Mercaderías
+702 Productos terminados
+703 Subproductos, desechos y 
+desperdicios
+704 Prestación de servicios
+709 Devoluciones sobre ventas
+71 VARIACIÓN DE LA 
+PRODUCCIÓN ALMACENADA
+711 Variación de productos 
+terminados
+712 Variación de subproductos, 
+desechos y desperdicios
+713 Variación de productos en 
+proceso
+714 Variación de envases y 
+embalajes
+715 Variación de existencias de 
+servicios
+72 PRODUCCIÓN DE ACTIVO 
+INMOVILIZADO
+721 Inversiones inmobiliarias
+722 Inmuebles, maquinaria y 
+equipo
+723 Intangibles
+724 Activos biológicos
+725 Costos de financiación 
+capitalizados
+73 DESCUENTOS, REBAJAS Y 
+BONIFICACIONES OBTENIDOS
+731 Descuentos, rebajas y 
+bonificaciones obtenidos
+74 DESCUENTOS, REBAJAS Y 
+BONIFICACIONES CONCEDIDOS
+741 Descuentos, rebajas y 
+bonificaciones concedidos
+75 OTROS INGRESOS DE GESTIÓN
+751 Servicios en beneficio del 
+personal
+752 Comisiones y corretajes
+753 Regalías
+754 Alquileres
+755 Recuperación de cuentas de 
+valuación
+756 Enajenación de activos 
+inmovilizados
+757 Recuperación de deterioro de 
+cuentas de activos inmovilizados
+759 Otros ingresos de gestión
+76 GANANCIA POR MEDICIÓN DE 
+ACTIVOS NO FINANCIEROS AL 
+VALOR RAZONABLE
+761 Activo realizable
+762 Activo inmovilizado
+77 INGRESOS FINANCIEROS
+771 Ganancia por instrumento 
+financiero derivado
+772 Rendimientos ganados
+773 Dividendos
+774 Ingresos en operaciones de 
+factoraje (factoring)
+775 Descuentos obtenidos por 
+pronto pago
+776 Diferencia en cambio
+777 Ganancia por medición de 
+activos y pasivos financieros al 
+valor razonable
+778 Participación en resultados de 
+entidades relacionadas
+779 Otros ingresos financieros
+78 CARGAS CUBIERTAS POR 
+PROVISIONES
+781 Cargas cubiertas por 
+provisiones
+79 CARGAS IMPUTABLES A 
+CUENTAS DE COSTOS Y GASTOS
+791 Cargas imputables a cuentas 
+de costos y gastos
+792 Gastos financieros imputables 
+a cuentas de existencias
+ELEMENTO 8: SALDOS 
+INTERMEDIARIOS DE GESTIÓN Y 
+DETERMINACIÓN DEL 
+RESULTADO DEL EJERCICIO
+80 MARGEN COMERCIAL
+801 Margen comercial
+81 PRODUCCIÓN DEL EJERCICIO
+811 Producción de bienes
+812 Producción de servicios
+813 Producción de activo 
+inmovilizado
+82 VALOR AGREGADO
+821 Valor agregado
+83 EXCEDENTE BRUTO 
+(INSUFICIENCIA BRUTA) DE 
+EXPLOTACIÓN
+831 Excedente bruto 
+(insuficiencia bruta) de explotación
+84 RESULTADO DE EXPLOTACIÓN
+841 Resultado de explotación
+85 RESULTADO ANTES DE 
+PARTICIPACIONES E IMPUESTOS
+851 Resultado antes de 
+participaciones e impuestos
+87 PARTICIPACIONES DE LOS 
+TRABAJADORES
+871 Participación de los 
+trabajadores – Corriente
+872 Participación de los 
+trabajadores – Diferida
+88 IMPUESTO A LA RENTA
+881 Impuesto a la renta – 
+Corriente
+882 Impuesto a la renta – Diferido
+89 DETERMINACIÓN DEL 
+RESULTADO DEL EJERCICIO
+891 Utilidad
+892 Pérdida
+ELEMENTO 9: CONTABILIDAD 
+ANALÍTICA DE EXPLOTACIÓN: 
+COSTOS DE PRODUCCIÓN Y 
+GASTOS POR FUNCIÓN
+(El uso de las cuentas de este 
+elemento se determina de acuerdo 
+con la clasificación requerida por 
+cada entidad).
+ELEMENTO 0: CUENTAS DE 
+ORDEN
+CUENTAS DE ORDEN DEUDORAS
+01 BIENES Y VALORES 
+ENTREGADOS
+011 Bienes en préstamo, custodia 
+y no capitalizables
+012 Valores y bienes entregados 
+en garantía
+013 Activos realizables entregados 
+en consignación
+02 DERECHOS SOBRE 
+INSTRUMENTOS FINANCIEROS
+021 Primarios
+022 Derivados
+03 OTRAS CUENTAS DE ORDEN 
+DEUDORAS
+031 Contratos aprobados
+032 Bienes dados de baja
+039 Diversas
+04 DEUDORAS POR CONTRA
+CUENTAS DE ORDEN ACREEDORAS
+06 BIENES Y VALORES RECIBIDOS
+061 Bienes recibidos en préstamo 
+y custodia
+062 Valores y bienes recibidos en 
+garantía
+063 Activos realizables recibidos 
+en consignación
+07 COMPROMISOS SOBRE 
+INSTRUMENTOS FINANCIEROS
+071 Primarios
+072 Derivados
+08 OTRAS CUENTAS DE ORDEN 
+ACREEDORAS
+089 Diversas
+09 ACREEDORAS POR CONTRA

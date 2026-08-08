@@ -66,7 +66,7 @@ class DatabaseSeeder extends Seeder
         echo "Usuarios de prueba sembrados con éxito.\n";
 
         // 3. Seed Plan de Cuentas (PCGE)
-        $filePath = 'j:\\Documentos\\Proyectos\\Software Contabilidad\\Plan de Cuentas PCGE 2026 (1)_extracted.txt';
+        $filePath = database_path('seeders/data/Plan_de_Cuentas_PCGE_2026_extracted.txt');
         
         if (file_exists($filePath)) {
             $lines = file($filePath);
