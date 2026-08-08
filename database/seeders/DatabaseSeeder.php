@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
                 'nombres' => 'Jhon Wilhelm',
                 'apellidos' => 'Huaman Sánchez',
                 'email' => 'admin@guesaa.com',
-                'password' => Hash::make('admin123'),
+                'password' => Hash::make('password'),
                 'estado' => true
             ],
             [
@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
                 'nombres' => 'Abima Galilei',
                 'apellidos' => 'Lozano Paz',
                 'email' => 'cajero@guesaa.com',
-                'password' => Hash::make('cajero123'),
+                'password' => Hash::make('password'),
                 'estado' => true
             ],
             [
@@ -55,7 +55,7 @@ class DatabaseSeeder extends Seeder
                 'nombres' => 'Anggie Fiorella',
                 'apellidos' => 'Tarrillo Rojas',
                 'email' => 'almacenero@guesaa.com',
-                'password' => Hash::make('almacenero123'),
+                'password' => Hash::make('password'),
                 'estado' => true
             ],
         ];
