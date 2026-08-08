@@ -210,3 +210,44 @@ El seeder precarga los siguientes usuarios de prueba para verificar los permisos
 | **Almacenero** | `almacenero@guesaa.com` | `password` | Dashboard, Clientes/Prov., Inventario/Kardex y Compras |
 
 ---
+
+## 🛠️ Solución de Problemas Comunes
+
+### Error de Ejecución de Scripts en PowerShell (npm / vite)
+Si al ejecutar comandos como `npm -v` o `npm run dev` en PowerShell recibes un error de seguridad que indica que **"la ejecución de scripts está deshabilitada en este sistema"** (UnauthorizedAccess / PSSecurityException), debes habilitar los permisos ejecutando el siguiente comando en tu PowerShell:
+```powershell
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+Escribe **`S`** (Sí) y presiona Enter para confirmar. Si no deseas cambiar las políticas de seguridad, puedes optar por utilizar la terminal convencional de Windows (**CMD / Símbolo del Sistema**), la cual no está sujeta a estas restricciones.
+
+---
+
+## 🐙 Comandos Útiles de Git y GitHub
+
+Para colaborar y mantener el código actualizado entre diferentes entornos de trabajo, utiliza los siguientes comandos:
+
+* **Descargar los últimos cambios del repositorio**:
+  ```bash
+  git pull origin main
+  ```
+* **Ver el estado actual del repositorio (archivos modificados o nuevos)**:
+  ```bash
+  git status
+  ```
+* **Preparar los archivos modificados para confirmación**:
+  ```bash
+  git add .
+  ```
+* **Confirmar los cambios con un mensaje descriptivo**:
+  ```bash
+  git commit -m "feat: descripción de tus cambios"
+  ```
+* **Subir tus cambios al repositorio remoto**:
+  ```bash
+  git push origin main
+  ```
+
+---
+
+## 👨‍💻 Créditos
+Desarrollado para la empresa **GUESAA PERÚ E.I.R.L.**
