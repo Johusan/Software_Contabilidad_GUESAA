@@ -8,7 +8,12 @@ import {
     ShoppingCart, 
     AlertCircle, 
     Check, 
-    FileText 
+    FileText,
+    Search,
+    UserPlus,
+    X,
+    Truck,
+    Barcode
 } from '@lucide/vue';
 
 const props = defineProps<{
@@ -19,6 +24,24 @@ const props = defineProps<{
 }>();
 
 const isModalOpen = ref(false);
+
+// Estados para Buscador / Picker de Proveedor
+const isProveedorPickerOpen = ref(false);
+const proveedorSearchQuery = ref('');
+
+// Estados para Registro Rápido de Nuevo Proveedor
+const isNewProveedorModalOpen = ref(false);
+const newProveedorForm = useForm({
+    ruc: '',
+    razon_social: '',
+    direccion: '',
+    telefono: '',
+});
+
+// Estados para Buscador / Picker de Producto por línea
+const isProductPickerOpen = ref(false);
+const activeProductLineIndex = ref<number | null>(null);
+const productSearchQuery = ref('');
 
 const form = useForm({
     id_proveedor: '',
@@ -52,12 +75,90 @@ const removeLine = (index: number) => {
     form.detalles.splice(index, 1);
 };
 
-const onProductChange = (index: number) => {
-    const selectedId = form.detalles[index].id_producto;
-    const prod = props.productos.find(p => p.id_producto.toString() === selectedId);
-    if (prod) {
-        form.detalles[index].precio_unitario = Number(prod.precio_compra);
+// Proveedor seleccionado etiqueta
+const selectedProveedorName = computed(() => {
+    const found = props.proveedores.find(p => p.id_proveedor.toString() === form.id_proveedor);
+    if (!found) return 'Seleccionar Proveedor...';
+    return `${found.razon_social} (RUC: ${found.ruc})`;
+});
+
+// Filtro de Proveedores en tiempo real
+const filteredProveedores = computed(() => {
+    const q = proveedorSearchQuery.value.trim().toLowerCase();
+    if (!q) return props.proveedores;
+    return props.proveedores.filter(p => 
+        p.razon_social.toLowerCase().includes(q) || 
+        p.ruc.toLowerCase().includes(q)
+    );
+});
+
+const selectProveedor = (proveedor: any) => {
+    form.id_proveedor = proveedor.id_proveedor.toString();
+    isProveedorPickerOpen.value = false;
+    proveedorSearchQuery.value = '';
+};
+
+// Modal de Nuevo Proveedor Rápido
+const openNewProveedorModal = () => {
+    newProveedorForm.reset();
+    newProveedorForm.clearErrors();
+    isNewProveedorModalOpen.value = true;
+};
+
+const submitNewProveedor = () => {
+    const ruc = newProveedorForm.ruc.trim();
+
+    if (ruc.length !== 11 || isNaN(Number(ruc)) || !(ruc.startsWith('10') || ruc.startsWith('20'))) {
+        newProveedorForm.setError('ruc', 'El RUC debe contener exactamente 11 dígitos numéricos y comenzar con 10 o 20.');
+        return;
     }
+
+    newProveedorForm.post('/terceros/proveedor', {
+        preserveScroll: true,
+        onSuccess: () => {
+            const newlyCreated = props.proveedores.find(p => p.ruc === ruc);
+            if (newlyCreated) {
+                form.id_proveedor = newlyCreated.id_proveedor.toString();
+            }
+            isNewProveedorModalOpen.value = false;
+            isProveedorPickerOpen.value = false;
+            newProveedorForm.reset();
+        }
+    });
+};
+
+// Picker de Producto por Línea de Compra
+const openProductPicker = (index: number) => {
+    activeProductLineIndex.value = index;
+    productSearchQuery.value = '';
+    isProductPickerOpen.value = true;
+};
+
+const getSelectedProductDescription = (idStr: string) => {
+    const prod = props.productos.find(p => p.id_producto.toString() === idStr);
+    if (!prod) return 'Seleccionar Producto...';
+    return `${prod.descripcion} (Stock: ${prod.stock_actual})`;
+};
+
+const filteredProductos = computed(() => {
+    const q = productSearchQuery.value.trim().toLowerCase();
+    if (!q) return props.productos;
+    return props.productos.filter(p => 
+        p.descripcion.toLowerCase().includes(q) || 
+        (p.codigo_barras && p.codigo_barras.toLowerCase().includes(q)) ||
+        (p.categoria?.nombre && p.categoria.nombre.toLowerCase().includes(q))
+    );
+});
+
+const selectProduct = (prod: any) => {
+    if (activeProductLineIndex.value !== null && form.detalles[activeProductLineIndex.value]) {
+        const idx = activeProductLineIndex.value;
+        form.detalles[idx].id_producto = prod.id_producto.toString();
+        form.detalles[idx].precio_unitario = Number(prod.precio_compra);
+    }
+    isProductPickerOpen.value = false;
+    activeProductLineIndex.value = null;
+    productSearchQuery.value = '';
 };
 
 // Totales calculados
@@ -204,12 +305,17 @@ defineOptions({
                         <!-- Campos Cabecera -->
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                             <div>
-                                <label class="block text-xs font-semibold text-zinc-500 uppercase tracking-wider">Proveedor</label>
-                                <select v-model="form.id_proveedor" required class="mt-1 block w-full rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-900 dark:text-zinc-50 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500">
-                                    <option v-for="p in proveedores" :key="p.id_proveedor" :value="p.id_proveedor.toString()">
-                                        {{ p.razon_social }} (RUC: {{ p.ruc }})
-                                    </option>
-                                </select>
+                                <div class="flex items-center justify-between">
+                                    <label class="block text-xs font-semibold text-zinc-500 uppercase tracking-wider">Proveedor</label>
+                                    <button type="button" @click="openNewProveedorModal" class="text-xs text-indigo-600 dark:text-indigo-400 font-semibold hover:underline flex items-center gap-1">
+                                        <UserPlus class="h-3 w-3" />
+                                        <span>+ Nuevo Proveedor</span>
+                                    </button>
+                                </div>
+                                <button type="button" @click="isProveedorPickerOpen = true" class="mt-1 w-full text-left rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-900 dark:text-zinc-50 focus:border-indigo-500 focus:outline-none flex items-center justify-between shadow-sm hover:bg-zinc-50 dark:hover:bg-zinc-850 transition-colors">
+                                    <span class="truncate font-medium">{{ selectedProveedorName }}</span>
+                                    <Search class="h-4 w-4 text-zinc-400 shrink-0 ml-1" />
+                                </button>
                             </div>
                             <div>
                                 <label class="block text-xs font-semibold text-zinc-500 uppercase tracking-wider">Tipo Comprobante</label>
@@ -241,11 +347,10 @@ defineOptions({
                                     <!-- Selector de Producto -->
                                     <div class="col-span-6">
                                         <label class="block text-[10px] font-semibold text-zinc-400 uppercase">Producto</label>
-                                        <select v-model="line.id_producto" @change="onProductChange(index)" required class="mt-1 block w-full rounded border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-950 px-2 py-1.5 text-xs text-zinc-900 dark:text-zinc-50 focus:border-indigo-500 focus:outline-none">
-                                            <option v-for="p in productos" :key="p.id_producto" :value="p.id_producto.toString()">
-                                                {{ p.descripcion }} (Stock: {{ p.stock_actual }})
-                                            </option>
-                                        </select>
+                                        <button type="button" @click="openProductPicker(index)" class="mt-1 w-full text-left rounded border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-950 px-2 py-1.5 text-xs text-zinc-900 dark:text-zinc-50 focus:border-indigo-500 focus:outline-none flex items-center justify-between truncate shadow-sm hover:bg-zinc-50 dark:hover:bg-zinc-850 transition-colors">
+                                            <span class="truncate">{{ getSelectedProductDescription(line.id_producto) }}</span>
+                                            <Search class="h-3.5 w-3.5 text-zinc-400 shrink-0 ml-1" />
+                                        </button>
                                     </div>
 
                                     <!-- Cantidad -->
@@ -326,6 +431,187 @@ defineOptions({
                             </button>
                         </div>
                     </form>
+                </div>
+            </div>
+
+            <!-- MODAL BUSCADOR DE PROVEEDORES -->
+            <div v-if="isProveedorPickerOpen" class="fixed inset-0 z-[60] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+                <div class="w-full max-w-lg rounded-xl border bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 p-5 shadow-2xl animate-in fade-in zoom-in-95 duration-150 flex flex-col max-h-[80vh]">
+                    
+                    <div class="flex items-center justify-between border-b pb-3 border-zinc-100 dark:border-zinc-800">
+                        <div class="flex items-center gap-2">
+                            <Search class="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
+                            <h3 class="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">Buscar y Seleccionar Proveedor</h3>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button type="button" @click="openNewProveedorModal" class="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-md transition-colors cursor-pointer">
+                                <UserPlus class="h-3 w-3" />
+                                <span>+ Nuevo Proveedor</span>
+                            </button>
+                            <button type="button" @click="isProveedorPickerOpen = false" class="text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 p-1">
+                                <X class="h-4 w-4" />
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Buscador -->
+                    <div class="my-3 relative">
+                        <input 
+                            v-model="proveedorSearchQuery" 
+                            type="text" 
+                            autofocus
+                            placeholder="Buscar por RUC o Razón Social..." 
+                            class="w-full pl-9 pr-3 py-2 text-xs rounded-lg border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 focus:border-indigo-500 focus:outline-none" 
+                        />
+                        <Search class="h-4 w-4 text-zinc-400 absolute left-3 top-2.5" />
+                    </div>
+
+                    <!-- Lista de Resultados -->
+                    <div class="flex-1 overflow-y-auto divide-y divide-zinc-100 dark:divide-zinc-800 pr-1">
+                        <div v-if="filteredProveedores.length === 0" class="p-6 text-center text-xs text-zinc-400">
+                            No se encontraron proveedores coincidentes.
+                        </div>
+                        <button 
+                            v-for="p in filteredProveedores" 
+                            :key="p.id_proveedor" 
+                            type="button" 
+                            @click="selectProveedor(p)" 
+                            class="w-full text-left p-3 hover:bg-indigo-50/50 dark:hover:bg-indigo-950/20 transition-colors flex items-center justify-between group rounded-lg cursor-pointer"
+                            :class="form.id_proveedor === p.id_proveedor.toString() ? 'bg-indigo-50/80 dark:bg-indigo-950/40 border-l-2 border-indigo-600' : ''"
+                        >
+                            <div>
+                                <p class="text-xs font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                                    {{ p.razon_social }}
+                                </p>
+                                <p class="text-[11px] text-zinc-400 mt-0.5">
+                                    <span class="font-mono">RUC: {{ p.ruc }}</span>
+                                    <span v-if="p.telefono"> • Tel: {{ p.telefono }}</span>
+                                </p>
+                            </div>
+                            <span v-if="form.id_proveedor === p.id_proveedor.toString()" class="text-indigo-600 dark:text-indigo-400">
+                                <Check class="h-4 w-4" />
+                            </span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- MODAL REGISTRO RÁPIDO DE NUEVO PROVEEDOR -->
+            <div v-if="isNewProveedorModalOpen" class="fixed inset-0 z-[70] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+                <div class="w-full max-w-md rounded-xl border bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 p-6 shadow-2xl animate-in fade-in zoom-in-95 duration-150">
+                    
+                    <div class="flex items-center justify-between border-b pb-3 border-zinc-100 dark:border-zinc-800">
+                        <div class="flex items-center gap-2">
+                            <Truck class="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
+                            <h3 class="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">Registrar Nuevo Proveedor</h3>
+                        </div>
+                        <button type="button" @click="isNewProveedorModalOpen = false" class="text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200">
+                            <X class="h-4 w-4" />
+                        </button>
+                    </div>
+
+                    <form @submit.prevent="submitNewProveedor" class="mt-4 space-y-3">
+                        <div>
+                            <label class="block text-[10px] font-semibold text-zinc-500 uppercase">N° RUC</label>
+                            <input v-model="newProveedorForm.ruc" type="text" required class="mt-1 block w-full rounded border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-2.5 py-1.5 text-xs text-zinc-900 dark:text-zinc-50" placeholder="11 dígitos (empezando con 10 o 20)" />
+                            <span v-if="newProveedorForm.errors.ruc" class="text-[10px] text-red-500 block mt-0.5">{{ newProveedorForm.errors.ruc }}</span>
+                        </div>
+
+                        <div>
+                            <label class="block text-[10px] font-semibold text-zinc-500 uppercase">Razón Social</label>
+                            <input v-model="newProveedorForm.razon_social" type="text" required class="mt-1 block w-full rounded border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-2.5 py-1.5 text-xs text-zinc-900 dark:text-zinc-50" placeholder="Ej: Laboratorios Droguería S.A.C." />
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <label class="block text-[10px] font-semibold text-zinc-500 uppercase">Dirección (opcional)</label>
+                                <input v-model="newProveedorForm.direccion" type="text" class="mt-1 block w-full rounded border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-2 py-1.5 text-xs text-zinc-900 dark:text-zinc-50" placeholder="Lima / Chiclayo" />
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-semibold text-zinc-500 uppercase">Teléfono (opcional)</label>
+                                <input v-model="newProveedorForm.telefono" type="text" class="mt-1 block w-full rounded border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-2 py-1.5 text-xs text-zinc-900 dark:text-zinc-50" placeholder="01-4567890" />
+                            </div>
+                        </div>
+
+                        <div class="flex justify-end gap-2 border-t pt-3 border-zinc-100 dark:border-zinc-800 mt-4">
+                            <button type="button" @click="isNewProveedorModalOpen = false" class="px-3 py-1.5 border border-zinc-200 dark:border-zinc-800 rounded-lg text-xs text-zinc-700 dark:text-zinc-300">
+                                Cancelar
+                            </button>
+                            <button type="submit" :disabled="newProveedorForm.processing" class="px-3 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs rounded-lg transition-colors cursor-pointer">
+                                Guardar y Seleccionar
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+            <!-- MODAL BUSCADOR DE PRODUCTOS -->
+            <div v-if="isProductPickerOpen" class="fixed inset-0 z-[60] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
+                <div class="w-full max-w-xl rounded-xl border bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 p-5 shadow-2xl animate-in fade-in zoom-in-95 duration-150 flex flex-col max-h-[80vh]">
+                    
+                    <div class="flex items-center justify-between border-b pb-3 border-zinc-100 dark:border-zinc-800">
+                        <div class="flex items-center gap-2">
+                            <Search class="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
+                            <h3 class="font-semibold text-zinc-900 dark:text-zinc-100 text-sm">Buscar Producto para Compra</h3>
+                        </div>
+                        <button type="button" @click="isProductPickerOpen = false" class="text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 p-1">
+                            <X class="h-4 w-4" />
+                        </button>
+                    </div>
+
+                    <!-- Buscador por código o nombre -->
+                    <div class="my-3 relative">
+                        <input 
+                            v-model="productSearchQuery" 
+                            type="text" 
+                            autofocus
+                            placeholder="Buscar por Descripción, Código de Barras o Categoría..." 
+                            class="w-full pl-9 pr-3 py-2 text-xs rounded-lg border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 focus:border-indigo-500 focus:outline-none" 
+                        />
+                        <Search class="h-4 w-4 text-zinc-400 absolute left-3 top-2.5" />
+                    </div>
+
+                    <!-- Lista de Productos -->
+                    <div class="flex-1 overflow-y-auto divide-y divide-zinc-100 dark:divide-zinc-800 pr-1">
+                        <div v-if="filteredProductos.length === 0" class="p-6 text-center text-xs text-zinc-400">
+                            No se encontraron productos coincidentes.
+                        </div>
+                        <button 
+                            v-for="p in filteredProductos" 
+                            :key="p.id_producto" 
+                            type="button" 
+                            @click="selectProduct(p)" 
+                            class="w-full text-left p-3 hover:bg-indigo-50/50 dark:hover:bg-indigo-950/20 transition-colors flex items-center justify-between group rounded-lg cursor-pointer"
+                        >
+                            <div class="space-y-0.5">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                                        {{ p.descripcion }}
+                                    </span>
+                                    <span v-if="p.categoria" class="text-[10px] px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400">
+                                        {{ p.categoria.nombre }}
+                                    </span>
+                                </div>
+                                <p class="text-[11px] text-zinc-400 flex items-center gap-2">
+                                    <span v-if="p.codigo_barras" class="font-mono flex items-center gap-1">
+                                        <Barcode class="h-3 w-3 inline" /> {{ p.codigo_barras }}
+                                    </span>
+                                    <span class="font-semibold text-zinc-700 dark:text-zinc-300">
+                                        P. Compra: {{ formatCurrency(Number(p.precio_compra)) }}
+                                    </span>
+                                </p>
+                            </div>
+                            
+                            <div class="text-right">
+                                <span class="inline-flex items-center rounded-full px-2 py-0.5 text-xs font-semibold bg-blue-50 text-blue-700 dark:bg-blue-950/30 dark:text-blue-400">
+                                    Stock Actual: {{ p.stock_actual }}
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+
                 </div>
             </div>
 
