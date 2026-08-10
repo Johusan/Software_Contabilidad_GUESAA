@@ -1,7 +1,7 @@
 import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition, applyUrlDefaults } from './../../wayfinder'
 /**
 * @see \App\Http\Controllers\ProductoController::store
- * @see app/Http/Controllers/ProductoController.php:85
+ * @see app/Http/Controllers/ProductoController.php:93
  * @route '/inventario/categoria'
  */
 export const store = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -16,7 +16,7 @@ store.definition = {
 
 /**
 * @see \App\Http\Controllers\ProductoController::store
- * @see app/Http/Controllers/ProductoController.php:85
+ * @see app/Http/Controllers/ProductoController.php:93
  * @route '/inventario/categoria'
  */
 store.url = (options?: RouteQueryOptions) => {
@@ -25,7 +25,7 @@ store.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\ProductoController::store
- * @see app/Http/Controllers/ProductoController.php:85
+ * @see app/Http/Controllers/ProductoController.php:93
  * @route '/inventario/categoria'
  */
 store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -35,7 +35,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
     /**
 * @see \App\Http\Controllers\ProductoController::store
- * @see app/Http/Controllers/ProductoController.php:85
+ * @see app/Http/Controllers/ProductoController.php:93
  * @route '/inventario/categoria'
  */
     const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -45,7 +45,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
             /**
 * @see \App\Http\Controllers\ProductoController::store
- * @see app/Http/Controllers/ProductoController.php:85
+ * @see app/Http/Controllers/ProductoController.php:93
  * @route '/inventario/categoria'
  */
         storeForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -56,7 +56,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     store.form = storeForm
 /**
 * @see \App\Http\Controllers\ProductoController::update
- * @see app/Http/Controllers/ProductoController.php:100
+ * @see app/Http/Controllers/ProductoController.php:108
  * @route '/inventario/categoria/{id}'
  */
 export const update = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
@@ -71,7 +71,7 @@ update.definition = {
 
 /**
 * @see \App\Http\Controllers\ProductoController::update
- * @see app/Http/Controllers/ProductoController.php:100
+ * @see app/Http/Controllers/ProductoController.php:108
  * @route '/inventario/categoria/{id}'
  */
 update.url = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -99,7 +99,7 @@ update.url = (args: { id: string | number } | [id: string | number ] | string | 
 
 /**
 * @see \App\Http\Controllers\ProductoController::update
- * @see app/Http/Controllers/ProductoController.php:100
+ * @see app/Http/Controllers/ProductoController.php:108
  * @route '/inventario/categoria/{id}'
  */
 update.put = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'put'> => ({
@@ -109,7 +109,7 @@ update.put = (args: { id: string | number } | [id: string | number ] | string | 
 
     /**
 * @see \App\Http\Controllers\ProductoController::update
- * @see app/Http/Controllers/ProductoController.php:100
+ * @see app/Http/Controllers/ProductoController.php:108
  * @route '/inventario/categoria/{id}'
  */
     const updateForm = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -124,7 +124,7 @@ update.put = (args: { id: string | number } | [id: string | number ] | string | 
 
             /**
 * @see \App\Http\Controllers\ProductoController::update
- * @see app/Http/Controllers/ProductoController.php:100
+ * @see app/Http/Controllers/ProductoController.php:108
  * @route '/inventario/categoria/{id}'
  */
         updateForm.put = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -140,7 +140,7 @@ update.put = (args: { id: string | number } | [id: string | number ] | string | 
     update.form = updateForm
 /**
 * @see \App\Http\Controllers\ProductoController::deleteMethod
- * @see app/Http/Controllers/ProductoController.php:132
+ * @see app/Http/Controllers/ProductoController.php:140
  * @route '/inventario/categoria/{id}'
  */
 export const deleteMethod = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
@@ -155,7 +155,7 @@ deleteMethod.definition = {
 
 /**
 * @see \App\Http\Controllers\ProductoController::deleteMethod
- * @see app/Http/Controllers/ProductoController.php:132
+ * @see app/Http/Controllers/ProductoController.php:140
  * @route '/inventario/categoria/{id}'
  */
 deleteMethod.url = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -183,7 +183,7 @@ deleteMethod.url = (args: { id: string | number } | [id: string | number ] | str
 
 /**
 * @see \App\Http\Controllers\ProductoController::deleteMethod
- * @see app/Http/Controllers/ProductoController.php:132
+ * @see app/Http/Controllers/ProductoController.php:140
  * @route '/inventario/categoria/{id}'
  */
 deleteMethod.delete = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
@@ -193,7 +193,7 @@ deleteMethod.delete = (args: { id: string | number } | [id: string | number ] | 
 
     /**
 * @see \App\Http\Controllers\ProductoController::deleteMethod
- * @see app/Http/Controllers/ProductoController.php:132
+ * @see app/Http/Controllers/ProductoController.php:140
  * @route '/inventario/categoria/{id}'
  */
     const deleteMethodForm = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -208,7 +208,7 @@ deleteMethod.delete = (args: { id: string | number } | [id: string | number ] | 
 
             /**
 * @see \App\Http\Controllers\ProductoController::deleteMethod
- * @see app/Http/Controllers/ProductoController.php:132
+ * @see app/Http/Controllers/ProductoController.php:140
  * @route '/inventario/categoria/{id}'
  */
         deleteMethodForm.delete = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({

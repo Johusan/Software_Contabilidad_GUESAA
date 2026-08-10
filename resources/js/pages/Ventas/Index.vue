@@ -164,12 +164,38 @@ const filteredProductos = computed(() => {
     );
 });
 
+// Lógica de precio por mayor
+const getEffectiveUnitPrice = (idStr: string, cantidad: number) => {
+    const prod = props.productos.find(p => p.id_producto.toString() === idStr);
+    if (!prod) return 0;
+    
+    const cantMayor = prod.cant_mayorista ? Number(prod.cant_mayorista) : 6;
+    const precioMayor = prod.precio_mayorista ? Number(prod.precio_mayorista) : 0;
+    
+    if (precioMayor > 0 && cantidad >= cantMayor) {
+        return precioMayor;
+    }
+    return Number(prod.precio_venta);
+};
+
+const isWholesaleApplied = (idStr: string, cantidad: number) => {
+    const prod = props.productos.find(p => p.id_producto.toString() === idStr);
+    if (!prod) return false;
+    const cantMayor = prod.cant_mayorista ? Number(prod.cant_mayorista) : 6;
+    const precioMayor = prod.precio_mayorista ? Number(prod.precio_mayorista) : 0;
+    return (precioMayor > 0 && cantidad >= cantMayor);
+};
+
+const onQuantityChange = (line: any) => {
+    line.precio_unitario = getEffectiveUnitPrice(line.id_producto, line.cantidad);
+};
+
 const selectProduct = (prod: any) => {
     if (activeProductLineIndex.value !== null && form.detalles[activeProductLineIndex.value]) {
         const idx = activeProductLineIndex.value;
         form.detalles[idx].id_producto = prod.id_producto.toString();
-        form.detalles[idx].precio_unitario = Number(prod.precio_venta);
         form.detalles[idx].cantidad = 1;
+        form.detalles[idx].precio_unitario = getEffectiveUnitPrice(prod.id_producto.toString(), 1);
         form.detalles[idx].descuento = 0;
     }
     isProductPickerOpen.value = false;
@@ -429,14 +455,20 @@ defineOptions({
                                             Cantidad 
                                             <span class="text-[9px] text-zinc-400 font-normal">(Max: {{ getProductStock(line.id_producto) }})</span>
                                         </label>
-                                        <input v-model="line.cantidad" type="number" min="1" required class="mt-1 block w-full rounded border px-2 py-1 text-xs text-zinc-900 dark:text-zinc-50 focus:border-indigo-500 focus:outline-none"
+                                        <input v-model="line.cantidad" @input="onQuantityChange(line)" @change="onQuantityChange(line)" type="number" min="1" required class="mt-1 block w-full rounded border px-2 py-1 text-xs text-zinc-900 dark:text-zinc-50 focus:border-indigo-500 focus:outline-none"
                                             :class="isStockInsufficient(line) ? 'border-red-500 bg-red-50 dark:bg-red-950/20 text-red-900' : 'border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-955'" />
                                     </div>
 
                                     <!-- Precio Venta -->
                                     <div class="col-span-2">
-                                        <label class="block text-[10px] font-semibold text-zinc-400 uppercase">P. Unitario</label>
-                                        <span class="block text-xs font-semibold text-zinc-900 dark:text-zinc-100 mt-2 bg-zinc-100 dark:bg-zinc-800 py-1 px-2 rounded">
+                                        <div class="flex items-center justify-between">
+                                            <label class="block text-[10px] font-semibold text-zinc-400 uppercase">P. Unitario</label>
+                                            <span v-if="isWholesaleApplied(line.id_producto, line.cantidad)" class="text-[9px] font-bold text-emerald-600 dark:text-emerald-400">
+                                                ¡Mayorista!
+                                            </span>
+                                        </div>
+                                        <span class="block text-xs font-semibold mt-1 py-1 px-2 rounded"
+                                            :class="isWholesaleApplied(line.id_producto, line.cantidad) ? 'bg-emerald-100 text-emerald-900 dark:bg-emerald-950/50 dark:text-emerald-300 font-bold border border-emerald-300 dark:border-emerald-800' : 'bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100'">
                                             {{ formatCurrency(line.precio_unitario) }}
                                         </span>
                                     </div>

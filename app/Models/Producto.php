@@ -18,12 +18,16 @@ class Producto extends Model
         'stock_minimo',
         'precio_compra',
         'precio_venta',
+        'precio_mayorista',
+        'cant_mayorista',
         'estado'
     ];
 
     protected $casts = [
         'precio_compra' => 'decimal:2',
         'precio_venta' => 'decimal:2',
+        'precio_mayorista' => 'decimal:2',
+        'cant_mayorista' => 'integer',
         'stock_actual' => 'integer',
         'stock_minimo' => 'integer',
         'estado' => 'boolean'

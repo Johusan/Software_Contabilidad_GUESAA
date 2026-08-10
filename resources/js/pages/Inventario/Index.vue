@@ -36,6 +36,8 @@ const productoForm = useForm({
     stock_minimo: 5,
     precio_compra: 0.00,
     precio_venta: 0.00,
+    precio_mayorista: 0.00,
+    cant_mayorista: 6,
 });
 
 // Formulario de Categorías
@@ -64,6 +66,8 @@ const openEditProductoModal = (prod: any) => {
     productoForm.stock_minimo = prod.stock_minimo;
     productoForm.precio_compra = Number(prod.precio_compra);
     productoForm.precio_venta = Number(prod.precio_venta);
+    productoForm.precio_mayorista = prod.precio_mayorista ? Number(prod.precio_mayorista) : 0.00;
+    productoForm.cant_mayorista = prod.cant_mayorista ? Number(prod.cant_mayorista) : 6;
     productoForm.clearErrors();
     isProductoModalOpen.value = true;
 };
@@ -223,14 +227,15 @@ defineOptions({
                                     <th class="p-4">Stock Actual</th>
                                     <th class="p-4">Stock Mínimo</th>
                                     <th class="p-4">P. Compra</th>
-                                    <th class="p-4">P. Venta</th>
+                                    <th class="p-4">P. Menor</th>
+                                    <th class="p-4">P. Mayorista</th>
                                     <th class="p-4 text-center">Estado</th>
                                     <th class="p-4 text-right">Acciones</th>
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-zinc-100 dark:divide-zinc-800">
                                 <tr v-if="productos.length === 0">
-                                    <td colspan="9" class="p-8 text-center text-zinc-400">No hay productos registrados.</td>
+                                    <td colspan="10" class="p-8 text-center text-zinc-400">No hay productos registrados.</td>
                                 </tr>
                                 <tr v-for="p in productos" :key="p.id_producto" 
                                     class="hover:bg-zinc-50/50 dark:hover:bg-zinc-800/30 transition-colors"
@@ -253,6 +258,13 @@ defineOptions({
                                     <td class="p-4 text-zinc-400">{{ p.stock_minimo }}</td>
                                     <td class="p-4">{{ formatCurrency(Number(p.precio_compra)) }}</td>
                                     <td class="p-4 font-medium text-zinc-900 dark:text-zinc-100">{{ formatCurrency(Number(p.precio_venta)) }}</td>
+                                    <td class="p-4">
+                                        <div v-if="Number(p.precio_mayorista) > 0">
+                                            <span class="font-semibold text-emerald-600 dark:text-emerald-400">{{ formatCurrency(Number(p.precio_mayorista)) }}</span>
+                                            <span class="text-[10px] text-zinc-400 block">≥ {{ p.cant_mayorista || 6 }} unid.</span>
+                                        </div>
+                                        <span v-else class="text-zinc-400 text-xs">-</span>
+                                    </td>
                                     <td class="p-4 text-center">
                                         <span class="inline-flex items-center rounded-full px-2 py-1 text-xs font-medium ring-1 ring-inset"
                                             :class="p.estado ? 'bg-emerald-50 text-emerald-700 ring-emerald-600/20' : 'bg-red-50 text-red-700 ring-red-600/20'">
@@ -368,8 +380,19 @@ defineOptions({
                                 <input v-model="productoForm.precio_compra" type="number" step="0.01" min="0" required class="mt-1 block w-full rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-900 dark:text-zinc-50 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500" />
                             </div>
                             <div>
-                                <label class="block text-xs font-semibold text-zinc-500 uppercase tracking-wider">Precio Venta (S/.)</label>
+                                <label class="block text-xs font-semibold text-zinc-500 uppercase tracking-wider">P. Menor / Detal (S/.)</label>
                                 <input v-model="productoForm.precio_venta" type="number" step="0.01" min="0" required class="mt-1 block w-full rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-900 dark:text-zinc-50 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500" />
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-zinc-500 uppercase tracking-wider">P. Mayorista (S/.)</label>
+                                <input v-model="productoForm.precio_mayorista" type="number" step="0.01" min="0" class="mt-1 block w-full rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-900 dark:text-zinc-50 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500" placeholder="Opcional. Ej: 8.50" />
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-zinc-500 uppercase tracking-wider">Min. Unidades P. Mayor</label>
+                                <input v-model="productoForm.cant_mayorista" type="number" min="1" class="mt-1 block w-full rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-900 dark:text-zinc-50 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500" placeholder="Ej: 6 o 12" />
                             </div>
                         </div>
 

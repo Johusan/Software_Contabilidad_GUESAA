@@ -30,6 +30,8 @@ class ProductoController extends Controller
             'stock_minimo' => 'nullable|integer|min:0',
             'precio_compra' => 'required|numeric|min:0',
             'precio_venta' => 'required|numeric|min:0',
+            'precio_mayorista' => 'nullable|numeric|min:0',
+            'cant_mayorista' => 'nullable|integer|min:1',
         ]);
 
         Producto::create([
@@ -40,6 +42,8 @@ class ProductoController extends Controller
             'stock_minimo' => $request->input('stock_minimo', 5),
             'precio_compra' => $request->input('precio_compra'),
             'precio_venta' => $request->input('precio_venta'),
+            'precio_mayorista' => $request->input('precio_mayorista', 0.00),
+            'cant_mayorista' => $request->input('cant_mayorista', 6),
             'estado' => true
         ]);
 
@@ -58,6 +62,8 @@ class ProductoController extends Controller
             'stock_minimo' => 'required|integer|min:0',
             'precio_compra' => 'required|numeric|min:0',
             'precio_venta' => 'required|numeric|min:0',
+            'precio_mayorista' => 'nullable|numeric|min:0',
+            'cant_mayorista' => 'nullable|integer|min:1',
         ]);
 
         $producto->update([
@@ -68,6 +74,8 @@ class ProductoController extends Controller
             'stock_minimo' => $request->input('stock_minimo'),
             'precio_compra' => $request->input('precio_compra'),
             'precio_venta' => $request->input('precio_venta'),
+            'precio_mayorista' => $request->input('precio_mayorista', 0.00),
+            'cant_mayorista' => $request->input('cant_mayorista', 6),
         ]);
 
         return redirect()->back()->with('success', 'Producto actualizado con éxito.');
