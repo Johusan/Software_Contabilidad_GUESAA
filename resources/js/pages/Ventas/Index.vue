@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 import { Head, useForm, Link } from '@inertiajs/vue3';
 
 import { 
@@ -15,7 +15,8 @@ import {
     UserPlus,
     X,
     UserCheck,
-    Barcode
+    Barcode,
+    Sparkles
 } from '@lucide/vue';
 
 const props = defineProps<{
@@ -54,6 +55,42 @@ const form = useForm({
     detalles: [] as Array<{ id_producto: string; cantidad: number; precio_unitario: number; descuento: number }>,
 });
 
+// Lógica de Generación de Número Correlativo de Comprobante
+const generateNextVoucherNumber = (tipo: string) => {
+    const isFactura = (tipo === 'Factura');
+    const prefix = isFactura ? 'F001-' : 'B001-';
+    
+    let maxNumber = 0;
+    
+    if (props.ventas && props.ventas.length > 0) {
+        props.ventas.forEach(v => {
+            if (v.tipo_comprobante === tipo && v.num_comprobante && v.num_comprobante.startsWith(prefix)) {
+                const parts = v.num_comprobante.split('-');
+                if (parts.length > 1) {
+                    const num = parseInt(parts[1], 10);
+                    if (!isNaN(num) && num > maxNumber) {
+                        maxNumber = num;
+                    }
+                }
+            }
+        });
+    }
+
+    const nextNum = maxNumber + 1;
+    return `${prefix}${String(nextNum).padStart(8, '0')}`;
+};
+
+const autoGenerateNumComprobante = () => {
+    form.num_comprobante = generateNextVoucherNumber(form.tipo_comprobante);
+};
+
+// Actualizar correlativo automáticamente al cambiar entre Boleta y Factura
+watch(() => form.tipo_comprobante, () => {
+    if (isModalOpen.value) {
+        autoGenerateNumComprobante();
+    }
+});
+
 const openNewVentaModal = () => {
     form.reset();
     if (props.clientes.length > 0) {
@@ -61,6 +98,7 @@ const openNewVentaModal = () => {
     }
     form.detalles = [];
     addLine();
+    autoGenerateNumComprobante();
     form.clearErrors();
     isModalOpen.value = true;
 };
@@ -422,8 +460,14 @@ defineOptions({
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-xs font-semibold text-zinc-500 uppercase tracking-wider">N° Comprobante</label>
-                                <input v-model="form.num_comprobante" type="text" required class="mt-1 block w-full rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-900 dark:text-zinc-50 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500" placeholder="Ej: B001-00045" />
+                                <div class="flex items-center justify-between">
+                                    <label class="block text-xs font-semibold text-zinc-500 uppercase tracking-wider">N° Comprobante</label>
+                                    <button type="button" @click="autoGenerateNumComprobante" class="text-[11px] text-indigo-600 dark:text-indigo-400 font-semibold hover:underline flex items-center gap-1 transition-colors">
+                                        <Sparkles class="h-3 w-3 text-amber-500" />
+                                        <span>⚡ Auto Generar</span>
+                                    </button>
+                                </div>
+                                <input v-model="form.num_comprobante" type="text" required class="mt-1 block w-full rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-900 dark:text-zinc-50 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 font-mono font-medium" placeholder="Ej: B001-00000001" />
                             </div>
                         </div>
 
