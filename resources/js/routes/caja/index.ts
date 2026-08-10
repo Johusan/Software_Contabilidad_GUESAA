@@ -189,7 +189,7 @@ egreso.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     egreso.form = egresoForm
 /**
 * @see \App\Http\Controllers\CajaController::cerrar
- * @see app/Http/Controllers/CajaController.php:109
+ * @see app/Http/Controllers/CajaController.php:108
  * @route '/caja/cerrar'
  */
 export const cerrar = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -204,7 +204,7 @@ cerrar.definition = {
 
 /**
 * @see \App\Http\Controllers\CajaController::cerrar
- * @see app/Http/Controllers/CajaController.php:109
+ * @see app/Http/Controllers/CajaController.php:108
  * @route '/caja/cerrar'
  */
 cerrar.url = (options?: RouteQueryOptions) => {
@@ -213,7 +213,7 @@ cerrar.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\CajaController::cerrar
- * @see app/Http/Controllers/CajaController.php:109
+ * @see app/Http/Controllers/CajaController.php:108
  * @route '/caja/cerrar'
  */
 cerrar.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -223,7 +223,7 @@ cerrar.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
     /**
 * @see \App\Http\Controllers\CajaController::cerrar
- * @see app/Http/Controllers/CajaController.php:109
+ * @see app/Http/Controllers/CajaController.php:108
  * @route '/caja/cerrar'
  */
     const cerrarForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -233,7 +233,7 @@ cerrar.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
             /**
 * @see \App\Http\Controllers\CajaController::cerrar
- * @see app/Http/Controllers/CajaController.php:109
+ * @see app/Http/Controllers/CajaController.php:108
  * @route '/caja/cerrar'
  */
         cerrarForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({

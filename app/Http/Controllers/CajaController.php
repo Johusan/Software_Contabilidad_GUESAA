@@ -75,17 +75,16 @@ class CajaController extends Controller
             // Generar asiento contable por el gasto (Caja chica / Gastos varios)
             $asiento = AsientoContable::create([
                 'id_usuario' => Auth::user()->id_usuario,
-                'glosa' => 'EGRESO DE CAJA: ' . strtoupper($request->input('glosa')),
+                'glosa' => 'GASTO CAJA CHICA: ' . strtoupper($request->input('glosa')),
                 'tipo_operacion' => 'CAJA',
                 'referencia_id' => $caja->id_caja,
                 'estado' => 'ACTIVO'
             ]);
 
             // Debe 659 (Otros gastos de gestión diversos)
-            // (Si no existe en cuentas_pcge, usaremos una genérica o crearemos 659, pero en el seeder se insertaron cientos. Usemos 659 u otra si existe, o 65 por naturaleza)
             DetalleAsiento::create([
                 'id_asiento' => $asiento->id_asiento,
-                'codigo_cuenta' => '659' ?? '65',
+                'codigo_cuenta' => '659',
                 'debe' => $montoEgreso,
                 'haber' => 0.00
             ]);
@@ -99,7 +98,7 @@ class CajaController extends Controller
             ]);
 
             DB::commit();
-            return redirect()->back()->with('success', 'Egreso registrado y contabilizado.');
+            return redirect()->back()->with('success', 'Gasto de Caja Chica registrado exitosamente.');
         } catch (\Exception $e) {
             DB::rollBack();
             return back()->withErrors(['error' => 'Error al registrar egreso: ' . $e->getMessage()]);

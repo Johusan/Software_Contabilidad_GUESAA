@@ -88,16 +88,16 @@ defineOptions({
 </script>
 
 <template>
-    <Head title="Caja y Bancos - GUESAA SIC" />
+    <Head title="Control de Caja - GUESAA SIC" />
 
         <div class="p-6 max-w-7xl mx-auto space-y-6">
             
             <!-- Encabezado -->
             <div class="flex justify-between items-center border-b pb-5 border-zinc-200 dark:border-zinc-800">
                 <div>
-                    <h1 class="text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">Control de Caja Chica</h1>
+                    <h1 class="text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">Control de Caja</h1>
                     <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
-                        Control de ingresos por ventas y egresos varios de caja chica para el arqueo diario.
+                        Gestión de la caja diaria comercial, cobros de ventas y administración de gastos menores de caja chica.
                     </p>
                 </div>
             </div>
@@ -117,7 +117,7 @@ defineOptions({
 
             <div class="grid gap-6 md:grid-cols-3">
                 
-                <!-- Columna Izquierda: Estado Caja Chica -->
+                <!-- Columna Izquierda: Estado Caja Diaria -->
                 <div class="md:col-span-2 space-y-6">
                     
                     <!-- CAJA ACTIVA (ABIERTA) -->
@@ -129,18 +129,18 @@ defineOptions({
                                 </span>
                                 <div>
                                     <h3 class="text-lg font-bold text-zinc-900 dark:text-zinc-50">Caja Diaria Abierta</h3>
-                                    <p class="text-xs text-zinc-500 dark:text-zinc-400">Abierto por: {{ cajaActiva.usuario?.nombres }}</p>
+                                    <p class="text-xs text-zinc-500 dark:text-zinc-400">Responsable del turno: {{ cajaActiva.usuario?.nombres }}</p>
                                 </div>
                             </div>
                             
                             <div class="flex gap-2">
-                                <button @click="isEgresoModalOpen = true" class="inline-flex items-center gap-1 text-xs font-semibold bg-zinc-100 dark:bg-zinc-850 border border-zinc-200 dark:border-zinc-700 px-3 py-2 rounded-lg text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors">
-                                    <ArrowUpRight class="h-4 w-4 text-red-500" />
-                                    Registrar Egreso
+                                <button @click="isEgresoModalOpen = true" class="inline-flex items-center gap-1.5 text-xs font-semibold bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/50 px-3 py-2 rounded-lg text-amber-800 dark:text-amber-300 hover:bg-amber-100 transition-colors">
+                                    <ArrowUpRight class="h-4 w-4 text-amber-600" />
+                                    + Gasto Caja Chica
                                 </button>
-                                <button @click="submitCerrar" class="inline-flex items-center gap-1 text-xs font-semibold bg-red-600 text-white px-3 py-2 rounded-lg hover:bg-red-500 transition-colors">
+                                <button @click="submitCerrar" class="inline-flex items-center gap-1.5 text-xs font-semibold bg-red-600 text-white px-3 py-2 rounded-lg hover:bg-red-500 transition-colors">
                                     <Lock class="h-4 w-4" />
-                                    Cerrar Caja (Arqueo)
+                                    Cerrar y Arquear Caja
                                 </button>
                             </div>
                         </div>
@@ -148,14 +148,14 @@ defineOptions({
                         <!-- Métricas del Flujo de Efectivo -->
                         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                             
-                            <div class="p-4 rounded-lg bg-zinc-50 dark:bg-zinc-800/40 border">
-                                <span class="text-xs font-semibold text-zinc-400 uppercase tracking-wider block">Monto Inicial</span>
+                            <div class="p-4 rounded-lg bg-zinc-50 dark:bg-zinc-800/40 border border-zinc-100 dark:border-zinc-800">
+                                <span class="text-xs font-semibold text-zinc-400 uppercase tracking-wider block">Monto Inicial (Vuelto)</span>
                                 <span class="text-lg font-bold text-zinc-900 dark:text-zinc-50 block mt-2">
                                     {{ formatCurrency(cajaActiva.monto_inicial) }}
                                 </span>
                             </div>
 
-                            <div class="p-4 rounded-lg bg-zinc-50 dark:bg-zinc-800/40 border">
+                            <div class="p-4 rounded-lg bg-zinc-50 dark:bg-zinc-800/40 border border-zinc-100 dark:border-zinc-800">
                                 <span class="text-xs font-semibold text-zinc-400 uppercase tracking-wider block flex items-center gap-1">
                                     Ventas Efectivo
                                     <ArrowDownLeft class="h-3 w-3 text-emerald-500" />
@@ -165,9 +165,9 @@ defineOptions({
                                 </span>
                             </div>
 
-                            <div class="p-4 rounded-lg bg-zinc-50 dark:bg-zinc-800/40 border">
+                            <div class="p-4 rounded-lg bg-zinc-50 dark:bg-zinc-800/40 border border-zinc-100 dark:border-zinc-800">
                                 <span class="text-xs font-semibold text-zinc-400 uppercase tracking-wider block flex items-center gap-1">
-                                    Egresos Varios
+                                    Gastos Caja Chica
                                     <ArrowUpRight class="h-3 w-3 text-red-500" />
                                 </span>
                                 <span class="text-lg font-bold text-red-600 dark:text-red-400 block mt-2">
@@ -176,7 +176,7 @@ defineOptions({
                             </div>
 
                             <div class="p-4 rounded-lg bg-indigo-50/50 dark:bg-indigo-950/10 border border-indigo-100 dark:border-indigo-900/40">
-                                <span class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider block">Saldo Actual</span>
+                                <span class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider block">Saldo Disponible</span>
                                 <span class="text-xl font-black text-indigo-700 dark:text-indigo-300 block mt-1.5">
                                     {{ formatCurrency(saldoCalculado()) }}
                                 </span>
@@ -185,8 +185,8 @@ defineOptions({
 
                         <!-- Información Contable -->
                         <div class="p-4 rounded-lg bg-zinc-50 dark:bg-zinc-850/50 border border-zinc-150 dark:border-zinc-800 text-xs text-zinc-500">
-                            <p class="font-semibold text-zinc-700 dark:text-zinc-300 mb-1">Información de Arqueo para Auditoría:</p>
-                            <p>El saldo actual de <strong class="text-zinc-800 dark:text-zinc-200">{{ formatCurrency(saldoCalculado()) }}</strong> representa la suma de los cobros comerciales registrados vía Registro Ventas más el capital de apertura de caja chica, restando los gastos menores contabilizados. Al momento de cerrar caja, este saldo pasará a consolidarse como el <strong class="text-zinc-850 dark:text-zinc-250">Monto Final</strong> del día.</p>
+                            <p class="font-semibold text-zinc-700 dark:text-zinc-300 mb-1">Información de Arqueo de Caja:</p>
+                            <p>El saldo actual disponible de <strong class="text-zinc-800 dark:text-zinc-200">{{ formatCurrency(saldoCalculado()) }}</strong> representa el dinero físico en efectivo acumulado por cobranzas del día más el sencillo inicial, descontando los comprobantes/egresos por Gastos de Caja Chica.</p>
                         </div>
                     </div>
 
@@ -196,16 +196,16 @@ defineOptions({
                             <Lock class="h-6 w-6" />
                         </div>
                         <div class="max-w-md mx-auto">
-                            <h3 class="text-xl font-bold text-zinc-950 dark:text-zinc-50">Caja Chica Cerrada</h3>
+                            <h3 class="text-xl font-bold text-zinc-950 dark:text-zinc-50">Caja Diaria Cerrada</h3>
                             <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-2">
-                                Para poder operar el registro de ventas y cobrar a clientes, debes aperturar un nuevo turno de caja chica ingresando un monto inicial para vuelto (sencillo).
+                                Para aperturar un nuevo turno comercial y poder realizar cobros de ventas, ingresa el monto inicial destinado a vuelto (sencillo).
                             </p>
                         </div>
 
                         <!-- Formulario Apertura -->
                         <form @submit.prevent="submitAbrir" class="max-w-xs mx-auto flex gap-2 justify-center items-end">
                             <div>
-                                <label class="block text-xs font-semibold text-zinc-500 uppercase tracking-wider text-left">Monto Inicial (S/.)</label>
+                                <label class="block text-xs font-semibold text-zinc-500 uppercase tracking-wider text-left">Monto Inicial (Vuelto) S/.</label>
                                 <input v-model="openForm.monto_inicial" type="number" step="0.01" min="0" required class="mt-1 block w-full rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-900 dark:text-zinc-50 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500" />
                             </div>
                             <button type="submit" :disabled="openForm.processing" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm shadow-sm transition-colors">
@@ -217,23 +217,32 @@ defineOptions({
 
                 </div>
 
-                <!-- Columna Derecha: Resumen Informativo de Caja -->
+                <!-- Columna Derecha: Tarjeta Específica de Caja Chica / Gastos Menores -->
                 <div class="md:col-span-1 space-y-6">
                     <div class="rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6 shadow-sm space-y-4">
-                        <h3 class="text-base font-bold text-zinc-950 dark:text-zinc-50 border-b pb-3 border-zinc-100 dark:border-zinc-800">
-                            Arqueo e Integración
-                        </h3>
+                        <div class="flex items-center gap-2 border-b pb-3 border-zinc-100 dark:border-zinc-800">
+                            <Wallet class="h-5 w-5 text-amber-500" />
+                            <h3 class="text-base font-bold text-zinc-950 dark:text-zinc-50">
+                                Caja Chica & Gastos Menores
+                            </h3>
+                        </div>
                         <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed">
-                            El módulo de caja se vincula de manera directa con las operaciones de ventas. Cada venta registrada al contado suma automáticamente su total a la caja abierta.
+                            Módulo de desembolso rápido para gastos menores operativos (movilidad, útiles de limpieza, pasajes, mantenimiento imprevisto).
                         </p>
-                        <div class="space-y-2 border-t pt-3 border-zinc-100 dark:border-zinc-800">
-                            <h4 class="text-xs font-bold text-zinc-700 dark:text-zinc-300">Asientos Contables por Egresos:</h4>
-                            <p class="text-[11px] text-zinc-500">Cada salida manual por "Caja Chica" genera automáticamente un asiento:</p>
-                            <div class="font-mono text-[9px] bg-zinc-50 dark:bg-zinc-950 p-2 rounded border">
-                                <div>659 Gastos diversos • DEBE</div>
-                                <div>1011 Caja M/N • HABER</div>
+                        
+                        <div class="p-3 bg-amber-50/50 dark:bg-amber-950/20 border border-amber-200/60 dark:border-amber-800/40 rounded-lg space-y-2 text-xs">
+                            <div class="flex justify-between items-center text-amber-900 dark:text-amber-300">
+                                <span class="font-semibold">Acumulado Gastos del Turno:</span>
+                                <span class="font-bold text-sm text-red-600 dark:text-red-400">
+                                    {{ formatCurrency(cajaActiva ? cajaActiva.egresos_varios : 0) }}
+                                </span>
                             </div>
                         </div>
+
+                        <button v-if="cajaActiva" @click="isEgresoModalOpen = true" class="w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white text-xs font-semibold shadow-sm transition-colors">
+                            <Plus class="h-4 w-4" />
+                            Registrar Gasto de Caja Chica
+                        </button>
                     </div>
                 </div>
             </div>
@@ -242,7 +251,7 @@ defineOptions({
             <div class="space-y-4 pt-4">
                 <h3 class="text-lg font-bold text-zinc-950 dark:text-zinc-50 flex items-center gap-1.5">
                     <Clock class="h-5 w-5 text-zinc-400" />
-                    Historial de Cierres y Arqueos
+                    Historial de Cierres y Arqueos Diarios
                 </h3>
                 
                 <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden shadow-sm">
@@ -250,12 +259,12 @@ defineOptions({
                         <table class="w-full text-left text-sm text-zinc-500 dark:text-zinc-400">
                             <thead class="bg-zinc-50 dark:bg-zinc-800/50 text-xs uppercase text-zinc-700 dark:text-zinc-300">
                                 <tr>
-                                    <th class="p-4">Cajero</th>
+                                    <th class="p-4">Responsable</th>
                                     <th class="p-4">Apertura</th>
                                     <th class="p-4">Cierre</th>
                                     <th class="p-4 text-right">M. Inicial</th>
-                                    <th class="p-4 text-right">Ingreso Ventas</th>
-                                    <th class="p-4 text-right">Egreso Chica</th>
+                                    <th class="p-4 text-right">Ventas Efectivo</th>
+                                    <th class="p-4 text-right">Gastos Caja Chica</th>
                                     <th class="p-4 text-right">Monto Final</th>
                                     <th class="p-4 text-center">Estado</th>
                                 </tr>
@@ -284,31 +293,31 @@ defineOptions({
                 </div>
             </div>
 
-            <!-- MODAL REGISTRAR EGRESO -->
+            <!-- MODAL REGISTRAR EGRESO / CAJA CHICA -->
             <div v-if="isEgresoModalOpen" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
                 <div class="w-full max-w-md rounded-xl border bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 p-6 shadow-xl animate-in fade-in zoom-in-95 duration-150">
-                    <h3 class="text-lg font-semibold text-zinc-950 dark:text-zinc-50 border-b pb-3 border-zinc-100 dark:border-zinc-800 flex items-center gap-1">
-                        <ArrowUpRight class="h-5 w-5 text-red-500" />
-                        Registrar Egreso (Caja Chica)
+                    <h3 class="text-lg font-semibold text-zinc-950 dark:text-zinc-50 border-b pb-3 border-zinc-100 dark:border-zinc-800 flex items-center gap-2">
+                        <Wallet class="h-5 w-5 text-amber-500" />
+                        Registrar Gasto de Caja Chica
                     </h3>
                     
                     <form @submit.prevent="submitEgreso" class="mt-4 space-y-4">
                         <div>
-                            <label class="block text-xs font-semibold text-zinc-500 uppercase tracking-wider">Monto del Egreso (S/.)</label>
+                            <label class="block text-xs font-semibold text-zinc-500 uppercase tracking-wider">Monto a Retirar (S/.)</label>
                             <input v-model="egresoForm.monto" type="number" step="0.01" min="0.01" required class="mt-1 block w-full rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-955 px-3 py-2 text-sm text-zinc-900 dark:text-zinc-50 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500" />
                         </div>
 
                         <div>
-                            <label class="block text-xs font-semibold text-zinc-500 uppercase tracking-wider">Glosa / Concepto del Gasto</label>
-                            <input v-model="egresoForm.glosa" type="text" required class="mt-1 block w-full rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-900 dark:text-zinc-50 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500" placeholder="Ej: Compra de útiles de limpieza, Pasajes de mensajería" />
+                            <label class="block text-xs font-semibold text-zinc-500 uppercase tracking-wider">Motivo / Concepto del Gasto</label>
+                            <input v-model="egresoForm.glosa" type="text" required class="mt-1 block w-full rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-900 dark:text-zinc-50 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500" placeholder="Ej: Pasajes de courier, compra de útiles de escritorio" />
                         </div>
 
                         <div class="flex justify-end gap-2 border-t pt-4 border-zinc-100 dark:border-zinc-800 mt-6">
                             <button type="button" @click="isEgresoModalOpen = false" class="px-4 py-2 border border-zinc-200 dark:border-zinc-850 rounded-lg text-sm text-zinc-700 dark:text-zinc-300 hover:bg-zinc-50 dark:hover:bg-zinc-850/50 transition-colors">
                                 Cancelar
                             </button>
-                            <button type="submit" :disabled="egresoForm.processing" class="px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm shadow-sm transition-colors disabled:opacity-50">
-                                Registrar y Contabilizar
+                            <button type="submit" :disabled="egresoForm.processing" class="px-4 py-2 rounded-lg bg-amber-600 hover:bg-amber-500 text-white font-semibold text-sm shadow-sm transition-colors disabled:opacity-50">
+                                Registrar Gasto
                             </button>
                         </div>
                     </form>

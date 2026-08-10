@@ -46,7 +46,7 @@ const mainNavItems = computed<NavItem[]>(() => {
             roles: [1, 2]
         },
         {
-            item: { title: 'Caja Chica', href: '/caja', icon: Wallet },
+            item: { title: 'Control de Caja', href: '/caja', icon: Wallet },
             roles: [1, 2]
         },
         {
