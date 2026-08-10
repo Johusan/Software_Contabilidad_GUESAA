@@ -52,15 +52,10 @@ import {
                     <template v-else>
                         <Link
                             :href="login()"
-                            class="px-4 py-2 text-sm font-semibold text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white transition-colors cursor-pointer"
+                            class="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-semibold rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white shadow-sm transition-colors cursor-pointer"
                         >
-                            Iniciar Sesión
-                        </Link>
-                        <Link
-                            :href="register()"
-                            class="px-4 py-2 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-lg shadow-sm transition-colors cursor-pointer"
-                        >
-                            Registrarse
+                            <span>Iniciar Sesión</span>
+                            <ArrowRight class="h-4 w-4" />
                         </Link>
                     </template>
                 </nav>
