@@ -7,6 +7,7 @@ use App\Http\Controllers\CompraController;
 use App\Http\Controllers\VentaController;
 use App\Http\Controllers\CajaController;
 use App\Http\Controllers\PlanCuentasController;
+use App\Http\Controllers\ContabilidadController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Middleware\CheckRole;
 use App\Models\Cliente;
@@ -87,6 +88,9 @@ Route::middleware(['auth'])->group(function () {
     Route::middleware([CheckRole::class . ':1'])->group(function () {
         Route::get('/plan-cuentas', [PlanCuentasController::class, 'index'])->name('plan-cuentas.index');
         Route::post('/plan-cuentas/subcuenta', [PlanCuentasController::class, 'storeSubcuenta'])->name('plan-cuentas.store-subcuenta');
+
+        Route::get('/contabilidad', [ContabilidadController::class, 'index'])->name('contabilidad.index');
+        Route::post('/contabilidad/asientos', [ContabilidadController::class, 'storeAsientoManual'])->name('contabilidad.store-asiento');
 
         Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index');
         Route::post('/usuarios', [UsuarioController::class, 'store'])->name('usuarios.store');

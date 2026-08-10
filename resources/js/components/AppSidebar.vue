@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { Link, usePage } from '@inertiajs/vue3';
-import { BookOpen, LayoutGrid, Users, Package, ShoppingBag, Receipt, Wallet, Shield } from '@lucide/vue';
+import { BookOpen, LayoutGrid, Users, Package, ShoppingBag, Receipt, Wallet, Shield, FileText } from '@lucide/vue';
 import AppLogo from '@/components/AppLogo.vue';
 import NavFooter from '@/components/NavFooter.vue';
 import NavMain from '@/components/NavMain.vue';
@@ -48,6 +48,10 @@ const mainNavItems = computed<NavItem[]>(() => {
         {
             item: { title: 'Control de Caja', href: '/caja', icon: Wallet },
             roles: [1, 2]
+        },
+        {
+            item: { title: 'Contabilidad', href: '/contabilidad', icon: FileText },
+            roles: [1, 2, 3]
         },
         {
             item: { title: 'Plan de Cuentas', href: '/plan-cuentas', icon: BookOpen },
