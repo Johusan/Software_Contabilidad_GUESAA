@@ -497,27 +497,10 @@ defineOptions({
                             </div>
                         </div>
 
-                        <!-- Sección de Totales / Resumen Asiento -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 border-t pt-4 border-zinc-100 dark:border-zinc-850">
-                            
-                            <!-- Asiento Automático -->
-                            <div class="p-4 rounded-lg bg-zinc-50 dark:bg-zinc-800/20 border border-zinc-150 dark:border-zinc-800/80 text-xs">
-                                <h4 class="font-semibold text-zinc-800 dark:text-zinc-200 flex items-center gap-1.5 mb-2">
-                                    <FileText class="h-4 w-4 text-indigo-600" />
-                                    Integración Contable Automática (PCGE)
-                                </h4>
-                                <p class="text-zinc-500 mb-2">Se registrará automáticamente el siguiente asiento contable en el Libro Diario:</p>
-                                <div class="font-mono text-[10px] space-y-1 bg-white dark:bg-zinc-950 p-2 rounded border">
-                                    <div class="flex justify-between"><span>121 Facturas por cobrar</span> <span class="text-emerald-600 font-semibold">DEBE: {{ formatCurrency(computedTotal) }}</span></div>
-                                    <div class="flex justify-between pl-4"><span>401 Gobierno central (IGV)</span> <span class="text-blue-600 font-semibold">HABER: {{ formatCurrency(computedIgv) }}</span></div>
-                                    <div class="flex justify-between pl-4"><span>701 Mercaderías</span> <span class="text-blue-600 font-semibold">HABER: {{ formatCurrency(computedSubtotal) }}</span></div>
-                                    <hr class="my-1 border-zinc-100 dark:border-zinc-800" />
-                                    <div class="flex justify-between text-indigo-600 dark:text-indigo-400"><span>Caja Diaria Activa</span> <span>Ingreso Caja Chica: +{{ formatCurrency(computedTotal) }}</span></div>
-                                </div>
-                            </div>
-
+                        <!-- Sección de Totales -->
+                        <div class="flex justify-end border-t pt-4 border-zinc-100 dark:border-zinc-850">
                             <!-- Resumen Importes -->
-                            <div class="flex flex-col justify-end space-y-2 text-sm pr-4">
+                            <div class="w-full md:w-72 space-y-2 text-sm pr-2">
                                 <div class="flex justify-between">
                                     <span class="text-zinc-500">Subtotal (Neto)</span>
                                     <span class="font-medium text-zinc-900 dark:text-zinc-100">{{ formatCurrency(computedSubtotal) }}</span>
