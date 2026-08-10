@@ -51,9 +51,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/terceros/cliente', [TerceroController::class, 'storeCliente'])->name('clientes.store');
     Route::put('/terceros/cliente/{id}', [TerceroController::class, 'updateCliente'])->name('clientes.update');
     Route::post('/terceros/cliente/{id}/toggle', [TerceroController::class, 'toggleClienteEstado'])->name('clientes.toggle');
+    Route::delete('/terceros/cliente/{id}', [TerceroController::class, 'deleteCliente'])->name('clientes.delete');
     Route::post('/terceros/proveedor', [TerceroController::class, 'storeProveedor'])->name('proveedores.store');
     Route::put('/terceros/proveedor/{id}', [TerceroController::class, 'updateProveedor'])->name('proveedores.update');
     Route::post('/terceros/proveedor/{id}/toggle', [TerceroController::class, 'toggleProveedorEstado'])->name('proveedores.toggle');
+    Route::delete('/terceros/proveedor/{id}', [TerceroController::class, 'deleteProveedor'])->name('proveedores.delete');
 
     // Módulos de Logística: Inventario y Compras (Acceso: Administrador 1, Almacenero 3)
     Route::middleware([CheckRole::class . ':1,3'])->group(function () {
@@ -61,8 +63,10 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/inventario/producto', [ProductoController::class, 'storeProducto'])->name('productos.store');
         Route::put('/inventario/producto/{id}', [ProductoController::class, 'updateProducto'])->name('productos.update');
         Route::post('/inventario/producto/{id}/toggle', [ProductoController::class, 'toggleProductoEstado'])->name('productos.toggle');
+        Route::delete('/inventario/producto/{id}', [ProductoController::class, 'deleteProducto'])->name('productos.delete');
         Route::post('/inventario/categoria', [ProductoController::class, 'storeCategoria'])->name('categorias.store');
         Route::put('/inventario/categoria/{id}', [ProductoController::class, 'updateCategoria'])->name('categorias.update');
+        Route::delete('/inventario/categoria/{id}', [ProductoController::class, 'deleteCategoria'])->name('categorias.delete');
 
         Route::get('/compras', [CompraController::class, 'index'])->name('compras.index');
         Route::post('/compras', [CompraController::class, 'store'])->name('compras.store');

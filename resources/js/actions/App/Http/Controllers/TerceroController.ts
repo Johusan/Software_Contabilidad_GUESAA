@@ -291,6 +291,90 @@ toggleClienteEstado.post = (args: { id: string | number } | [id: string | number
     
     toggleClienteEstado.form = toggleClienteEstadoForm
 /**
+* @see \App\Http\Controllers\TerceroController::deleteCliente
+ * @see app/Http/Controllers/TerceroController.php:170
+ * @route '/terceros/cliente/{id}'
+ */
+export const deleteCliente = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+    url: deleteCliente.url(args, options),
+    method: 'delete',
+})
+
+deleteCliente.definition = {
+    methods: ["delete"],
+    url: '/terceros/cliente/{id}',
+} satisfies RouteDefinition<["delete"]>
+
+/**
+* @see \App\Http\Controllers\TerceroController::deleteCliente
+ * @see app/Http/Controllers/TerceroController.php:170
+ * @route '/terceros/cliente/{id}'
+ */
+deleteCliente.url = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions) => {
+    if (typeof args === 'string' || typeof args === 'number') {
+        args = { id: args }
+    }
+
+    
+    if (Array.isArray(args)) {
+        args = {
+                    id: args[0],
+                }
+    }
+
+    args = applyUrlDefaults(args)
+
+    const parsedArgs = {
+                        id: args.id,
+                }
+
+    return deleteCliente.definition.url
+            .replace('{id}', parsedArgs.id.toString())
+            .replace(/\/+$/, '') + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\TerceroController::deleteCliente
+ * @see app/Http/Controllers/TerceroController.php:170
+ * @route '/terceros/cliente/{id}'
+ */
+deleteCliente.delete = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+    url: deleteCliente.url(args, options),
+    method: 'delete',
+})
+
+    /**
+* @see \App\Http\Controllers\TerceroController::deleteCliente
+ * @see app/Http/Controllers/TerceroController.php:170
+ * @route '/terceros/cliente/{id}'
+ */
+    const deleteClienteForm = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        action: deleteCliente.url(args, {
+                    [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                        _method: 'DELETE',
+                        ...(options?.query ?? options?.mergeQuery ?? {}),
+                    }
+                }),
+        method: 'post',
+    })
+
+            /**
+* @see \App\Http\Controllers\TerceroController::deleteCliente
+ * @see app/Http/Controllers/TerceroController.php:170
+ * @route '/terceros/cliente/{id}'
+ */
+        deleteClienteForm.delete = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+            action: deleteCliente.url(args, {
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'DELETE',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'post',
+        })
+    
+    deleteCliente.form = deleteClienteForm
+/**
 * @see \App\Http\Controllers\TerceroController::storeProveedor
  * @see app/Http/Controllers/TerceroController.php:108
  * @route '/terceros/proveedor'
@@ -503,6 +587,90 @@ toggleProveedorEstado.post = (args: { id: string | number } | [id: string | numb
         })
     
     toggleProveedorEstado.form = toggleProveedorEstadoForm
-const TerceroController = { index, storeCliente, updateCliente, toggleClienteEstado, storeProveedor, updateProveedor, toggleProveedorEstado }
+/**
+* @see \App\Http\Controllers\TerceroController::deleteProveedor
+ * @see app/Http/Controllers/TerceroController.php:185
+ * @route '/terceros/proveedor/{id}'
+ */
+export const deleteProveedor = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+    url: deleteProveedor.url(args, options),
+    method: 'delete',
+})
+
+deleteProveedor.definition = {
+    methods: ["delete"],
+    url: '/terceros/proveedor/{id}',
+} satisfies RouteDefinition<["delete"]>
+
+/**
+* @see \App\Http\Controllers\TerceroController::deleteProveedor
+ * @see app/Http/Controllers/TerceroController.php:185
+ * @route '/terceros/proveedor/{id}'
+ */
+deleteProveedor.url = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions) => {
+    if (typeof args === 'string' || typeof args === 'number') {
+        args = { id: args }
+    }
+
+    
+    if (Array.isArray(args)) {
+        args = {
+                    id: args[0],
+                }
+    }
+
+    args = applyUrlDefaults(args)
+
+    const parsedArgs = {
+                        id: args.id,
+                }
+
+    return deleteProveedor.definition.url
+            .replace('{id}', parsedArgs.id.toString())
+            .replace(/\/+$/, '') + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\TerceroController::deleteProveedor
+ * @see app/Http/Controllers/TerceroController.php:185
+ * @route '/terceros/proveedor/{id}'
+ */
+deleteProveedor.delete = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+    url: deleteProveedor.url(args, options),
+    method: 'delete',
+})
+
+    /**
+* @see \App\Http\Controllers\TerceroController::deleteProveedor
+ * @see app/Http/Controllers/TerceroController.php:185
+ * @route '/terceros/proveedor/{id}'
+ */
+    const deleteProveedorForm = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        action: deleteProveedor.url(args, {
+                    [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                        _method: 'DELETE',
+                        ...(options?.query ?? options?.mergeQuery ?? {}),
+                    }
+                }),
+        method: 'post',
+    })
+
+            /**
+* @see \App\Http\Controllers\TerceroController::deleteProveedor
+ * @see app/Http/Controllers/TerceroController.php:185
+ * @route '/terceros/proveedor/{id}'
+ */
+        deleteProveedorForm.delete = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+            action: deleteProveedor.url(args, {
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'DELETE',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'post',
+        })
+    
+    deleteProveedor.form = deleteProveedorForm
+const TerceroController = { index, storeCliente, updateCliente, toggleClienteEstado, deleteCliente, storeProveedor, updateProveedor, toggleProveedorEstado, deleteProveedor }
 
 export default TerceroController

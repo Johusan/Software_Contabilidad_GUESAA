@@ -9,7 +9,8 @@ import {
     AlertTriangle, 
     Package, 
     Tags, 
-    AlertCircle 
+    AlertCircle,
+    Trash2 
 } from '@lucide/vue';
 
 const props = defineProps<{
@@ -125,6 +126,18 @@ const submitCategoria = () => {
 
 const formatCurrency = (val: number) => {
     return new Intl.NumberFormat('es-PE', { style: 'currency', currency: 'PEN' }).format(val);
+};
+
+const confirmDeleteProducto = (prod: any) => {
+    if (confirm(`¿Estás seguro de eliminar el producto "${prod.descripcion}"? Esta acción no se puede deshacer.`)) {
+        productoForm.delete(`/inventario/producto/${prod.id_producto}`);
+    }
+};
+
+const confirmDeleteCategoria = (cat: any) => {
+    if (confirm(`¿Estás seguro de eliminar la categoría "${cat.nombre}"? Esta acción no se puede deshacer.`)) {
+        categoriaForm.delete(`/inventario/categoria/${cat.id_categoria}`);
+    }
 };
 defineOptions({
     layout: {
@@ -247,11 +260,14 @@ defineOptions({
                                         </span>
                                     </td>
                                     <td class="p-4 text-right flex justify-end gap-2">
-                                        <button @click="openEditProductoModal(p)" class="p-1.5 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg text-zinc-600 dark:text-zinc-300" title="Editar">
+                                        <button @click="openEditProductoModal(p)" class="p-1.5 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg text-zinc-600 dark:text-zinc-300 transition-colors" title="Editar">
                                             <Edit class="h-4 w-4" />
                                         </button>
-                                        <button @click="toggleProducto(p.id_producto)" class="p-1.5 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg" :class="p.estado ? 'text-red-500' : 'text-emerald-500'" :title="p.estado ? 'Desactivar' : 'Activar'">
+                                        <button @click="toggleProducto(p.id_producto)" class="p-1.5 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors" :class="p.estado ? 'text-amber-500 hover:text-amber-600' : 'text-emerald-500 hover:text-emerald-600'" :title="p.estado ? 'Desactivar' : 'Activar'">
                                             <Power class="h-4 w-4" />
+                                        </button>
+                                        <button @click="confirmDeleteProducto(p)" class="p-1.5 hover:bg-red-50 dark:hover:bg-red-950/40 rounded-lg text-red-600 dark:text-red-400 transition-colors" title="Eliminar">
+                                            <Trash2 class="h-4 w-4" />
                                         </button>
                                     </td>
                                 </tr>
@@ -282,8 +298,11 @@ defineOptions({
                                 <td class="p-4 font-medium text-zinc-900 dark:text-zinc-100">{{ c.nombre }}</td>
                                 <td class="p-4">{{ c.descripcion || '-' }}</td>
                                 <td class="p-4 text-right flex justify-end gap-2">
-                                    <button @click="openEditCategoriaModal(c)" class="p-1.5 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg text-zinc-600 dark:text-zinc-300" title="Editar">
+                                    <button @click="openEditCategoriaModal(c)" class="p-1.5 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg text-zinc-600 dark:text-zinc-300 transition-colors" title="Editar">
                                         <Edit class="h-4 w-4" />
+                                    </button>
+                                    <button @click="confirmDeleteCategoria(c)" class="p-1.5 hover:bg-red-50 dark:hover:bg-red-950/40 rounded-lg text-red-600 dark:text-red-400 transition-colors" title="Eliminar">
+                                        <Trash2 class="h-4 w-4" />
                                     </button>
                                 </td>
                             </tr>

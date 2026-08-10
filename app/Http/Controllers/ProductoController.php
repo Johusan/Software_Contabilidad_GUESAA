@@ -113,4 +113,34 @@ class ProductoController extends Controller
 
         return redirect()->back()->with('success', 'Categoría actualizada con éxito.');
     }
+
+    public function deleteProducto($id)
+    {
+        $producto = Producto::findOrFail($id);
+
+        if ($producto->detallesCompra()->exists() || $producto->detallesVenta()->exists()) {
+            return redirect()->back()->withErrors([
+                'error' => 'No se puede eliminar el producto porque posee movimientos de compras o ventas registrados. Puede desactivarlo en su lugar.'
+            ]);
+        }
+
+        $producto->delete();
+
+        return redirect()->back()->with('success', 'Producto eliminado con éxito.');
+    }
+
+    public function deleteCategoria($id)
+    {
+        $categoria = Categoria::findOrFail($id);
+
+        if ($categoria->productos()->exists()) {
+            return redirect()->back()->withErrors([
+                'error' => 'No se puede eliminar la categoría porque contiene productos asociados.'
+            ]);
+        }
+
+        $categoria->delete();
+
+        return redirect()->back()->with('success', 'Categoría eliminada con éxito.');
+    }
 }

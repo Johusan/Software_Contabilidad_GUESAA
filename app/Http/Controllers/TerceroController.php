@@ -166,4 +166,34 @@ class TerceroController extends Controller
 
         return redirect()->back()->with('success', 'Estado del proveedor actualizado.');
     }
+
+    public function deleteCliente($id)
+    {
+        $cliente = Cliente::findOrFail($id);
+
+        if ($cliente->ventas()->exists()) {
+            return redirect()->back()->withErrors([
+                'error' => 'No se puede eliminar el cliente porque posee ventas registradas. Puede desactivarlo en su lugar.'
+            ]);
+        }
+
+        $cliente->delete();
+
+        return redirect()->back()->with('success', 'Cliente eliminado con éxito.');
+    }
+
+    public function deleteProveedor($id)
+    {
+        $proveedor = Proveedor::findOrFail($id);
+
+        if ($proveedor->compras()->exists()) {
+            return redirect()->back()->withErrors([
+                'error' => 'No se puede eliminar el proveedor porque posee compras registradas. Puede desactivarlo en su lugar.'
+            ]);
+        }
+
+        $proveedor->delete();
+
+        return redirect()->back()->with('success', 'Proveedor eliminado con éxito.');
+    }
 }

@@ -291,6 +291,90 @@ toggleProductoEstado.post = (args: { id: string | number } | [id: string | numbe
     
     toggleProductoEstado.form = toggleProductoEstadoForm
 /**
+* @see \App\Http\Controllers\ProductoController::deleteProducto
+ * @see app/Http/Controllers/ProductoController.php:117
+ * @route '/inventario/producto/{id}'
+ */
+export const deleteProducto = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+    url: deleteProducto.url(args, options),
+    method: 'delete',
+})
+
+deleteProducto.definition = {
+    methods: ["delete"],
+    url: '/inventario/producto/{id}',
+} satisfies RouteDefinition<["delete"]>
+
+/**
+* @see \App\Http\Controllers\ProductoController::deleteProducto
+ * @see app/Http/Controllers/ProductoController.php:117
+ * @route '/inventario/producto/{id}'
+ */
+deleteProducto.url = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions) => {
+    if (typeof args === 'string' || typeof args === 'number') {
+        args = { id: args }
+    }
+
+    
+    if (Array.isArray(args)) {
+        args = {
+                    id: args[0],
+                }
+    }
+
+    args = applyUrlDefaults(args)
+
+    const parsedArgs = {
+                        id: args.id,
+                }
+
+    return deleteProducto.definition.url
+            .replace('{id}', parsedArgs.id.toString())
+            .replace(/\/+$/, '') + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\ProductoController::deleteProducto
+ * @see app/Http/Controllers/ProductoController.php:117
+ * @route '/inventario/producto/{id}'
+ */
+deleteProducto.delete = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+    url: deleteProducto.url(args, options),
+    method: 'delete',
+})
+
+    /**
+* @see \App\Http\Controllers\ProductoController::deleteProducto
+ * @see app/Http/Controllers/ProductoController.php:117
+ * @route '/inventario/producto/{id}'
+ */
+    const deleteProductoForm = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        action: deleteProducto.url(args, {
+                    [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                        _method: 'DELETE',
+                        ...(options?.query ?? options?.mergeQuery ?? {}),
+                    }
+                }),
+        method: 'post',
+    })
+
+            /**
+* @see \App\Http\Controllers\ProductoController::deleteProducto
+ * @see app/Http/Controllers/ProductoController.php:117
+ * @route '/inventario/producto/{id}'
+ */
+        deleteProductoForm.delete = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+            action: deleteProducto.url(args, {
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'DELETE',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'post',
+        })
+    
+    deleteProducto.form = deleteProductoForm
+/**
 * @see \App\Http\Controllers\ProductoController::storeCategoria
  * @see app/Http/Controllers/ProductoController.php:85
  * @route '/inventario/categoria'
@@ -429,6 +513,90 @@ updateCategoria.put = (args: { id: string | number } | [id: string | number ] | 
         })
     
     updateCategoria.form = updateCategoriaForm
-const ProductoController = { index, storeProducto, updateProducto, toggleProductoEstado, storeCategoria, updateCategoria }
+/**
+* @see \App\Http\Controllers\ProductoController::deleteCategoria
+ * @see app/Http/Controllers/ProductoController.php:132
+ * @route '/inventario/categoria/{id}'
+ */
+export const deleteCategoria = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+    url: deleteCategoria.url(args, options),
+    method: 'delete',
+})
+
+deleteCategoria.definition = {
+    methods: ["delete"],
+    url: '/inventario/categoria/{id}',
+} satisfies RouteDefinition<["delete"]>
+
+/**
+* @see \App\Http\Controllers\ProductoController::deleteCategoria
+ * @see app/Http/Controllers/ProductoController.php:132
+ * @route '/inventario/categoria/{id}'
+ */
+deleteCategoria.url = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions) => {
+    if (typeof args === 'string' || typeof args === 'number') {
+        args = { id: args }
+    }
+
+    
+    if (Array.isArray(args)) {
+        args = {
+                    id: args[0],
+                }
+    }
+
+    args = applyUrlDefaults(args)
+
+    const parsedArgs = {
+                        id: args.id,
+                }
+
+    return deleteCategoria.definition.url
+            .replace('{id}', parsedArgs.id.toString())
+            .replace(/\/+$/, '') + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\ProductoController::deleteCategoria
+ * @see app/Http/Controllers/ProductoController.php:132
+ * @route '/inventario/categoria/{id}'
+ */
+deleteCategoria.delete = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'delete'> => ({
+    url: deleteCategoria.url(args, options),
+    method: 'delete',
+})
+
+    /**
+* @see \App\Http\Controllers\ProductoController::deleteCategoria
+ * @see app/Http/Controllers/ProductoController.php:132
+ * @route '/inventario/categoria/{id}'
+ */
+    const deleteCategoriaForm = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+        action: deleteCategoria.url(args, {
+                    [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                        _method: 'DELETE',
+                        ...(options?.query ?? options?.mergeQuery ?? {}),
+                    }
+                }),
+        method: 'post',
+    })
+
+            /**
+* @see \App\Http\Controllers\ProductoController::deleteCategoria
+ * @see app/Http/Controllers/ProductoController.php:132
+ * @route '/inventario/categoria/{id}'
+ */
+        deleteCategoriaForm.delete = (args: { id: string | number } | [id: string | number ] | string | number, options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+            action: deleteCategoria.url(args, {
+                        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+                            _method: 'DELETE',
+                            ...(options?.query ?? options?.mergeQuery ?? {}),
+                        }
+                    }),
+            method: 'post',
+        })
+    
+    deleteCategoria.form = deleteCategoriaForm
+const ProductoController = { index, storeProducto, updateProducto, toggleProductoEstado, deleteProducto, storeCategoria, updateCategoria, deleteCategoria }
 
 export default ProductoController

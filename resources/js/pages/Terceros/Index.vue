@@ -10,7 +10,8 @@ import {
     Check, 
     AlertCircle,
     UserCheck,
-    Truck
+    Truck,
+    Trash2
 } from '@lucide/vue';
 
 const props = defineProps<{
@@ -144,6 +145,18 @@ const submitProveedor = () => {
 const toggleProveedor = (id: number) => {
     proveedorForm.post(`/terceros/proveedor/${id}/toggle`);
 };
+
+const confirmDeleteCliente = (c: any) => {
+    if (confirm(`¿Estás seguro de eliminar al cliente "${c.nombre_razon_social}"? Esta acción no se puede deshacer.`)) {
+        clienteForm.delete(`/terceros/cliente/${c.id_cliente}`);
+    }
+};
+
+const confirmDeleteProveedor = (p: any) => {
+    if (confirm(`¿Estás seguro de eliminar al proveedor "${p.razon_social}"? Esta acción no se puede deshacer.`)) {
+        proveedorForm.delete(`/terceros/proveedor/${p.id_proveedor}`);
+    }
+};
 defineOptions({
     layout: {
         breadcrumbs: [
@@ -245,11 +258,14 @@ defineOptions({
                                     </span>
                                 </td>
                                 <td class="p-4 text-right flex justify-end gap-2">
-                                    <button @click="openEditClienteModal(c)" class="p-1.5 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg text-zinc-600 dark:text-zinc-300" title="Editar">
+                                    <button @click="openEditClienteModal(c)" class="p-1.5 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg text-zinc-600 dark:text-zinc-300 transition-colors" title="Editar">
                                         <Edit class="h-4 w-4" />
                                     </button>
-                                    <button @click="toggleCliente(c.id_cliente)" class="p-1.5 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg" :class="c.estado ? 'text-red-500' : 'text-emerald-500'" :title="c.estado ? 'Desactivar' : 'Activar'">
+                                    <button @click="toggleCliente(c.id_cliente)" class="p-1.5 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors" :class="c.estado ? 'text-amber-500 hover:text-amber-600' : 'text-emerald-500 hover:text-emerald-600'" :title="c.estado ? 'Desactivar' : 'Activar'">
                                         <Power class="h-4 w-4" />
+                                    </button>
+                                    <button @click="confirmDeleteCliente(c)" class="p-1.5 hover:bg-red-50 dark:hover:bg-red-950/40 rounded-lg text-red-600 dark:text-red-400 transition-colors" title="Eliminar">
+                                        <Trash2 class="h-4 w-4" />
                                     </button>
                                 </td>
                             </tr>
@@ -288,11 +304,14 @@ defineOptions({
                                     </span>
                                 </td>
                                 <td class="p-4 text-right flex justify-end gap-2">
-                                    <button @click="openEditProveedorModal(p)" class="p-1.5 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg text-zinc-600 dark:text-zinc-300" title="Editar">
+                                    <button @click="openEditProveedorModal(p)" class="p-1.5 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg text-zinc-600 dark:text-zinc-300 transition-colors" title="Editar">
                                         <Edit class="h-4 w-4" />
                                     </button>
-                                    <button @click="toggleProveedor(p.id_proveedor)" class="p-1.5 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg" :class="p.estado ? 'text-red-500' : 'text-emerald-500'" :title="p.estado ? 'Desactivar' : 'Activar'">
+                                    <button @click="toggleProveedor(p.id_proveedor)" class="p-1.5 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg transition-colors" :class="p.estado ? 'text-amber-500 hover:text-amber-600' : 'text-emerald-500 hover:text-emerald-600'" :title="p.estado ? 'Desactivar' : 'Activar'">
                                         <Power class="h-4 w-4" />
+                                    </button>
+                                    <button @click="confirmDeleteProveedor(p)" class="p-1.5 hover:bg-red-50 dark:hover:bg-red-950/40 rounded-lg text-red-600 dark:text-red-400 transition-colors" title="Eliminar">
+                                        <Trash2 class="h-4 w-4" />
                                     </button>
                                 </td>
                             </tr>
