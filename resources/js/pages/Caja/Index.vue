@@ -186,7 +186,7 @@ defineOptions({
                         <!-- Información Contable -->
                         <div class="p-4 rounded-lg bg-zinc-50 dark:bg-zinc-850/50 border border-zinc-150 dark:border-zinc-800 text-xs text-zinc-500">
                             <p class="font-semibold text-zinc-700 dark:text-zinc-300 mb-1">Información de Arqueo para Auditoría:</p>
-                            <p>El saldo actual de <strong class="text-zinc-800 dark:text-zinc-200">{{ formatCurrency(saldoCalculado()) }}</strong> representa la suma de los cobros comerciales registrados vía POS más el capital de apertura de caja chico, restando los gastos menores contabilizados. Al momento de cerrar caja, este saldo pasará a consolidarse como el <strong class="text-zinc-850 dark:text-zinc-250">Monto Final</strong> del día.</p>
+                            <p>El saldo actual de <strong class="text-zinc-800 dark:text-zinc-200">{{ formatCurrency(saldoCalculado()) }}</strong> representa la suma de los cobros comerciales registrados vía Registro Ventas más el capital de apertura de caja chica, restando los gastos menores contabilizados. Al momento de cerrar caja, este saldo pasará a consolidarse como el <strong class="text-zinc-850 dark:text-zinc-250">Monto Final</strong> del día.</p>
                         </div>
                     </div>
 
@@ -198,7 +198,7 @@ defineOptions({
                         <div class="max-w-md mx-auto">
                             <h3 class="text-xl font-bold text-zinc-950 dark:text-zinc-50">Caja Chica Cerrada</h3>
                             <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-2">
-                                Para poder operar el punto de venta (POS) y cobrar a clientes, debes aperturar un nuevo turno de caja chica ingresando un monto inicial para vuelto (sencillo).
+                                Para poder operar el registro de ventas y cobrar a clientes, debes aperturar un nuevo turno de caja chica ingresando un monto inicial para vuelto (sencillo).
                             </p>
                         </div>
 
@@ -254,7 +254,7 @@ defineOptions({
                                     <th class="p-4">Apertura</th>
                                     <th class="p-4">Cierre</th>
                                     <th class="p-4 text-right">M. Inicial</th>
-                                    <th class="p-4 text-right">Ingreso POS</th>
+                                    <th class="p-4 text-right">Ingreso Ventas</th>
                                     <th class="p-4 text-right">Egreso Chica</th>
                                     <th class="p-4 text-right">Monto Final</th>
                                     <th class="p-4 text-center">Estado</th>

@@ -273,7 +273,7 @@ defineOptions({
     layout: {
         breadcrumbs: [
             {
-                title: 'Punto de Venta',
+                title: 'Registro de Ventas',
                 href: '/ventas',
             },
         ],
@@ -282,16 +282,16 @@ defineOptions({
 </script>
 
 <template>
-    <Head title="Punto de Venta POS - GUESAA SIC" />
+    <Head title="Registro de Ventas - GUESAA SIC" />
 
         <div class="p-6 max-w-7xl mx-auto space-y-6">
             
             <!-- Encabezado -->
             <div class="flex justify-between items-center border-b pb-5 border-zinc-200 dark:border-zinc-800">
                 <div>
-                    <h1 class="text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">Punto de Venta (POS)</h1>
+                    <h1 class="text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">Registro de Ventas</h1>
                     <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
-                        Cobra al contado, verifica stocks de forma reactiva y genera automáticamente asientos contables y reportes.
+                        Cobra al contado, verifica stocks de forma reactiva y genera reportes comerciales.
                     </p>
                 </div>
                 <button
@@ -299,7 +299,7 @@ defineOptions({
                     class="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 transition-colors"
                 >
                     <Plus class="h-4 w-4" />
-                    Registrar Venta (POS)
+                    Registrar Venta
                 </button>
             </div>
 
@@ -388,7 +388,7 @@ defineOptions({
                 <div class="w-full max-w-4xl rounded-xl border bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 p-6 shadow-xl animate-in fade-in zoom-in-95 duration-150 max-h-[90vh] flex flex-col">
                     
                     <h3 class="text-lg font-semibold text-zinc-950 dark:text-zinc-50 border-b pb-3 border-zinc-100 dark:border-zinc-800">
-                        Registrar Nueva Venta (Punto de Venta POS)
+                        Registrar Nueva Venta
                     </h3>
 
                     <!-- Alerta Caja Cerrada en Modal (por seguridad) -->

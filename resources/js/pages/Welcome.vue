@@ -123,7 +123,7 @@ import {
                             <div class="h-10 w-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 group-hover:scale-110 transition-transform">
                                 <CreditCard class="h-5.5 w-5.5" />
                             </div>
-                            <h3 class="text-lg font-bold text-zinc-900 dark:text-white mt-4 mb-2">Punto de Venta POS</h3>
+                            <h3 class="text-lg font-bold text-zinc-900 dark:text-white mt-4 mb-2">Registro de Ventas</h3>
                             <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
                                 Registra facturas y boletas rápidamente con control estricto de stock comercial y validación reactiva de existencias.
                             </p>

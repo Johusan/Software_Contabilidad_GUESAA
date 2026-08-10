@@ -134,7 +134,7 @@ const formatDate = (dateStr: string) => {
                     <div class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center mb-4 shadow-sm">
                         <TrendingUp class="w-5 h-5" />
                     </div>
-                    <span class="text-sm font-medium text-gray-500 dark:text-gray-400 block">Ventas al Contado (POS)</span>
+                    <span class="text-sm font-medium text-gray-500 dark:text-gray-400 block">Ventas al Contado</span>
                     <h3 class="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mt-1">
                         {{ formatCurrency(totalVentas) }}
                     </h3>
@@ -247,7 +247,7 @@ const formatDate = (dateStr: string) => {
                     
                     <div class="mt-4 space-y-2.5">
                         <Link href="/ventas" class="w-full flex items-center justify-between p-3 rounded-lg border border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800 text-sm font-semibold text-gray-700 dark:text-gray-300 transition-colors">
-                            <span>Cobros y Facturación POS</span>
+                            <span>Registro de Ventas</span>
                             <ArrowRight class="w-4 h-4 text-indigo-500" />
                         </Link>
                         <Link href="/compras" class="w-full flex items-center justify-between p-3 rounded-lg border border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800 text-sm font-semibold text-gray-700 dark:text-gray-300 transition-colors">

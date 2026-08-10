@@ -34,7 +34,7 @@ const mainNavItems = computed<NavItem[]>(() => {
             roles: [1, 2, 3]
         },
         {
-            item: { title: 'Inventario / Kardex', href: '/inventario', icon: Package },
+            item: { title: 'Inventario', href: '/inventario', icon: Package },
             roles: [1, 3]
         },
         {
@@ -42,7 +42,7 @@ const mainNavItems = computed<NavItem[]>(() => {
             roles: [1, 3]
         },
         {
-            item: { title: 'Punto de Venta (POS)', href: '/ventas', icon: Receipt },
+            item: { title: 'Registro Ventas', href: '/ventas', icon: Receipt },
             roles: [1, 2]
         },
         {

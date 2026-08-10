@@ -147,7 +147,7 @@ defineOptions({
     layout: {
         breadcrumbs: [
             {
-                title: 'Inventario de Productos',
+                title: 'Inventario',
                 href: '/inventario',
             },
         ],
@@ -156,14 +156,14 @@ defineOptions({
 </script>
 
 <template>
-    <Head title="Inventario y Kardex - GUESAA SIC" />
+    <Head title="Inventario - GUESAA SIC" />
 
         <div class="p-6 max-w-7xl mx-auto space-y-6">
             
             <!-- Encabezado -->
             <div class="flex justify-between items-center border-b pb-5 border-zinc-200 dark:border-zinc-800">
                 <div>
-                    <h1 class="text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">Inventario y Kardex</h1>
+                    <h1 class="text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">Inventario</h1>
                     <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
                         Catálogo de productos, control de stock mínimo y categorías.
                     </p>
