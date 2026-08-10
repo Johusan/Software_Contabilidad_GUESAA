@@ -443,10 +443,10 @@ defineOptions({
         </div>
 
         <!-- ==================== PESTAÑA 2: LIBRO MAYOR (INSPIRADO EN IMAGEN 1) ==================== -->
-        <div v-else-if="activeTab === 'mayor'" class="grid grid-cols-1 md:grid-cols-12 gap-6">
+        <div v-else-if="activeTab === 'mayor'" class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
             
             <!-- Panel Izquierdo: Lista de Cuentas PCGE con Movimientos -->
-            <div class="md:col-span-4 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 shadow-sm flex flex-col h-[650px]">
+            <div class="lg:col-span-4 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 shadow-sm flex flex-col h-[650px]">
                 <div class="mb-3">
                     <label class="block text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-2">Buscar Cuenta PCGE</label>
                     <div class="relative">
@@ -463,9 +463,9 @@ defineOptions({
                     <button v-for="c in cuentasConMovimiento" :key="c.codigo" 
                         @click="selectedCuentaCodigo = c.codigo"
                         class="w-full text-left p-2.5 rounded-lg text-xs transition-colors flex items-center justify-between"
-                        :class="selectedCuentaCodigo === c.codigo ? 'bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 font-bold border border-indigo-200 dark:border-indigo-800' : 'hover:bg-zinc-50 dark:hover:bg-zinc-800/50 text-zinc-700 dark:text-zinc-300'">
+                        :class="selectedCuentaCodigo === c.codigo ? 'bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 font-bold border border-indigo-200 dark:border-indigo-800 shadow-sm' : 'hover:bg-zinc-50 dark:hover:bg-zinc-800/50 text-zinc-700 dark:text-zinc-300'">
                         <div class="truncate pr-2">
-                            <span class="font-mono text-zinc-950 dark:text-zinc-100 block">{{ c.codigo }}</span>
+                            <span class="font-mono text-zinc-950 dark:text-zinc-100 block font-bold">{{ c.codigo }}</span>
                             <span class="text-[11px] font-normal truncate block text-zinc-500 dark:text-zinc-400">{{ c.nombre }}</span>
                         </div>
                         <span class="px-1.5 py-0.5 text-[10px] rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 font-mono shrink-0">
@@ -476,7 +476,7 @@ defineOptions({
             </div>
 
             <!-- Panel Derecho: Tabla de Movimientos del Mayor de la Cuenta Seleccionada -->
-            <div class="md:col-span-8 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 shadow-sm flex flex-col h-[650px]">
+            <div class="lg:col-span-8 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 shadow-sm flex flex-col h-[650px]">
                 <div v-if="cuentaMayorSeleccionadaObj" class="border-b pb-3 border-zinc-100 dark:border-zinc-800 flex justify-between items-center">
                     <div>
                         <span class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 font-mono">CUENTA # {{ cuentaMayorSeleccionadaObj.codigo_cuenta }}</span>
