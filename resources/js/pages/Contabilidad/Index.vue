@@ -443,10 +443,10 @@ defineOptions({
         </div>
 
         <!-- ==================== PESTAÑA 2: LIBRO MAYOR (INSPIRADO EN IMAGEN 1) ==================== -->
-        <div v-else-if="activeTab === 'mayor'" class="flex flex-col md:flex-row gap-6 items-start w-full">
+        <div v-else-if="activeTab === 'mayor'" class="flex flex-row gap-6 items-start w-full overflow-hidden">
             
             <!-- Panel Izquierdo: Lista de Cuentas PCGE con Movimientos -->
-            <div class="w-full md:w-80 lg:w-96 shrink-0 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 shadow-sm flex flex-col h-[650px]">
+            <div class="w-72 sm:w-80 lg:w-96 shrink-0 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 shadow-sm flex flex-col h-[650px]">
                 <div class="mb-3">
                     <label class="block text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-2">Buscar Cuenta PCGE</label>
                     <div class="relative">
