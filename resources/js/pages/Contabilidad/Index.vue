@@ -443,10 +443,10 @@ defineOptions({
         </div>
 
         <!-- ==================== PESTAÑA 2: LIBRO MAYOR (INSPIRADO EN IMAGEN 1) ==================== -->
-        <div v-else-if="activeTab === 'mayor'" class="grid grid-cols-12 gap-6 items-start">
+        <div v-else-if="activeTab === 'mayor'" class="flex flex-col md:flex-row gap-6 items-start w-full">
             
             <!-- Panel Izquierdo: Lista de Cuentas PCGE con Movimientos -->
-            <div class="col-span-12 sm:col-span-5 md:col-span-4 lg:col-span-4 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 shadow-sm flex flex-col h-[650px]">
+            <div class="w-full md:w-80 lg:w-96 shrink-0 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 shadow-sm flex flex-col h-[650px]">
                 <div class="mb-3">
                     <label class="block text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-2">Buscar Cuenta PCGE</label>
                     <div class="relative">
@@ -476,7 +476,7 @@ defineOptions({
             </div>
 
             <!-- Panel Derecho: Tabla de Movimientos del Mayor de la Cuenta Seleccionada -->
-            <div class="col-span-12 sm:col-span-7 md:col-span-8 lg:col-span-8 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 shadow-sm flex flex-col h-[650px]">
+            <div class="flex-1 min-w-0 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 shadow-sm flex flex-col h-[650px]">
                 <div v-if="cuentaMayorSeleccionadaObj" class="border-b pb-3 border-zinc-100 dark:border-zinc-800 flex justify-between items-center">
                     <div>
                         <span class="text-xs font-semibold text-indigo-600 dark:text-indigo-400 font-mono">CUENTA # {{ cuentaMayorSeleccionadaObj.codigo_cuenta }}</span>
