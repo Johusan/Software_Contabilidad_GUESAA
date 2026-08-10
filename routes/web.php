@@ -19,6 +19,11 @@ use Inertia\Inertia;
 
 Route::inertia('/', 'Welcome')->name('home');
 
+// Deshabilitar registro público (Redirigir /register a /login)
+Route::get('/register', function () {
+    return redirect('/login');
+});
+
 Route::middleware(['auth'])->group(function () {
     
     // Dashboard con Estadísticas (Acceso: Todos los roles)

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Form, Head } from '@inertiajs/vue3';
+import { Info } from '@lucide/vue';
 import InputError from '@/components/InputError.vue';
 import PasswordInput from '@/components/PasswordInput.vue';
 import TextLink from '@/components/TextLink.vue';
@@ -8,7 +9,6 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Spinner } from '@/components/ui/spinner';
-import { register } from '@/routes';
 import { store } from '@/routes/login';
 import { request } from '@/routes/password';
 
@@ -110,12 +110,15 @@ defineProps<{
             </Button>
         </div>
 
-        <!-- Enlace a Registro -->
-        <div class="text-center text-sm text-zinc-500 dark:text-zinc-400 mt-2">
-            ¿No tienes una cuenta?
-            <TextLink :href="register()" :tabindex="6" class="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline">
-                Registrarse
-            </TextLink>
+        <!-- Aviso Informativo para Creación de Cuentas por Administrador -->
+        <div class="mt-2 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800 p-3.5 text-xs text-zinc-600 dark:text-zinc-400 flex items-start gap-3">
+            <Info class="h-4 w-4 text-indigo-600 dark:text-indigo-400 shrink-0 mt-0.5" />
+            <div class="space-y-0.5">
+                <p class="font-semibold text-zinc-800 dark:text-zinc-200">¿Necesitas acceso al sistema?</p>
+                <p class="leading-relaxed">
+                    Ponte en contacto con el <strong class="text-indigo-600 dark:text-indigo-400 font-semibold">Administrador</strong> de GUESAA PERÚ E.I.R.L. para la creación de tu usuario y asignación de rol.
+                </p>
+            </div>
         </div>
     </Form>
 </template>

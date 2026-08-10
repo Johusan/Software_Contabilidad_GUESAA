@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Head, Link } from '@inertiajs/vue3';
-import { dashboard, login, register } from '@/routes';
+import { dashboard, login } from '@/routes';
 import AppLogoIcon from '@/components/AppLogoIcon.vue';
 import { 
     CreditCard, 
