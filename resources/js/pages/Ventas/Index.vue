@@ -91,7 +91,14 @@ watch(() => form.tipo_comprobante, () => {
     }
 });
 
+const showCajaCerradaNotification = ref(false);
+
 const openNewVentaModal = () => {
+    if (!props.cajaAbierta) {
+        showCajaCerradaNotification.value = true;
+        return;
+    }
+    showCajaCerradaNotification.value = false;
     form.reset();
     if (props.clientes.length > 0) {
         form.id_cliente = props.clientes[0].id_cliente.toString();
@@ -341,7 +348,26 @@ defineOptions({
                 </button>
             </div>
 
-            <!-- Caja Cerrada Warning -->
+            <!-- Notificación emergente de Caja Cerrada al presionar Registrar Venta -->
+            <div v-if="showCajaCerradaNotification" class="rounded-xl border border-red-200 bg-red-50 p-4 dark:border-red-900/40 dark:bg-red-950/30 flex items-center justify-between gap-4 animate-in fade-in duration-200 shadow-sm">
+                <div class="flex items-center gap-3">
+                    <AlertCircle class="h-5 w-5 text-red-600 dark:text-red-400 shrink-0" />
+                    <div>
+                        <h4 class="text-xs font-bold text-red-800 dark:text-red-300 uppercase tracking-wider">No se puede registrar venta</h4>
+                        <p class="text-xs text-red-700 dark:text-red-400 mt-0.5">La caja chica del turno está cerrada. Debes aperturar la caja diaria para poder registrar ventas.</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 shrink-0">
+                    <Link href="/caja" class="px-3 py-1.5 bg-red-600 hover:bg-red-700 text-white rounded-lg text-xs font-semibold shadow-sm transition-colors">
+                        Ir a Control de Caja
+                    </Link>
+                    <button @click="showCajaCerradaNotification = false" class="p-1 text-red-500 hover:bg-red-100 dark:hover:bg-red-900/50 rounded-lg">
+                        <X class="h-4 w-4" />
+                    </button>
+                </div>
+            </div>
+
+            <!-- Caja Cerrada Warning General -->
             <div v-if="!cajaAbierta" class="rounded-xl border border-amber-200 bg-amber-50/50 p-6 dark:border-amber-900/40 dark:bg-amber-950/10 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div class="flex gap-3">
                     <div class="p-2 bg-amber-500/10 text-amber-600 dark:text-amber-400 rounded-lg h-fit">
@@ -425,17 +451,16 @@ defineOptions({
             <div v-if="isModalOpen" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
                 <div class="w-full max-w-4xl rounded-xl border bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 p-6 shadow-xl animate-in fade-in zoom-in-95 duration-150 max-h-[90vh] flex flex-col">
                     
-                    <h3 class="text-lg font-semibold text-zinc-950 dark:text-zinc-50 border-b pb-3 border-zinc-100 dark:border-zinc-800">
-                        Registrar Nueva Venta
-                    </h3>
-
-                    <!-- Alerta Caja Cerrada en Modal (por seguridad) -->
-                    <div v-if="!cajaAbierta" class="mt-4 p-4 bg-red-50 text-red-800 rounded-lg text-sm flex items-center gap-2">
-                        <AlertTriangle class="h-5 w-5 text-red-600" />
-                        <span>No puedes procesar ventas porque la caja diaria está cerrada. Por favor abre caja primero.</span>
+                    <div class="flex justify-between items-center border-b pb-3 border-zinc-100 dark:border-zinc-800">
+                        <h3 class="text-lg font-semibold text-zinc-950 dark:text-zinc-50">
+                            Registrar Nueva Venta
+                        </h3>
+                        <button @click="isModalOpen = false" class="p-1 text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-200 rounded-lg transition-colors">
+                            <X class="h-5 w-5" />
+                        </button>
                     </div>
 
-                    <form v-else @submit.prevent="submitVenta" class="mt-4 flex-1 overflow-y-auto space-y-4 pr-1">
+                    <form @submit.prevent="submitVenta" class="mt-4 flex-1 overflow-y-auto space-y-4 pr-1">
                         
                         <!-- Campos Cabecera -->
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -464,7 +489,7 @@ defineOptions({
                                     <label class="block text-xs font-semibold text-zinc-500 uppercase tracking-wider">N° Comprobante</label>
                                     <button type="button" @click="autoGenerateNumComprobante" class="text-[11px] text-indigo-600 dark:text-indigo-400 font-semibold hover:underline flex items-center gap-1 transition-colors">
                                         <Sparkles class="h-3 w-3 text-amber-500" />
-                                        <span>⚡ Auto Generar</span>
+                                        <span>Auto Generar</span>
                                     </button>
                                 </div>
                                 <input v-model="form.num_comprobante" type="text" required class="mt-1 block w-full rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950 px-3 py-2 text-sm text-zinc-900 dark:text-zinc-50 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 font-mono font-medium" placeholder="Ej: B001-00000001" />
