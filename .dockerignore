@@ -1,0 +1,12 @@
+.git
+.github
+node_modules
+vendor
+public/hot
+storage/*.key
+.env
+.env.backup
+.bin
+storage/app/tunnel.json
+GUESSA_APP
+GUESAA_PORTABLE

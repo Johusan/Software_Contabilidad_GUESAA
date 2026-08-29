@@ -1,0 +1,39 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: guesaa_sic_app
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    environment:
+      APP_NAME: "GUESAA SIC"
+      APP_ENV: production
+      APP_DEBUG: "false"
+      APP_URL: "http://localhost:8000"
+      DB_CONNECTION: pgsql
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_DATABASE: bd_guesaa_sic
+      DB_USERNAME: postgres
+      DB_PASSWORD: postgres_guesaa_pass
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16-alpine
+    container_name: guesaa_sic_db
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: bd_guesaa_sic
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres_guesaa_pass
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+    driver: local
