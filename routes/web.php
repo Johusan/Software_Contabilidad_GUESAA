@@ -25,6 +25,33 @@ Route::get('/register', function () {
     return redirect('/login');
 });
 
+// Endpoint público para autodescubrimiento y verificación de estado desde la App Android
+Route::get('/api/health', function () {
+    return response()->json([
+        'status' => 'ok',
+        'app' => 'GUESAA_SIC',
+        'empresa' => 'GUESAA PERÚ E.I.R.L.',
+        'version' => '1.0.0'
+    ]);
+});
+
+// Endpoint público para consultar el estado del túnel Cloudflare en tiempo real
+Route::get('/api/tunnel-status', function () {
+    $statusFile = storage_path('app/tunnel.json');
+    if (file_exists($statusFile)) {
+        $content = json_decode(file_get_contents($statusFile), true);
+        if ($content && isset($content['active']) && $content['active']) {
+            return response()->json($content);
+        }
+    }
+
+    return response()->json([
+        'active' => false,
+        'url' => null,
+        'message' => 'Túnel no iniciado'
+    ]);
+});
+
 Route::middleware(['auth'])->group(function () {
     
     // Dashboard con Estadísticas (Acceso: Todos los roles)

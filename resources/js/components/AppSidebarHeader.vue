@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { ref, computed } from 'vue';
 import { Link, usePage } from '@inertiajs/vue3';
 import Breadcrumbs from '@/components/Breadcrumbs.vue';
 import { SidebarTrigger } from '@/components/ui/sidebar';
 import { useAppearance } from '@/composables/useAppearance';
-import { Sun, Moon, Sidebar, Monitor, ChevronDown, LogOut, Settings } from '@lucide/vue';
+import { Sun, Moon, Sidebar, Monitor, ChevronDown, LogOut, Settings, Smartphone } from '@lucide/vue';
+import RemoteConnectionModal from '@/components/RemoteConnectionModal.vue';
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -29,6 +30,7 @@ withDefaults(
 
 const page = usePage();
 const user = computed(() => (page.props.auth as any)?.user);
+const isRemoteModalOpen = ref(false);
 
 const { getInitials } = useInitials();
 const { appearance, updateAppearance } = useAppearance();
@@ -60,8 +62,18 @@ const currentAppearanceIcon = computed(() => {
         </div>
 
         <!-- Acciones del Header en el lado derecho -->
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-3">
             
+            <!-- Botón Conexión Remota (Limpio, sin emoticones) -->
+            <button
+                @click="isRemoteModalOpen = true"
+                class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-indigo-200 dark:border-indigo-900/60 bg-indigo-50/60 dark:bg-indigo-950/20 text-indigo-700 dark:text-indigo-300 hover:bg-indigo-100 dark:hover:bg-indigo-900/40 cursor-pointer text-xs font-semibold transition-colors shrink-0"
+                title="Vincular dispositivo móvil"
+            >
+                <Smartphone class="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
+                <span class="hidden sm:inline">Conexión Remota</span>
+            </button>
+
             <!-- Selector de Temas -->
             <DropdownMenu>
                 <DropdownMenuTrigger as-child>
@@ -152,4 +164,7 @@ const currentAppearanceIcon = computed(() => {
 
         </div>
     </header>
+
+    <!-- Modal de Conexión Remota / Código QR -->
+    <RemoteConnectionModal v-model:open="isRemoteModalOpen" />
 </template>

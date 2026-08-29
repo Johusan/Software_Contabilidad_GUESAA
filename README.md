@@ -249,5 +249,25 @@ Para colaborar y mantener el código actualizado entre diferentes entornos de tr
 
 ---
 
+## 📱 Conexión Remota y App Móvil Android
+
+El sistema permite vincular dispositivos móviles o tablets dentro de la misma red local Wi-Fi o de forma remota mediante un túnel seguro:
+
+### 1. Acceso Local en Red Wi-Fi
+1. En el sistema web, presiona el botón **`Conexión Remota`** en la barra superior.
+2. Abre la aplicación móvil **`GUESSA_APP`** en tu celular (conectado al mismo Wi-Fi).
+3. La aplicación detectará automáticamente el servidor en la red local. Si no lo encuentra, presiona **`Escanear Código QR`** y enfoca la pantalla de tu computadora.
+
+### 2. Acceso Remoto Seguro (Cloudflare Quick Tunnel - 100% Automático)
+Para permitir que la aplicación móvil se conecte desde cualquier lugar fuera del local con datos móviles (sin abrir puertos ni configurar routers):
+1. En tu terminal ejecuta el comando integrado (descarga y arranca el túnel automáticamente):
+   ```bash
+   npm run tunnel
+   ```
+2. El script detectará la URL remota en 1 segundo y la sincronizará automáticamente con el sistema.
+3. En el sistema web, presiona el botón **`Conexión Remota`** y selecciona la pestaña **`Túnel Remoto`**: el Código QR aparecerá generado en tiempo real listo para escanear desde la App Android.
+
+---
+
 ## 👨‍💻 Créditos
 Desarrollado para la empresa **GUESAA PERÚ E.I.R.L.**
