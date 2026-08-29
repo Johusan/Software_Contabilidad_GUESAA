@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { Head, Link, usePage } from '@inertiajs/vue3';
 import { 
     Users, 
@@ -14,6 +13,7 @@ import {
     Calendar,
     Activity
 } from '@lucide/vue';
+import { ref, computed, onMounted, onUnmounted } from 'vue';
 
 defineProps<{
     totalClientes: number;
@@ -51,9 +51,14 @@ const updateTime = () => {
     currentDate.value = now.toLocaleDateString('es-PE', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
     
     const hrs = now.getHours();
-    if (hrs < 12) greeting.value = '¡Buenos días!';
-    else if (hrs < 19) greeting.value = '¡Buenas tardes!';
-    else greeting.value = '¡Buenas noches!';
+
+    if (hrs < 12) {
+greeting.value = '¡Buenos días!';
+} else if (hrs < 19) {
+greeting.value = '¡Buenas tardes!';
+} else {
+greeting.value = '¡Buenas noches!';
+}
 };
 
 let timer: any;

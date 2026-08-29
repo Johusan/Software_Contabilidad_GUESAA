@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
 import { Head, useForm } from '@inertiajs/vue3';
 import { 
     Users, 
@@ -13,6 +12,7 @@ import {
     UserCheck,
     Lock
 } from '@lucide/vue';
+import { ref, computed } from 'vue';
 
 interface Rol {
     id_rol: number;
@@ -50,7 +50,11 @@ const form = useForm({
 
 const filteredUsuarios = computed(() => {
     const q = searchQuery.value.toLowerCase().trim();
-    if (!q) return props.usuarios;
+
+    if (!q) {
+return props.usuarios;
+}
+
     return props.usuarios.filter(u => 
         u.nombres.toLowerCase().includes(q) ||
         u.apellidos.toLowerCase().includes(q) ||
@@ -102,6 +106,7 @@ const submitForm = () => {
 
 const toggleEstado = (usuario: Usuario) => {
     const actionText = usuario.estado ? 'desactivar' : 'activar';
+
     if (confirm(`¿Está seguro de que desea ${actionText} a ${usuario.nombres} ${usuario.apellidos}?`)) {
         useForm({}).post(`/usuarios/${usuario.id_usuario}/toggle`);
     }

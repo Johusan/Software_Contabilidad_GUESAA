@@ -182,7 +182,7 @@ Software_Contabilidad_GUESAA/
    ```bash
    cp .env.example .env
    ```
-   Configura las credenciales de tu base de datos PostgreSQL:
+   Primero crea en Postgre una base de datos vacia con el nombre "bd_guesaa_sic " y luego configura las credenciales de tu base de datos PostgreSQL:
    ```ini
    DB_CONNECTION=pgsql
    DB_HOST=127.0.0.1

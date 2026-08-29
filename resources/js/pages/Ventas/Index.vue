@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue';
 import { Head, useForm, Link } from '@inertiajs/vue3';
 
 import { 
@@ -18,6 +17,7 @@ import {
     Barcode,
     Sparkles
 } from '@lucide/vue';
+import { ref, computed, watch } from 'vue';
 
 const props = defineProps<{
     ventas: any[];
@@ -66,8 +66,10 @@ const generateNextVoucherNumber = (tipo: string) => {
         props.ventas.forEach(v => {
             if (v.tipo_comprobante === tipo && v.num_comprobante && v.num_comprobante.startsWith(prefix)) {
                 const parts = v.num_comprobante.split('-');
+
                 if (parts.length > 1) {
                     const num = parseInt(parts[1], 10);
+
                     if (!isNaN(num) && num > maxNumber) {
                         maxNumber = num;
                     }
@@ -77,6 +79,7 @@ const generateNextVoucherNumber = (tipo: string) => {
     }
 
     const nextNum = maxNumber + 1;
+
     return `${prefix}${String(nextNum).padStart(8, '0')}`;
 };
 
@@ -96,8 +99,10 @@ const showCajaCerradaNotification = ref(false);
 const openNewVentaModal = () => {
     if (!props.cajaAbierta) {
         showCajaCerradaNotification.value = true;
+
         return;
     }
+
     showCajaCerradaNotification.value = false;
     form.reset();
     form.id_cliente = '';
@@ -120,14 +125,22 @@ const removeLine = (index: number) => {
 // Cliente seleccionado etiqueta
 const selectedClienteName = computed(() => {
     const found = props.clientes.find(c => c.id_cliente.toString() === form.id_cliente);
-    if (!found) return 'Seleccionar Cliente...';
+
+    if (!found) {
+return 'Seleccionar Cliente...';
+}
+
     return `${found.nombre_razon_social} (${found.tipo_documento}: ${found.num_documento})`;
 });
 
 // Filtro de Clientes en tiempo real
 const filteredClientes = computed(() => {
     const q = clientSearchQuery.value.trim().toLowerCase();
-    if (!q) return props.clientes;
+
+    if (!q) {
+return props.clientes;
+}
+
     return props.clientes.filter(c => 
         c.nombre_razon_social.toLowerCase().includes(q) || 
         c.num_documento.toLowerCase().includes(q)
@@ -154,11 +167,13 @@ const submitNewClient = () => {
     if (tipo === 'DNI') {
         if (doc.length !== 8 || isNaN(Number(doc))) {
             newClientForm.setError('num_documento', 'El DNI debe contener exactamente 8 dígitos numéricos.');
+
             return;
         }
     } else if (tipo === 'RUC') {
         if (doc.length !== 11 || isNaN(Number(doc)) || !(doc.startsWith('10') || doc.startsWith('20'))) {
             newClientForm.setError('num_documento', 'El RUC debe contener exactamente 11 dígitos y comenzar con 10 o 20.');
+
             return;
         }
     }
@@ -167,9 +182,11 @@ const submitNewClient = () => {
         preserveScroll: true,
         onSuccess: () => {
             const newlyCreated = props.clientes.find(c => c.num_documento === doc);
+
             if (newlyCreated) {
                 form.id_cliente = newlyCreated.id_cliente.toString();
             }
+
             isNewClientModalOpen.value = false;
             isClientPickerOpen.value = false;
             newClientForm.reset();
@@ -186,13 +203,21 @@ const openProductPicker = (index: number) => {
 
 const getSelectedProductDescription = (idStr: string) => {
     const prod = props.productos.find(p => p.id_producto.toString() === idStr);
-    if (!prod) return 'Seleccionar Producto...';
+
+    if (!prod) {
+return 'Seleccionar Producto...';
+}
+
     return `${prod.descripcion} (Stock: ${prod.stock_actual})`;
 };
 
 const filteredProductos = computed(() => {
     const q = productSearchQuery.value.trim().toLowerCase();
-    if (!q) return props.productos;
+
+    if (!q) {
+return props.productos;
+}
+
     return props.productos.filter(p => 
         p.descripcion.toLowerCase().includes(q) || 
         (p.codigo_barras && p.codigo_barras.toLowerCase().includes(q)) ||
@@ -203,7 +228,10 @@ const filteredProductos = computed(() => {
 // Lógica de precio por mayor
 const getEffectiveUnitPrice = (idStr: string, cantidad: number) => {
     const prod = props.productos.find(p => p.id_producto.toString() === idStr);
-    if (!prod) return 0;
+
+    if (!prod) {
+return 0;
+}
     
     const cantMayor = prod.cant_mayorista ? Number(prod.cant_mayorista) : 6;
     const precioMayor = prod.precio_mayorista ? Number(prod.precio_mayorista) : 0;
@@ -211,14 +239,20 @@ const getEffectiveUnitPrice = (idStr: string, cantidad: number) => {
     if (precioMayor > 0 && cantidad >= cantMayor) {
         return precioMayor;
     }
+
     return Number(prod.precio_venta);
 };
 
 const isWholesaleApplied = (idStr: string, cantidad: number) => {
     const prod = props.productos.find(p => p.id_producto.toString() === idStr);
-    if (!prod) return false;
+
+    if (!prod) {
+return false;
+}
+
     const cantMayor = prod.cant_mayorista ? Number(prod.cant_mayorista) : 6;
     const precioMayor = prod.precio_mayorista ? Number(prod.precio_mayorista) : 0;
+
     return (precioMayor > 0 && cantidad >= cantMayor);
 };
 
@@ -242,6 +276,7 @@ const selectProduct = (prod: any) => {
             descuento: 0
         });
     }
+
     isProductPickerOpen.value = false;
     activeProductLineIndex.value = null;
     productSearchQuery.value = '';
@@ -250,11 +285,13 @@ const selectProduct = (prod: any) => {
 // Validar stock disponible reactivamente para cada línea
 const getProductStock = (idStr: string) => {
     const prod = props.productos.find(p => p.id_producto.toString() === idStr);
+
     return prod ? prod.stock_actual : 0;
 };
 
 const isStockInsufficient = (line: { id_producto: string; cantidad: number }) => {
     const stock = getProductStock(line.id_producto);
+
     return line.cantidad > stock;
 };
 
@@ -262,6 +299,7 @@ const isStockInsufficient = (line: { id_producto: string; cantidad: number }) =>
 const computedSubtotal = computed(() => {
     return form.detalles.reduce((acc, line) => {
         const lineTotal = (line.cantidad * line.precio_unitario) - Number(line.descuento || 0);
+
         return acc + Math.max(0, lineTotal);
     }, 0);
 });
@@ -282,24 +320,34 @@ const hasStockError = computed(() => {
 const submitVenta = () => {
     if (!props.cajaAbierta) {
         alert('Debe abrir caja para poder vender.');
+
         return;
     }
+
     if (!form.id_cliente) {
         alert('Por favor, selecciona un cliente para la venta.');
+
         return;
     }
+
     if (form.detalles.length === 0) {
         alert('Debe agregar al menos un producto al comprobante.');
+
         return;
     }
+
     if (form.detalles.some(d => !d.id_producto)) {
         alert('Hay líneas sin producto seleccionado.');
+
         return;
     }
+
     if (hasStockError.value) {
         alert('Hay productos con cantidades que superan el stock disponible. Por favor corríjalos.');
+
         return;
     }
+
     form.post('/ventas', {
         onSuccess: () => {
             isModalOpen.value = false;

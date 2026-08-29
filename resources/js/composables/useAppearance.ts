@@ -105,6 +105,7 @@ export function useAppearance(): UseAppearanceReturn {
         if (appearance.value === 'system') {
             return prefersDark() ? 'dark' : 'light';
         }
+
         if (appearance.value === 'semi-dark') {
             return 'light';
         }

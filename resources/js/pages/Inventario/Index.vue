@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue';
 import { Head, useForm } from '@inertiajs/vue3';
 
 import { 
@@ -12,6 +11,7 @@ import {
     AlertCircle,
     Trash2 
 } from '@lucide/vue';
+import { ref } from 'vue';
 
 const props = defineProps<{
     productos: any[];
@@ -50,9 +50,11 @@ const categoriaForm = useForm({
 const openNewProductoModal = () => {
     editingProductoId.value = null;
     productoForm.reset();
+
     if (props.categorias.length > 0) {
         productoForm.id_categoria = props.categorias[0].id_categoria.toString();
     }
+
     productoForm.clearErrors();
     isProductoModalOpen.value = true;
 };

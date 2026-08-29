@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
 import { Head, useForm, router } from '@inertiajs/vue3';
 import { 
     BookOpen, 
@@ -20,6 +19,7 @@ import {
     Activity,
     Printer
 } from '@lucide/vue';
+import { ref, computed } from 'vue';
 
 const props = defineProps<{
     asientosDiario: any[];
@@ -98,7 +98,10 @@ const formatCurrency = (val: number | string) => {
 };
 
 const formatDate = (dateStr: string) => {
-    if (!dateStr) return '-';
+    if (!dateStr) {
+return '-';
+}
+
     return new Date(dateStr).toLocaleDateString('es-PE', {
         year: 'numeric',
         month: '2-digit',
@@ -115,6 +118,7 @@ const printReport = () => {
 const totalDiarioDebe = computed(() => {
     return props.asientosDiario.reduce((acc, asiento) => {
         const sum = (asiento.detalles || []).reduce((s: number, d: any) => s + Number(d.debe || 0), 0);
+
         return acc + sum;
     }, 0);
 });
@@ -122,6 +126,7 @@ const totalDiarioDebe = computed(() => {
 const totalDiarioHaber = computed(() => {
     return props.asientosDiario.reduce((acc, asiento) => {
         const sum = (asiento.detalles || []).reduce((s: number, d: any) => s + Number(d.haber || 0), 0);
+
         return acc + sum;
     }, 0);
 });
@@ -142,14 +147,17 @@ const cuentasConMovimiento = computed(() => {
                 count: 0
             });
         }
+
         map.get(m.codigo_cuenta)!.count++;
     });
 
     let list = Array.from(map.values());
+
     if (mayorSearchQuery.value) {
         const q = mayorSearchQuery.value.toLowerCase();
         list = list.filter(c => c.codigo.includes(q) || c.nombre.toLowerCase().includes(q));
     }
+
     return list;
 });
 
@@ -160,7 +168,10 @@ if (cuentasConMovimiento.value.length > 0 && !selectedCuentaCodigo.value) {
 
 // Movimientos de la cuenta seleccionada en el Mayor
 const movimientosCuentaSeleccionada = computed(() => {
-    if (!selectedCuentaCodigo.value) return [];
+    if (!selectedCuentaCodigo.value) {
+return [];
+}
+
     return props.movimientosMayor.filter(m => m.codigo_cuenta === selectedCuentaCodigo.value);
 });
 
@@ -184,6 +195,7 @@ const totalMayorHaber = computed(() => {
 const saldoMayor = computed(() => {
     const d = totalMayorDebe.value;
     const h = totalMayorHaber.value;
+
     if (d >= h) {
         return { tipo: 'DEUDOR', monto: d - h };
     } else {
@@ -195,8 +207,12 @@ const saldoMayor = computed(() => {
 const balanzaSearch = ref('');
 
 const balanzaFiltrada = computed(() => {
-    if (!balanzaSearch.value) return props.balanza;
+    if (!balanzaSearch.value) {
+return props.balanza;
+}
+
     const q = balanzaSearch.value.toLowerCase();
+
     return props.balanza.filter(b => b.codigo_cuenta.includes(q) || b.nombre_cuenta.toLowerCase().includes(q));
 });
 
@@ -264,7 +280,10 @@ const isManualCuadrado = computed(() => {
 // Función de autocuadre / igualar saldos
 const igualarSaldos = () => {
     const diff = manualTotalDebe.value - manualTotalHaber.value;
-    if (Math.abs(diff) < 0.01) return;
+
+    if (Math.abs(diff) < 0.01) {
+return;
+}
 
     if (diff > 0) {
         manualForm.detalles.push({
@@ -282,7 +301,10 @@ const igualarSaldos = () => {
 };
 
 const submitManualAsiento = () => {
-    if (!isManualCuadrado.value) return;
+    if (!isManualCuadrado.value) {
+return;
+}
+
     manualForm.post('/contabilidad/asiento-manual', {
         onSuccess: () => {
             isManualModalOpen.value = false;
@@ -293,6 +315,7 @@ const submitManualAsiento = () => {
 
 const getCuentaNombre = (codigo: string) => {
     const c = props.cuentasCatalogo.find(item => item.codigo_cuenta === codigo);
+
     return c ? c.denominacion : 'Cuenta Desconocida';
 };
 </script>

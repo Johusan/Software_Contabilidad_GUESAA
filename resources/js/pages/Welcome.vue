@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { Head, Link } from '@inertiajs/vue3';
-import { dashboard, login } from '@/routes';
-import AppLogoIcon from '@/components/AppLogoIcon.vue';
 import { 
     CreditCard, 
     Wallet, 
@@ -12,6 +10,8 @@ import {
     TrendingUp,
     Shield
 } from '@lucide/vue';
+import AppLogoIcon from '@/components/AppLogoIcon.vue';
+import { dashboard, login } from '@/routes';
 </script>
 
 <template>

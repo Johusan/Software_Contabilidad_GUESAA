@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { ref, computed, watch, onMounted, onUnmounted, nextTick } from 'vue';
-import QRCode from 'qrcode';
 import { 
     Smartphone, 
     Wifi, 
@@ -13,6 +11,8 @@ import {
     CheckCircle2,
     AlertCircle
 } from '@lucide/vue';
+import QRCode from 'qrcode';
+import { ref, computed, watch, onMounted, onUnmounted, nextTick } from 'vue';
 
 const props = defineProps<{
     open: boolean;
@@ -41,18 +41,23 @@ const currentUrl = computed(() => {
     if (activeTab.value === 'local') {
         return localUrl.value;
     }
+
     return autoRemoteUrl.value || 'https://tu-enlace.trycloudflare.com';
 });
 
 const checkTunnelStatus = async () => {
     isCheckingTunnel.value = true;
+
     try {
         const res = await fetch('/api/tunnel-status');
+
         if (res.ok) {
             const data = await res.json();
+
             if (data && data.active && data.url) {
                 tunnelActive.value = true;
                 autoRemoteUrl.value = data.url;
+
                 if (activeTab.value === 'remote') {
                     generateQr();
                 }
@@ -70,7 +75,10 @@ const checkTunnelStatus = async () => {
 
 const generateQr = async () => {
     await nextTick();
-    if (!canvasRef.value) return;
+
+    if (!canvasRef.value) {
+return;
+}
 
     try {
         await QRCode.toCanvas(canvasRef.value, currentUrl.value, {

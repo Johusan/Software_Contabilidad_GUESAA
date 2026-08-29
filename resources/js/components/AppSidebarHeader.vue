@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
 import { Link, usePage } from '@inertiajs/vue3';
-import Breadcrumbs from '@/components/Breadcrumbs.vue';
-import { SidebarTrigger } from '@/components/ui/sidebar';
-import { useAppearance } from '@/composables/useAppearance';
 import { Sun, Moon, Sidebar, Monitor, ChevronDown, LogOut, Settings, Smartphone } from '@lucide/vue';
+import { ref, computed } from 'vue';
+import Breadcrumbs from '@/components/Breadcrumbs.vue';
 import RemoteConnectionModal from '@/components/RemoteConnectionModal.vue';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -13,7 +12,8 @@ import {
     DropdownMenuTrigger,
     DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { SidebarTrigger } from '@/components/ui/sidebar';
+import { useAppearance } from '@/composables/useAppearance';
 import { useInitials } from '@/composables/useInitials';
 import { logout } from '@/routes';
 import { edit as editProfile } from '@/routes/profile';
@@ -36,16 +36,34 @@ const { getInitials } = useInitials();
 const { appearance, updateAppearance } = useAppearance();
 
 const currentAppearanceLabel = computed(() => {
-    if (appearance.value === 'light') return 'Claro';
-    if (appearance.value === 'dark') return 'Oscuro';
-    if (appearance.value === 'semi-dark') return 'Semidark';
+    if (appearance.value === 'light') {
+return 'Claro';
+}
+
+    if (appearance.value === 'dark') {
+return 'Oscuro';
+}
+
+    if (appearance.value === 'semi-dark') {
+return 'Semidark';
+}
+
     return 'Sistema';
 });
 
 const currentAppearanceIcon = computed(() => {
-    if (appearance.value === 'light') return Sun;
-    if (appearance.value === 'dark') return Moon;
-    if (appearance.value === 'semi-dark') return Sidebar;
+    if (appearance.value === 'light') {
+return Sun;
+}
+
+    if (appearance.value === 'dark') {
+return Moon;
+}
+
+    if (appearance.value === 'semi-dark') {
+return Sidebar;
+}
+
     return Monitor;
 });
 </script>

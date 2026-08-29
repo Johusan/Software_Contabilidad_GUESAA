@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
 import { Head, useForm, usePage } from '@inertiajs/vue3';
 
 import { 
@@ -10,6 +9,7 @@ import {
     Folder, 
     FileCode 
 } from '@lucide/vue';
+import { ref, computed } from 'vue';
 
 const props = defineProps<{
     cuentas: any[];
@@ -36,7 +36,11 @@ const cuentasPadre = computed(() => {
 // Filtrar cuentas por búsqueda
 const filteredCuentas = computed(() => {
     const query = searchQuery.value.toLowerCase().trim();
-    if (!query) return props.cuentas;
+
+    if (!query) {
+return props.cuentas;
+}
+
     return props.cuentas.filter(c => 
         c.codigo_cuenta.includes(query) || 
         c.denominacion.toLowerCase().includes(query)
@@ -45,10 +49,12 @@ const filteredCuentas = computed(() => {
 
 const openNewSubcuentaModal = () => {
     form.reset();
+
     if (cuentasPadre.value.length > 0) {
         form.codigo_padre = cuentasPadre.value[0].codigo_cuenta;
         form.codigo_cuenta = cuentasPadre.value[0].codigo_cuenta;
     }
+
     form.clearErrors();
     isModalOpen.value = true;
 };
@@ -64,10 +70,13 @@ const submitSubcuenta = () => {
 
     if (!cod.startsWith(pad)) {
         form.setError('codigo_cuenta', `El código debe comenzar con el del padre: ${pad}`);
+
         return;
     }
+
     if (cod.length <= pad.length) {
         form.setError('codigo_cuenta', 'El código de la subcuenta debe ser más largo que el de la cuenta padre.');
+
         return;
     }
 
@@ -81,8 +90,15 @@ const submitSubcuenta = () => {
 
 const getIndentationClass = (code: string) => {
     const len = code.length;
-    if (len === 2) return 'font-bold text-zinc-950 dark:text-zinc-50 pl-2';
-    if (len === 3) return 'font-semibold text-zinc-800 dark:text-zinc-200 pl-8';
+
+    if (len === 2) {
+return 'font-bold text-zinc-950 dark:text-zinc-50 pl-2';
+}
+
+    if (len === 3) {
+return 'font-semibold text-zinc-800 dark:text-zinc-200 pl-8';
+}
+
     return 'text-zinc-600 dark:text-zinc-400 pl-14';
 };
 defineOptions({

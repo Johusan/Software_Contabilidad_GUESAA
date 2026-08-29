@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue';
 import { Head, useForm } from '@inertiajs/vue3';
 
 import { 
@@ -13,6 +12,7 @@ import {
     Clock, 
     Receipt 
 } from '@lucide/vue';
+import { ref } from 'vue';
 
 const props = defineProps<{
     cajaActiva: any | null;
@@ -72,7 +72,10 @@ const formatDate = (dateStr: string) => {
 
 // Saldo actual en caja abierta
 const saldoCalculado = () => {
-    if (!props.cajaActiva) return 0;
+    if (!props.cajaActiva) {
+return 0;
+}
+
     return Number(props.cajaActiva.monto_inicial) + Number(props.cajaActiva.ingresos_ventas) - Number(props.cajaActiva.egresos_varios);
 };
 defineOptions({

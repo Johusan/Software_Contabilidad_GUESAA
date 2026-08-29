@@ -1,7 +1,7 @@
 import { spawn } from 'child_process';
 import fs from 'fs';
-import path from 'path';
 import https from 'https';
+import path from 'path';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -16,6 +16,7 @@ const exePath = path.join(binDir, 'cloudflared.exe');
 if (!fs.existsSync(storageDir)) {
     fs.mkdirSync(storageDir, { recursive: true });
 }
+
 if (!fs.existsSync(binDir)) {
     fs.mkdirSync(binDir, { recursive: true });
 }
@@ -47,6 +48,7 @@ const downloadBinary = () => {
                 if (response.statusCode === 302 || response.statusCode === 301) {
                     return request(response.headers.location);
                 }
+
                 response.pipe(file);
                 file.on('finish', () => {
                     file.close();
@@ -80,6 +82,7 @@ const startTunnel = async () => {
         const parseOutput = (data) => {
             const str = data.toString();
             const match = str.match(/https:\/\/[a-zA-Z0-9-]+\.trycloudflare\.com/);
+
             if (match && !detectedUrl) {
                 detectedUrl = match[0];
                 console.log('\n¡TÚNEL CONECTADO EXITOSAMENTE!');

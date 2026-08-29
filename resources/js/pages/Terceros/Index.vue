@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
 import { Head, useForm } from '@inertiajs/vue3';
 
 import { 
@@ -13,6 +12,7 @@ import {
     Truck,
     Trash2
 } from '@lucide/vue';
+import { ref, computed } from 'vue';
 
 const props = defineProps<{
     clientes: any[];
@@ -72,10 +72,13 @@ const submitCliente = () => {
     
     if (tipo === 'DNI' && (doc.length !== 8 || isNaN(Number(doc)))) {
         clienteForm.setError('num_documento', 'El DNI debe contener exactamente 8 números.');
+
         return;
     }
+
     if (tipo === 'RUC' && (doc.length !== 11 || isNaN(Number(doc)) || !(doc.startsWith('10') || doc.startsWith('20')))) {
         clienteForm.setError('num_documento', 'El RUC debe contener exactamente 11 números y empezar con 10 o 20.');
+
         return;
     }
 
@@ -120,8 +123,10 @@ const openEditProveedorModal = (prov: any) => {
 
 const submitProveedor = () => {
     const ruc = proveedorForm.ruc;
+
     if (ruc.length !== 11 || isNaN(Number(ruc)) || !(ruc.startsWith('10') || ruc.startsWith('20'))) {
         proveedorForm.setError('ruc', 'El RUC debe contener exactamente 11 números y empezar con 10 o 20.');
+
         return;
     }
 

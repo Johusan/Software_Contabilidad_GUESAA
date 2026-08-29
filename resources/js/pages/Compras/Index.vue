@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
 import { Head, useForm } from '@inertiajs/vue3';
 
 import { 
@@ -15,6 +14,7 @@ import {
     Truck,
     Barcode
 } from '@lucide/vue';
+import { ref, computed } from 'vue';
 
 const props = defineProps<{
     compras: any[];
@@ -71,14 +71,22 @@ const removeLine = (index: number) => {
 // Proveedor seleccionado etiqueta
 const selectedProveedorName = computed(() => {
     const found = props.proveedores.find(p => p.id_proveedor.toString() === form.id_proveedor);
-    if (!found) return 'Seleccionar Proveedor...';
+
+    if (!found) {
+return 'Seleccionar Proveedor...';
+}
+
     return `${found.razon_social} (RUC: ${found.ruc})`;
 });
 
 // Filtro de Proveedores en tiempo real
 const filteredProveedores = computed(() => {
     const q = proveedorSearchQuery.value.trim().toLowerCase();
-    if (!q) return props.proveedores;
+
+    if (!q) {
+return props.proveedores;
+}
+
     return props.proveedores.filter(p => 
         p.razon_social.toLowerCase().includes(q) || 
         p.ruc.toLowerCase().includes(q)
@@ -103,6 +111,7 @@ const submitNewProveedor = () => {
 
     if (ruc.length !== 11 || isNaN(Number(ruc)) || !(ruc.startsWith('10') || ruc.startsWith('20'))) {
         newProveedorForm.setError('ruc', 'El RUC debe contener exactamente 11 dígitos numéricos y comenzar con 10 o 20.');
+
         return;
     }
 
@@ -110,9 +119,11 @@ const submitNewProveedor = () => {
         preserveScroll: true,
         onSuccess: () => {
             const newlyCreated = props.proveedores.find(p => p.ruc === ruc);
+
             if (newlyCreated) {
                 form.id_proveedor = newlyCreated.id_proveedor.toString();
             }
+
             isNewProveedorModalOpen.value = false;
             isProveedorPickerOpen.value = false;
             newProveedorForm.reset();
@@ -129,13 +140,21 @@ const openProductPicker = (index: number) => {
 
 const getSelectedProductDescription = (idStr: string) => {
     const prod = props.productos.find(p => p.id_producto.toString() === idStr);
-    if (!prod) return 'Seleccionar Producto...';
+
+    if (!prod) {
+return 'Seleccionar Producto...';
+}
+
     return `${prod.descripcion} (Stock: ${prod.stock_actual})`;
 };
 
 const filteredProductos = computed(() => {
     const q = productSearchQuery.value.trim().toLowerCase();
-    if (!q) return props.productos;
+
+    if (!q) {
+return props.productos;
+}
+
     return props.productos.filter(p => 
         p.descripcion.toLowerCase().includes(q) || 
         (p.codigo_barras && p.codigo_barras.toLowerCase().includes(q)) ||
@@ -156,6 +175,7 @@ const selectProduct = (prod: any) => {
             precio_unitario: Number(prod.precio_compra)
         });
     }
+
     isProductPickerOpen.value = false;
     activeProductLineIndex.value = null;
     productSearchQuery.value = '';
@@ -177,16 +197,22 @@ const computedTotal = computed(() => {
 const submitCompra = () => {
     if (!form.id_proveedor) {
         alert('Por favor, selecciona un proveedor para la compra.');
+
         return;
     }
+
     if (form.detalles.length === 0) {
         alert('Debe agregar al menos un producto a la compra.');
+
         return;
     }
+
     if (form.detalles.some(d => !d.id_producto)) {
         alert('Hay ítems sin producto seleccionado.');
+
         return;
     }
+
     form.post('/compras', {
         onSuccess: () => {
             isModalOpen.value = false;
