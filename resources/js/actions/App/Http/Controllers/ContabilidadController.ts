@@ -79,7 +79,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     index.form = indexForm
 /**
 * @see \App\Http\Controllers\ContabilidadController::storeAsientoManual
- * @see app/Http/Controllers/ContabilidadController.php:120
+ * @see app/Http/Controllers/ContabilidadController.php:463
  * @route '/contabilidad/asientos'
  */
 export const storeAsientoManual = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -94,7 +94,7 @@ storeAsientoManual.definition = {
 
 /**
 * @see \App\Http\Controllers\ContabilidadController::storeAsientoManual
- * @see app/Http/Controllers/ContabilidadController.php:120
+ * @see app/Http/Controllers/ContabilidadController.php:463
  * @route '/contabilidad/asientos'
  */
 storeAsientoManual.url = (options?: RouteQueryOptions) => {
@@ -103,7 +103,7 @@ storeAsientoManual.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\ContabilidadController::storeAsientoManual
- * @see app/Http/Controllers/ContabilidadController.php:120
+ * @see app/Http/Controllers/ContabilidadController.php:463
  * @route '/contabilidad/asientos'
  */
 storeAsientoManual.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -113,7 +113,7 @@ storeAsientoManual.post = (options?: RouteQueryOptions): RouteDefinition<'post'>
 
     /**
 * @see \App\Http\Controllers\ContabilidadController::storeAsientoManual
- * @see app/Http/Controllers/ContabilidadController.php:120
+ * @see app/Http/Controllers/ContabilidadController.php:463
  * @route '/contabilidad/asientos'
  */
     const storeAsientoManualForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -123,7 +123,7 @@ storeAsientoManual.post = (options?: RouteQueryOptions): RouteDefinition<'post'>
 
             /**
 * @see \App\Http\Controllers\ContabilidadController::storeAsientoManual
- * @see app/Http/Controllers/ContabilidadController.php:120
+ * @see app/Http/Controllers/ContabilidadController.php:463
  * @route '/contabilidad/asientos'
  */
         storeAsientoManualForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({

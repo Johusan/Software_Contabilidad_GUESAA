@@ -79,7 +79,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     index.form = indexForm
 /**
 * @see \App\Http\Controllers\ContabilidadController::storeAsiento
- * @see app/Http/Controllers/ContabilidadController.php:120
+ * @see app/Http/Controllers/ContabilidadController.php:463
  * @route '/contabilidad/asientos'
  */
 export const storeAsiento = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -94,7 +94,7 @@ storeAsiento.definition = {
 
 /**
 * @see \App\Http\Controllers\ContabilidadController::storeAsiento
- * @see app/Http/Controllers/ContabilidadController.php:120
+ * @see app/Http/Controllers/ContabilidadController.php:463
  * @route '/contabilidad/asientos'
  */
 storeAsiento.url = (options?: RouteQueryOptions) => {
@@ -103,7 +103,7 @@ storeAsiento.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\ContabilidadController::storeAsiento
- * @see app/Http/Controllers/ContabilidadController.php:120
+ * @see app/Http/Controllers/ContabilidadController.php:463
  * @route '/contabilidad/asientos'
  */
 storeAsiento.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -113,7 +113,7 @@ storeAsiento.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
     /**
 * @see \App\Http\Controllers\ContabilidadController::storeAsiento
- * @see app/Http/Controllers/ContabilidadController.php:120
+ * @see app/Http/Controllers/ContabilidadController.php:463
  * @route '/contabilidad/asientos'
  */
     const storeAsientoForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
@@ -123,7 +123,7 @@ storeAsiento.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
             /**
 * @see \App\Http\Controllers\ContabilidadController::storeAsiento
- * @see app/Http/Controllers/ContabilidadController.php:120
+ * @see app/Http/Controllers/ContabilidadController.php:463
  * @route '/contabilidad/asientos'
  */
         storeAsientoForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
