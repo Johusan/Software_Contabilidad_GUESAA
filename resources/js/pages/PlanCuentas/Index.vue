@@ -100,20 +100,20 @@ defineOptions({
 <template>
     <Head title="Plan Contable PCGE - GUESAA SIC" />
 
-        <div class="p-6 max-w-7xl mx-auto space-y-6">
+        <div class="p-4 sm:p-6 max-w-7xl mx-auto space-y-6 w-full min-w-0 max-w-full">
             
             <!-- Encabezado -->
-            <div class="flex justify-between items-center border-b pb-5 border-zinc-200 dark:border-zinc-800">
+            <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4 border-b pb-5 border-zinc-200 dark:border-zinc-800">
                 <div>
-                    <h1 class="text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">Plan Contable General Empresarial</h1>
-                    <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
+                    <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">Plan Contable General Empresarial</h1>
+                    <p class="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 mt-1">
                         Catálogo de cuentas (PCGE) oficial precargado. Permite estructurar e integrar las transacciones comerciales.
                     </p>
                 </div>
                 <button
                     v-if="isAdmin"
                     @click="openNewSubcuentaModal"
-                    class="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 transition-colors"
+                    class="inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 transition-colors shrink-0"
                 >
                     <Plus class="h-4 w-4" />
                     Registrar Subcuenta
@@ -150,8 +150,8 @@ defineOptions({
 
             <!-- Árbol Jerárquico (Indented Table) -->
             <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden shadow-sm">
-                <div class="max-h-[60vh] overflow-y-auto">
-                    <table class="w-full text-left text-sm text-zinc-500 dark:text-zinc-400">
+                <div class="max-h-[60vh] overflow-y-auto overflow-x-auto">
+                    <table class="w-full min-w-[600px] text-left text-sm text-zinc-500 dark:text-zinc-400">
                         <thead class="bg-zinc-50 dark:bg-zinc-800/50 text-xs uppercase text-zinc-700 dark:text-zinc-300 sticky top-0 z-10">
                             <tr>
                                 <th class="p-4 w-1/4">Código Cuenta</th>

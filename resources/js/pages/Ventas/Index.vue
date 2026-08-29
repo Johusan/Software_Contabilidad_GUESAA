@@ -336,19 +336,19 @@ defineOptions({
 <template>
     <Head title="Registro de Ventas - GUESAA SIC" />
 
-        <div class="p-6 max-w-7xl mx-auto space-y-6">
+        <div class="p-4 sm:p-6 max-w-7xl mx-auto space-y-6 w-full min-w-0 max-w-full">
             
             <!-- Encabezado -->
-            <div class="flex justify-between items-center border-b pb-5 border-zinc-200 dark:border-zinc-800">
+            <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4 border-b pb-5 border-zinc-200 dark:border-zinc-800">
                 <div>
-                    <h1 class="text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">Registro de Ventas</h1>
-                    <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
+                    <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">Registro de Ventas</h1>
+                    <p class="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 mt-1">
                         Cobra al contado, verifica stocks de forma reactiva y genera reportes comerciales.
                     </p>
                 </div>
                 <button
                     @click="openNewVentaModal"
-                    class="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 transition-colors"
+                    class="inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 transition-colors shrink-0"
                 >
                     <Plus class="h-4 w-4" />
                     Registrar Venta
@@ -408,7 +408,7 @@ defineOptions({
             <!-- Tabla de Ventas Realizadas -->
             <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden shadow-sm">
                 <div class="overflow-x-auto">
-                    <table class="w-full text-left text-sm text-zinc-500 dark:text-zinc-400">
+                    <table class="w-full min-w-[750px] text-left text-sm text-zinc-500 dark:text-zinc-400">
                         <thead class="bg-zinc-50 dark:bg-zinc-800/50 text-xs uppercase text-zinc-700 dark:text-zinc-300">
                             <tr>
                                 <th class="p-4">Boleta/Factura</th>

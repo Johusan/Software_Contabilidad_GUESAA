@@ -172,19 +172,19 @@ defineOptions({
 <template>
     <Head title="Clientes y Proveedores - GUESAA SIC" />
 
-        <div class="p-6 max-w-7xl mx-auto space-y-6">
+        <div class="p-4 sm:p-6 max-w-7xl mx-auto space-y-6 w-full min-w-0 max-w-full">
             
             <!-- Encabezado de Página -->
-            <div class="flex justify-between items-center border-b pb-5 border-zinc-200 dark:border-zinc-800">
+            <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4 border-b pb-5 border-zinc-200 dark:border-zinc-800">
                 <div>
-                    <h1 class="text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">Clientes y Proveedores</h1>
-                    <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1">
+                    <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-950 dark:text-zinc-50">Clientes y Proveedores</h1>
+                    <p class="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 mt-1">
                         Mantenimiento del catálogo de terceros de GUESAA PERÚ E.I.R.L.
                     </p>
                 </div>
                 <button
                     @click="activeTab === 'clientes' ? openNewClienteModal() : openNewProveedorModal()"
-                    class="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 transition-colors"
+                    class="inline-flex items-center justify-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 transition-colors shrink-0"
                 >
                     <Plus class="h-4 w-4" />
                     Registrar {{ activeTab === 'clientes' ? 'Cliente' : 'Proveedor' }}
@@ -192,11 +192,11 @@ defineOptions({
             </div>
 
             <!-- Navegación por pestañas -->
-            <div class="border-b border-zinc-200 dark:border-zinc-800">
-                <nav class="-mb-px flex gap-6">
+            <div class="border-b border-zinc-200 dark:border-zinc-800 overflow-x-auto max-w-full">
+                <nav class="-mb-px flex gap-6 min-w-max">
                     <button
                         @click="activeTab = 'clientes'"
-                        class="pb-4 px-1 text-sm font-medium border-b-2 transition-colors flex items-center gap-2"
+                        class="pb-4 px-1 text-sm font-medium border-b-2 transition-colors flex items-center gap-2 cursor-pointer"
                         :class="activeTab === 'clientes' ? 'border-indigo-600 text-indigo-600 dark:text-indigo-400 dark:border-indigo-400' : 'border-transparent text-zinc-500 hover:text-zinc-700 hover:border-zinc-300 dark:hover:text-zinc-300'"
                     >
                         <UserCheck class="h-4.5 w-4.5" />
@@ -204,7 +204,7 @@ defineOptions({
                     </button>
                     <button
                         @click="activeTab = 'proveedores'"
-                        class="pb-4 px-1 text-sm font-medium border-b-2 transition-colors flex items-center gap-2"
+                        class="pb-4 px-1 text-sm font-medium border-b-2 transition-colors flex items-center gap-2 cursor-pointer"
                         :class="activeTab === 'proveedores' ? 'border-indigo-600 text-indigo-600 dark:text-indigo-400 dark:border-indigo-400' : 'border-transparent text-zinc-500 hover:text-zinc-700 hover:border-zinc-300 dark:hover:text-zinc-300'"
                     >
                         <Truck class="h-4.5 w-4.5" />
@@ -229,7 +229,7 @@ defineOptions({
             <!-- Tabla de Clientes -->
             <div v-if="activeTab === 'clientes'" class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden shadow-sm">
                 <div class="overflow-x-auto">
-                    <table class="w-full text-left text-sm text-zinc-500 dark:text-zinc-400">
+                    <table class="w-full min-w-[700px] text-left text-sm text-zinc-500 dark:text-zinc-400">
                         <thead class="bg-zinc-50 dark:bg-zinc-800/50 text-xs uppercase text-zinc-700 dark:text-zinc-300">
                             <tr>
                                 <th class="p-4">Tipo Doc.</th>
@@ -277,7 +277,7 @@ defineOptions({
             <!-- Tabla de Proveedores -->
             <div v-else class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden shadow-sm">
                 <div class="overflow-x-auto">
-                    <table class="w-full text-left text-sm text-zinc-500 dark:text-zinc-400">
+                    <table class="w-full min-w-[650px] text-left text-sm text-zinc-500 dark:text-zinc-400">
                         <thead class="bg-zinc-50 dark:bg-zinc-800/50 text-xs uppercase text-zinc-700 dark:text-zinc-300">
                             <tr>
                                 <th class="p-4">RUC</th>

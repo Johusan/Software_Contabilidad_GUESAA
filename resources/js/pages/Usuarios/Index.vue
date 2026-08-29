@@ -135,7 +135,7 @@ defineOptions({
 <template>
     <Head title="Gestión de Usuarios y Roles - GUESAA SIC" />
 
-    <div class="p-6 max-w-7xl mx-auto space-y-6">
+    <div class="p-4 sm:p-6 max-w-7xl mx-auto space-y-6 w-full min-w-0 max-w-full">
         
         <!-- Encabezado -->
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b pb-5 border-zinc-200 dark:border-zinc-800">
@@ -223,7 +223,7 @@ defineOptions({
         <!-- Tabla de Usuarios -->
         <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden shadow-sm">
             <div class="overflow-x-auto">
-                <table class="w-full text-left text-sm text-zinc-500 dark:text-zinc-400">
+                <table class="w-full min-w-[650px] text-left text-sm text-zinc-500 dark:text-zinc-400">
                     <thead class="bg-zinc-50 dark:bg-zinc-800/50 text-xs uppercase text-zinc-700 dark:text-zinc-300">
                         <tr>
                             <th class="p-4">ID</th>

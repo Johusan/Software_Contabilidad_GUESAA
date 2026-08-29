@@ -300,7 +300,7 @@ const getCuentaNombre = (codigo: string) => {
 <template>
     <Head title="Contabilidad & Estados Financieros - GUESAA SIC" />
 
-    <div class="space-y-6 max-w-7xl mx-auto pb-12">
+    <div class="p-4 sm:p-6 space-y-6 max-w-7xl mx-auto pb-12 w-full min-w-0 max-w-full">
         
         <!-- Encabezado de Página -->
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-zinc-200 dark:border-zinc-800 pb-5">
@@ -333,10 +333,10 @@ const getCuentaNombre = (codigo: string) => {
         </div>
 
         <!-- Barra de Herramientas: Filtros de Fecha & Pestañas de Navegación -->
-        <div class="flex flex-col xl:flex-row justify-between items-start xl:items-center gap-4 bg-white dark:bg-zinc-900/60 p-3.5 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm">
+        <div class="flex flex-col xl:flex-row justify-between items-start xl:items-center gap-4 bg-white dark:bg-zinc-900/60 p-3.5 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm w-full min-w-0 max-w-full overflow-hidden">
             
-            <!-- Filtros de Fecha (En una sola línea recta) -->
-            <div class="flex items-center gap-2 text-xs shrink-0 whitespace-nowrap">
+            <!-- Filtros de Fecha -->
+            <div class="flex flex-wrap items-center gap-2 text-xs w-full sm:w-auto">
                 <div class="flex items-center gap-1.5 font-semibold text-zinc-700 dark:text-zinc-300 mr-1">
                     <Filter class="h-3.5 w-3.5 text-indigo-500" />
                     Periodo:
@@ -362,10 +362,10 @@ const getCuentaNombre = (codigo: string) => {
             </div>
 
             <!-- Pestañero en 2 Filas Organizadas (Cambios en Patrimonio debajo de Libro Diario) -->
-            <div class="flex flex-col gap-1.5 text-xs font-semibold">
+            <div class="flex flex-col gap-1.5 text-xs font-semibold overflow-x-auto max-w-full pb-1 w-full xl:w-auto">
                 
                 <!-- Fila 1: Libros Principales y Resultados -->
-                <div class="inline-flex rounded-lg p-1 bg-zinc-100 dark:bg-zinc-800/80 gap-1">
+                <div class="inline-flex rounded-lg p-1 bg-zinc-100 dark:bg-zinc-800/80 gap-1 min-w-max">
                     <button @click="activeTab = 'diario'" 
                         class="px-3 py-1.5 rounded-md transition-all flex items-center gap-1.5 cursor-pointer"
                         :class="activeTab === 'diario' ? 'bg-white dark:bg-zinc-900 text-indigo-600 dark:text-indigo-400 shadow-sm' : 'text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100'">
@@ -396,7 +396,7 @@ const getCuentaNombre = (codigo: string) => {
                 </div>
 
                 <!-- Fila 2: Estados Financieros y Ratios -->
-                <div class="inline-flex rounded-lg p-1 bg-zinc-100 dark:bg-zinc-800/80 gap-1">
+                <div class="inline-flex rounded-lg p-1 bg-zinc-100 dark:bg-zinc-800/80 gap-1 min-w-max">
                     <button @click="activeTab = 'patrimonio'" 
                         class="px-3 py-1.5 rounded-md transition-all flex items-center gap-1.5 cursor-pointer"
                         :class="activeTab === 'patrimonio' ? 'bg-white dark:bg-zinc-900 text-indigo-600 dark:text-indigo-400 shadow-sm' : 'text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100'">
@@ -426,7 +426,7 @@ const getCuentaNombre = (codigo: string) => {
         <div v-if="activeTab === 'diario'" class="space-y-4">
             <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden shadow-sm">
                 <div class="overflow-x-auto">
-                    <table class="w-full text-left text-sm text-zinc-500 dark:text-zinc-400">
+                    <table class="w-full min-w-[780px] text-left text-sm text-zinc-500 dark:text-zinc-400">
                         <thead class="bg-zinc-50 dark:bg-zinc-800/50 text-xs uppercase text-zinc-700 dark:text-zinc-300 border-b border-zinc-200 dark:border-zinc-800">
                             <tr>
                                 <th class="p-3">N° Asiento</th>
@@ -596,7 +596,7 @@ const getCuentaNombre = (codigo: string) => {
         <div v-else-if="activeTab === 'balanza'" class="space-y-4">
             <div class="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden shadow-sm">
                 <div class="overflow-x-auto">
-                    <table class="w-full text-left text-sm text-zinc-500 dark:text-zinc-400 font-mono text-xs">
+                    <table class="w-full min-w-[650px] text-left text-sm text-zinc-500 dark:text-zinc-400 font-mono text-xs">
                         <thead class="bg-zinc-50 dark:bg-zinc-800/60 text-xs uppercase text-zinc-700 dark:text-zinc-300 border-b border-zinc-200 dark:border-zinc-800">
                             <tr>
                                 <th class="p-3 border-r border-zinc-200 dark:border-zinc-800 w-24">Código</th>
@@ -650,7 +650,7 @@ const getCuentaNombre = (codigo: string) => {
 
                 <!-- Tabla de Resultados Directa por Cuentas (Elemento 6 y 7) -->
                 <div class="overflow-x-auto p-4">
-                    <table class="w-full text-left text-sm border-collapse">
+                    <table class="w-full min-w-[500px] text-left text-sm border-collapse">
                         <thead>
                             <tr class="border-b-2 border-zinc-900 dark:border-zinc-100 font-bold text-xs uppercase text-zinc-900 dark:text-zinc-100">
                                 <th class="py-2.5 px-4 w-28">Código</th>
@@ -714,7 +714,7 @@ const getCuentaNombre = (codigo: string) => {
 
                 <!-- Matriz de Cambios en Patrimonio -->
                 <div class="overflow-x-auto p-4">
-                    <table class="w-full text-left text-sm border-collapse font-mono text-xs">
+                    <table class="w-full min-w-[750px] text-left text-sm border-collapse font-mono text-xs">
                         <thead>
                             <tr class="border-b-2 border-zinc-900 dark:border-zinc-100 font-bold uppercase text-zinc-900 dark:text-zinc-100 text-center">
                                 <th class="py-3 px-3 text-left w-1/4 font-sans">Concepto</th>
