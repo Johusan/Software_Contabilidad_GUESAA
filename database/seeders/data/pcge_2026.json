@@ -1,0 +1,2963 @@
+[
+    {
+        "codigo_cuenta": "01",
+        "denominacion": "BIENES Y VALORES ENTREGADOS",
+        "elemento": 0,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "011",
+        "denominacion": "Bienes en préstamo, custodia y no capitalizables",
+        "elemento": 0,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "012",
+        "denominacion": "Valores y bienes entregados en garantía",
+        "elemento": 0,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "013",
+        "denominacion": "Activos realizables entregados en consignación",
+        "elemento": 0,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "02",
+        "denominacion": "DERECHOS SOBRE INSTRUMENTOS FINANCIEROS",
+        "elemento": 0,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "021",
+        "denominacion": "Primarios",
+        "elemento": 0,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "022",
+        "denominacion": "Derivados",
+        "elemento": 0,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "03",
+        "denominacion": "OTRAS CUENTAS DE ORDEN DEUDORAS",
+        "elemento": 0,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "031",
+        "denominacion": "Contratos aprobados",
+        "elemento": 0,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "032",
+        "denominacion": "Bienes dados de baja",
+        "elemento": 0,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "039",
+        "denominacion": "Diversas",
+        "elemento": 0,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "04",
+        "denominacion": "DEUDORAS POR CONTRA CUENTAS DE ORDEN ACREEDORAS",
+        "elemento": 0,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "06",
+        "denominacion": "BIENES Y VALORES RECIBIDOS",
+        "elemento": 0,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "061",
+        "denominacion": "Bienes recibidos en préstamo y custodia",
+        "elemento": 0,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "062",
+        "denominacion": "Valores y bienes recibidos en garantía",
+        "elemento": 0,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "063",
+        "denominacion": "Activos realizables recibidos en consignación",
+        "elemento": 0,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "07",
+        "denominacion": "COMPROMISOS SOBRE INSTRUMENTOS FINANCIEROS",
+        "elemento": 0,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "071",
+        "denominacion": "Primarios",
+        "elemento": 0,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "072",
+        "denominacion": "Derivados",
+        "elemento": 0,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "08",
+        "denominacion": "OTRAS CUENTAS DE ORDEN ACREEDORAS",
+        "elemento": 0,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "089",
+        "denominacion": "Diversas",
+        "elemento": 0,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "09",
+        "denominacion": "ACREEDORAS POR CONTRA",
+        "elemento": 0,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "10",
+        "denominacion": "EFECTIVO Y EQUIVALENTES DE EFECTIVO",
+        "elemento": 1,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "101",
+        "denominacion": "Caja",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "102",
+        "denominacion": "Fondos fijos",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "103",
+        "denominacion": "Efectivo en tránsito",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "104",
+        "denominacion": "Cuentas corrientes en instituciones financieras",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "105",
+        "denominacion": "Otros equivalentes de efectivo",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "106",
+        "denominacion": "Depósitos en instituciones financieras",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "107",
+        "denominacion": "Fondos sujetos a restricción",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "11",
+        "denominacion": "INVERSIONES FINANCIERAS",
+        "elemento": 1,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "111",
+        "denominacion": "Inversiones mantenidas para negociación",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "112",
+        "denominacion": "Inversiones disponibles para la venta",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "113",
+        "denominacion": "Activos financieros – Acuerdo de compra",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "12",
+        "denominacion": "CUENTAS POR COBRAR COMERCIALES – TERCEROS",
+        "elemento": 1,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "121",
+        "denominacion": "Facturas, boletas y otros comprobantes por cobrar",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "122",
+        "denominacion": "Anticipos de clientes",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "123",
+        "denominacion": "Letras por cobrar",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "13",
+        "denominacion": "CUENTAS POR COBRAR COMERCIALES – RELACIONADAS",
+        "elemento": 1,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "131",
+        "denominacion": "Facturas, boletas y otros comprobantes por cobrar",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "132",
+        "denominacion": "Anticipos recibidos",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "133",
+        "denominacion": "Letras por cobrar",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "14",
+        "denominacion": "CUENTAS POR COBRAR AL PERSONAL, A LOS ACCIONISTAS (SOCIOS), DIRECTORES Y GERENTES",
+        "elemento": 1,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "141",
+        "denominacion": "Personal",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "142",
+        "denominacion": "Accionistas (o socios)",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "143",
+        "denominacion": "Directores",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "144",
+        "denominacion": "Gerentes",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "148",
+        "denominacion": "Diversas",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "16",
+        "denominacion": "CUENTAS POR COBRAR DIVERSAS – TERCEROS",
+        "elemento": 1,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "161",
+        "denominacion": "Préstamos",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "162",
+        "denominacion": "Reclamaciones a terceros",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "163",
+        "denominacion": "Intereses, regalías y dividendos",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "164",
+        "denominacion": "Depósitos otorgados en garantía",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "165",
+        "denominacion": "Venta de activo inmovilizado",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "166",
+        "denominacion": "Activos por instrumentos financieros",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "168",
+        "denominacion": "Otras cuentas por cobrar diversas",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "17",
+        "denominacion": "CUENTAS POR COBRAR DIVERSAS – RELACIONADAS",
+        "elemento": 1,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "171",
+        "denominacion": "Préstamos",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "173",
+        "denominacion": "Intereses, regalías y dividendos",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "174",
+        "denominacion": "Depósitos otorgados en garantía",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "175",
+        "denominacion": "Venta de activo inmovilizado",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "176",
+        "denominacion": "Activos por instrumentos financieros",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "178",
+        "denominacion": "Otras cuentas por cobrar diversas",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "18",
+        "denominacion": "SERVICIOS Y OTROS CONTRATADOS POR ANTICIPADO",
+        "elemento": 1,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "181",
+        "denominacion": "Costos financieros",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "182",
+        "denominacion": "Seguros",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "183",
+        "denominacion": "Alquileres",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "184",
+        "denominacion": "Primas pagadas por opciones",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "185",
+        "denominacion": "Mantenimiento de activos inmovilizados",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "189",
+        "denominacion": "Otros gastos contratados por anticipado",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "19",
+        "denominacion": "ESTIMACIÓN DE CUENTAS DE COBRANZA DUDOSA",
+        "elemento": 1,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "191",
+        "denominacion": "Cuentas por cobrar comerciales – Terceros",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "192",
+        "denominacion": "Cuentas por cobrar comerciales – Relacionadas",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "193",
+        "denominacion": "Cuentas por cobrar al personal, a los accionistas (socios), directores y gerentes",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "194",
+        "denominacion": "Cuentas por cobrar diversas – Terceros",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "195",
+        "denominacion": "Cuentas por cobrar diversas – Relacionadas",
+        "elemento": 1,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "20",
+        "denominacion": "MERCADERÍAS",
+        "elemento": 2,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "201",
+        "denominacion": "Mercaderías manufacturadas",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "202",
+        "denominacion": "Mercaderías de extracción",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "203",
+        "denominacion": "Mercaderías agropecuarias y piscícolas",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "204",
+        "denominacion": "Mercaderías inmuebles",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "208",
+        "denominacion": "Otras mercaderías",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "21",
+        "denominacion": "PRODUCTOS TERMINADOS",
+        "elemento": 2,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "211",
+        "denominacion": "Productos manufacturados",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "212",
+        "denominacion": "Productos de extracción terminados",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "213",
+        "denominacion": "Productos agropecuarios y piscícolas terminados",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "214",
+        "denominacion": "Productos inmuebles",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "215",
+        "denominacion": "Existencias de servicios terminados",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "217",
+        "denominacion": "Otros productos terminados",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "218",
+        "denominacion": "Costos de financiación – Productos terminados",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "22",
+        "denominacion": "SUBPRODUCTOS, DESECHOS Y DESPERDICIOS",
+        "elemento": 2,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "221",
+        "denominacion": "Subproductos",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "222",
+        "denominacion": "Desechos y desperdicios",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "23",
+        "denominacion": "PRODUCTOS EN PROCESO",
+        "elemento": 2,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "231",
+        "denominacion": "Productos en proceso de manufactura",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "232",
+        "denominacion": "Productos extraídos en proceso de transformación",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "233",
+        "denominacion": "Productos agropecuarios y piscícolas en proceso",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "234",
+        "denominacion": "Productos inmuebles en proceso",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "235",
+        "denominacion": "Existencias de servicios en proceso",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "237",
+        "denominacion": "Otros productos en proceso",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "238",
+        "denominacion": "Costos de financiación – Productos en proceso",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "24",
+        "denominacion": "MATERIAS PRIMAS",
+        "elemento": 2,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "241",
+        "denominacion": "Materias primas para productos manufacturados",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "242",
+        "denominacion": "Materias primas para productos de extracción",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "243",
+        "denominacion": "Materias primas para productos agropecuarios y piscícolas",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "244",
+        "denominacion": "Materias primas para productos inmuebles",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "25",
+        "denominacion": "MATERIALES AUXILIARES, SUMINISTROS Y REPUESTOS",
+        "elemento": 2,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "251",
+        "denominacion": "Materiales auxiliares",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "252",
+        "denominacion": "Suministros",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "253",
+        "denominacion": "Repuestos",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "26",
+        "denominacion": "ENVASES Y EMBALAJES",
+        "elemento": 2,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "261",
+        "denominacion": "Envases",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "262",
+        "denominacion": "Embalajes",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "27",
+        "denominacion": "ACTIVOS NO CORRIENTES MANTENIDOS PARA LA VENTA",
+        "elemento": 2,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "271",
+        "denominacion": "Inversiones inmobiliarias",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "272",
+        "denominacion": "Inmuebles, maquinaria y equipo",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "273",
+        "denominacion": "Intangibles",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "274",
+        "denominacion": "Activos biológicos",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "275",
+        "denominacion": "Depreciación acumulada – Inversión inmobiliaria",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "276",
+        "denominacion": "Depreciación acumulada – Inmuebles, maquinaria y equipo",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "277",
+        "denominacion": "Amortización acumulada – Intangibles",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "278",
+        "denominacion": "Depreciación acumulada – Activos biológicos",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "279",
+        "denominacion": "Desvalorización acumulada",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "28",
+        "denominacion": "EXISTENCIAS POR RECIBIR",
+        "elemento": 2,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "281",
+        "denominacion": "Mercaderías",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "284",
+        "denominacion": "Materias primas",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "285",
+        "denominacion": "Materiales auxiliares, suministros y repuestos",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "286",
+        "denominacion": "Envases y embalajes",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "29",
+        "denominacion": "DESVALORIZACIÓN DE EXISTENCIAS",
+        "elemento": 2,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "291",
+        "denominacion": "Mercaderías",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "292",
+        "denominacion": "Productos terminados",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "293",
+        "denominacion": "Subproductos, desechos y desperdicios",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "294",
+        "denominacion": "Productos en proceso",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "295",
+        "denominacion": "Materias primas",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "296",
+        "denominacion": "Materiales auxiliares, suministros y repuestos",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "297",
+        "denominacion": "Envases y embalajes",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "298",
+        "denominacion": "Existencias por recibir",
+        "elemento": 2,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "30",
+        "denominacion": "INVERSIONES MOBILIARIAS",
+        "elemento": 3,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "301",
+        "denominacion": "Inversiones a ser mantenidas hasta el vencimiento",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "302",
+        "denominacion": "Instrumentos financieros representativos de derecho patrimonial",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "308",
+        "denominacion": "Inversiones mobiliarias – Acuerdos de compra",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "31",
+        "denominacion": "INVERSIONES INMOBILIARIAS",
+        "elemento": 3,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "311",
+        "denominacion": "Terrenos",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "312",
+        "denominacion": "Edificaciones",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "32",
+        "denominacion": "ACTIVOS ADQUIRIDOS EN ARRENDAMIENTO FINANCIERO",
+        "elemento": 3,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "321",
+        "denominacion": "Inversiones inmobiliarias",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "322",
+        "denominacion": "Inmuebles, maquinaria y equipo",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "33",
+        "denominacion": "INMUEBLES, MAQUINARIA Y EQUIPO",
+        "elemento": 3,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "331",
+        "denominacion": "Terrenos",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "332",
+        "denominacion": "Edificaciones",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "333",
+        "denominacion": "Maquinarias y equipos de explotación",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "334",
+        "denominacion": "Unidades de transporte",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "335",
+        "denominacion": "Muebles y enseres",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "336",
+        "denominacion": "Equipos diversos",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "337",
+        "denominacion": "Herramientas y unidades de reemplazo",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "338",
+        "denominacion": "Unidades por recibir",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "339",
+        "denominacion": "Construcciones y obras en curso",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "34",
+        "denominacion": "INTANGIBLES",
+        "elemento": 3,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "341",
+        "denominacion": "Concesiones, licencias y otros derechos",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "342",
+        "denominacion": "Patentes y propiedad industrial",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "343",
+        "denominacion": "Programas de computadora (software)",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "344",
+        "denominacion": "Costos de exploración y desarrollo",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "345",
+        "denominacion": "Fórmulas, diseños y prototipos",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "346",
+        "denominacion": "Reservas de recursos extraíbles",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "347",
+        "denominacion": "Plusvalía mercantil",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "349",
+        "denominacion": "Otros activos intangibles",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "35",
+        "denominacion": "ACTIVOS BIOLÓGICOS",
+        "elemento": 3,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "351",
+        "denominacion": "Activos biológicos en producción",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "352",
+        "denominacion": "Activos biológicos en desarrollo",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "36",
+        "denominacion": "DESVALORIZACIÓN DE ACTIVO INMOVILIZADO",
+        "elemento": 3,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "361",
+        "denominacion": "Desvalorización de inversiones inmobiliarias",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "363",
+        "denominacion": "Desvalorización de inmuebles, maquinaria y equipo",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "364",
+        "denominacion": "Desvalorización de intangibles",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "365",
+        "denominacion": "Desvalorización de activos biológicos",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "366",
+        "denominacion": "Desvalorización de inversiones mobiliarias",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "37",
+        "denominacion": "ACTIVO DIFERIDO",
+        "elemento": 3,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "371",
+        "denominacion": "Impuesto a la renta diferido",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "372",
+        "denominacion": "Participaciones de los trabajadores diferidas",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "373",
+        "denominacion": "Intereses diferidos",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "38",
+        "denominacion": "OTROS ACTIVOS",
+        "elemento": 3,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "381",
+        "denominacion": "Bienes de arte y cultura",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "382",
+        "denominacion": "Diversos",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "39",
+        "denominacion": "DEPRECIACIÓN, AMORTIZACIÓN Y AGOTAMIENTO ACUMULADOS",
+        "elemento": 3,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "391",
+        "denominacion": "Depreciación acumulada",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "392",
+        "denominacion": "Amortización acumulada",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "393",
+        "denominacion": "Agotamiento acumulado",
+        "elemento": 3,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "40",
+        "denominacion": "TRIBUTOS, CONTRAPRESTACIONES Y APORTES AL SISTEMA DE PENSIONES Y DE SALUD POR PAGAR",
+        "elemento": 4,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "401",
+        "denominacion": "Gobierno central",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "402",
+        "denominacion": "Certificados tributarios",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "403",
+        "denominacion": "Instituciones públicas",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "405",
+        "denominacion": "Gobiernos regionales",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "406",
+        "denominacion": "Gobiernos locales",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "407",
+        "denominacion": "Administradoras de fondos de pensiones",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "408",
+        "denominacion": "Empresas prestadoras de servicios de salud",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "409",
+        "denominacion": "Otros costos administrativos e intereses",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "41",
+        "denominacion": "REMUNERACIONES Y PARTICIPACIONES POR PAGAR",
+        "elemento": 4,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "411",
+        "denominacion": "Remuneraciones por pagar",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "413",
+        "denominacion": "Participaciones de los trabajadores por pagar",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "415",
+        "denominacion": "Beneficios sociales de los trabajadores por pagar",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "419",
+        "denominacion": "Otras remuneraciones y participaciones por pagar",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "42",
+        "denominacion": "CUENTAS POR PAGAR COMERCIALES – TERCEROS",
+        "elemento": 4,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "421",
+        "denominacion": "Facturas, boletas y otros comprobantes por pagar",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "422",
+        "denominacion": "Anticipos a proveedores",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "423",
+        "denominacion": "Letras por pagar",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "424",
+        "denominacion": "Honorarios por pagar",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "43",
+        "denominacion": "CUENTAS POR PAGAR COMERCIALES – RELACIONADAS",
+        "elemento": 4,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "431",
+        "denominacion": "Facturas, boletas y otros comprobantes por pagar",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "432",
+        "denominacion": "Anticipos otorgados",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "433",
+        "denominacion": "Letras por pagar",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "434",
+        "denominacion": "Honorarios por pagar",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "44",
+        "denominacion": "CUENTAS POR PAGAR A LOS ACCIONISTAS (SOCIOS), DIRECTORES Y GERENTES",
+        "elemento": 4,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "441",
+        "denominacion": "Accionistas (o socios)",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "442",
+        "denominacion": "Directores",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "443",
+        "denominacion": "Gerentes",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "45",
+        "denominacion": "OBLIGACIONES FINANCIERAS",
+        "elemento": 4,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "451",
+        "denominacion": "Préstamos de instituciones financieras y otras entidades",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "452",
+        "denominacion": "Contratos de arrendamiento financiero",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "453",
+        "denominacion": "Obligaciones emitidas",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "454",
+        "denominacion": "Otros Instrumentos financieros por pagar",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "455",
+        "denominacion": "Costos de financiación por pagar",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "456",
+        "denominacion": "Préstamos con compromisos de recompra",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "46",
+        "denominacion": "CUENTAS POR PAGAR DIVERSAS – TERCEROS",
+        "elemento": 4,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "461",
+        "denominacion": "Reclamaciones de terceros",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "464",
+        "denominacion": "Pasivos por instrumentos financieros",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "465",
+        "denominacion": "Pasivos por compra de activo inmovilizado",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "467",
+        "denominacion": "Depósitos recibidos en garantía",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "469",
+        "denominacion": "Otras cuentas por pagar diversas",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "47",
+        "denominacion": "CUENTAS POR PAGAR DIVERSAS – RELACIONADAS",
+        "elemento": 4,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "471",
+        "denominacion": "Préstamos",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "472",
+        "denominacion": "Costos de financiación",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "473",
+        "denominacion": "Anticipos recibidos",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "474",
+        "denominacion": "Regalías",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "475",
+        "denominacion": "Dividendos",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "477",
+        "denominacion": "Pasivo por compra de activo inmovilizado",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "479",
+        "denominacion": "Otras cuentas por pagar diversas",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "48",
+        "denominacion": "PROVISIONES",
+        "elemento": 4,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "481",
+        "denominacion": "Provisión para litigios",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "482",
+        "denominacion": "Provisión por desmantelamiento, retiro o rehabilitación del inmovilizado",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "483",
+        "denominacion": "Provisión para reestructuraciones",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "484",
+        "denominacion": "Provisión para protección y remediación del medio ambiente",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "485",
+        "denominacion": "Provisión para gastos de responsabilidad social",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "486",
+        "denominacion": "Provisión para garantías",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "489",
+        "denominacion": "Otras provisiones",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "49",
+        "denominacion": "PASIVO DIFERIDO",
+        "elemento": 4,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "491",
+        "denominacion": "Impuesto a la renta diferido",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "492",
+        "denominacion": "Participaciones de los trabajadores diferidas",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "493",
+        "denominacion": "Intereses diferidos",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "494",
+        "denominacion": "Ganancia en venta con arrendamiento financiero paralelo",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "495",
+        "denominacion": "Subsidios recibidos diferidos",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "496",
+        "denominacion": "Ingresos diferidos",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "497",
+        "denominacion": "Costos diferidos",
+        "elemento": 4,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "50",
+        "denominacion": "CAPITAL",
+        "elemento": 5,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "501",
+        "denominacion": "Capital social",
+        "elemento": 5,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "502",
+        "denominacion": "Acciones en tesorería",
+        "elemento": 5,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "51",
+        "denominacion": "ACCIONES DE INVERSIÓN",
+        "elemento": 5,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "511",
+        "denominacion": "Acciones de inversión",
+        "elemento": 5,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "512",
+        "denominacion": "Acciones de inversión en tesorería",
+        "elemento": 5,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "52",
+        "denominacion": "CAPITAL ADICIONAL",
+        "elemento": 5,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "521",
+        "denominacion": "Primas (descuento) de acciones",
+        "elemento": 5,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "522",
+        "denominacion": "Capitalizaciones en trámite",
+        "elemento": 5,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "523",
+        "denominacion": "Reducciones de capital pendientes de formalización",
+        "elemento": 5,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "56",
+        "denominacion": "RESULTADOS NO REALIZADOS",
+        "elemento": 5,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "561",
+        "denominacion": "Diferencia en cambio de inversiones permanentes en entidades extranjeras",
+        "elemento": 5,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "562",
+        "denominacion": "Instrumentos financieros – Cobertura de flujo de efectivo",
+        "elemento": 5,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "563",
+        "denominacion": "Ganancia o pérdida en activos o pasivos financieros disponibles para la venta",
+        "elemento": 5,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "564",
+        "denominacion": "Ganancia o pérdida en activos o pasivos financieros disponibles para la venta – Compra o venta convencional fecha de liquidación",
+        "elemento": 5,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "57",
+        "denominacion": "EXCEDENTE DE REVALUACIÓN",
+        "elemento": 5,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "571",
+        "denominacion": "Excedente de revaluación",
+        "elemento": 5,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "572",
+        "denominacion": "Excedente de revaluación – Acciones liberadas recibidas",
+        "elemento": 5,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "573",
+        "denominacion": "Participación en excedente de revaluación – Inversiones en entidades relacionadas",
+        "elemento": 5,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "58",
+        "denominacion": "RESERVAS",
+        "elemento": 5,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "581",
+        "denominacion": "Reinversión",
+        "elemento": 5,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "582",
+        "denominacion": "Legal",
+        "elemento": 5,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "583",
+        "denominacion": "Contractuales",
+        "elemento": 5,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "584",
+        "denominacion": "Estatutarias",
+        "elemento": 5,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "585",
+        "denominacion": "Facultativas",
+        "elemento": 5,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "589",
+        "denominacion": "Otras reservas",
+        "elemento": 5,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "59",
+        "denominacion": "RESULTADOS ACUMULADOS",
+        "elemento": 5,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "591",
+        "denominacion": "Utilidades no distribuidas",
+        "elemento": 5,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "592",
+        "denominacion": "Pérdidas acumuladas",
+        "elemento": 5,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "60",
+        "denominacion": "COMPRAS",
+        "elemento": 6,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "601",
+        "denominacion": "Mercaderías",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "602",
+        "denominacion": "Materias primas",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "603",
+        "denominacion": "Materiales auxiliares, suministros y repuestos",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "604",
+        "denominacion": "Envases y embalajes",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "609",
+        "denominacion": "Costos vinculados con las compras",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "61",
+        "denominacion": "VARIACIÓN DE EXISTENCIAS",
+        "elemento": 6,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "611",
+        "denominacion": "Mercaderías",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "612",
+        "denominacion": "Materias primas",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "613",
+        "denominacion": "Materiales auxiliares, suministros y repuestos",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "614",
+        "denominacion": "Envases y embalajes",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "62",
+        "denominacion": "GASTOS DE PERSONAL, DIRECTORES Y GERENTES",
+        "elemento": 6,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "621",
+        "denominacion": "Remuneraciones",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "622",
+        "denominacion": "Otras remuneraciones",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "623",
+        "denominacion": "Indemnizaciones al personal",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "624",
+        "denominacion": "Capacitación",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "625",
+        "denominacion": "Atención al personal",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "626",
+        "denominacion": "Gerentes",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "627",
+        "denominacion": "Seguridad, previsión social y otras contribuciones",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "628",
+        "denominacion": "Retribuciones al directorio",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "629",
+        "denominacion": "Beneficios sociales de los trabajadores",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "63",
+        "denominacion": "GASTOS DE SERVICIOS PRESTADOS POR TERCEROS",
+        "elemento": 6,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "631",
+        "denominacion": "Transporte, correos y gastos de viaje",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "632",
+        "denominacion": "Asesoría y consultoría",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "633",
+        "denominacion": "Producción encargada a terceros",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "634",
+        "denominacion": "Mantenimiento y reparaciones",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "635",
+        "denominacion": "Alquileres",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "636",
+        "denominacion": "Servicios básicos",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "637",
+        "denominacion": "Publicidad, publicaciones, relaciones públicas",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "638",
+        "denominacion": "Servicios de contratistas",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "639",
+        "denominacion": "Otros servicios prestados por terceros",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "64",
+        "denominacion": "GASTOS POR TRIBUTOS",
+        "elemento": 6,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "641",
+        "denominacion": "Gobierno central",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "642",
+        "denominacion": "Gobierno regional",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "643",
+        "denominacion": "Gobierno local",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "644",
+        "denominacion": "Otros gastos por tributos",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "65",
+        "denominacion": "OTROS GASTOS DE GESTION",
+        "elemento": 6,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "651",
+        "denominacion": "Seguros",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "652",
+        "denominacion": "Regalías",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "653",
+        "denominacion": "Suscripciones",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "654",
+        "denominacion": "Licencias y derechos de vigencia",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "655",
+        "denominacion": "Costo neto de enajenación de activos inmovilizados y operaciones discontinuadas",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "656",
+        "denominacion": "Suministros",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "658",
+        "denominacion": "Gestión medioambiental",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "659",
+        "denominacion": "Otros gastos de gestión",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "66",
+        "denominacion": "PERDIDA POR MEDICIÓN DE ACTIVOS NO FINANCIEROS AL VALOR RAZONABLE",
+        "elemento": 6,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "661",
+        "denominacion": "Activo realizable",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "662",
+        "denominacion": "Activo inmovilizado",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "67",
+        "denominacion": "GASTOS FINANCIEROS",
+        "elemento": 6,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "671",
+        "denominacion": "Gastos en operaciones de endeudamiento y otros",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "672",
+        "denominacion": "Pérdida por instrumentos financieros derivados",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "673",
+        "denominacion": "Intereses por préstamos y otras obligaciones",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "674",
+        "denominacion": "Gastos en operaciones de factoraje (factoring)",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "675",
+        "denominacion": "Descuentos concedidos por pronto pago",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "676",
+        "denominacion": "Diferencia de cambio",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "677",
+        "denominacion": "Pérdida por medición de activos y pasivos financieros al valor razonable",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "678",
+        "denominacion": "Participación en resultados de entidades relacionadas",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "679",
+        "denominacion": "Otros gastos financieros",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "68",
+        "denominacion": "VALUACIÓN Y DETERIORO DE ACTIVOS Y PROVISIONES",
+        "elemento": 6,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "681",
+        "denominacion": "Depreciación",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "682",
+        "denominacion": "Amortización de intangibles",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "683",
+        "denominacion": "Agotamiento",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "684",
+        "denominacion": "Valuación de activos",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "685",
+        "denominacion": "Deterioro del valor de los activos",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "686",
+        "denominacion": "Provisiones",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "69",
+        "denominacion": "COSTO DE VENTAS",
+        "elemento": 6,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "691",
+        "denominacion": "Mercaderías",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "692",
+        "denominacion": "Productos terminados",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "693",
+        "denominacion": "Subproductos, desechos y desperdicios",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "694",
+        "denominacion": "Servicios",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "695",
+        "denominacion": "Gastos por desvalorización de existencias",
+        "elemento": 6,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "70",
+        "denominacion": "VENTAS",
+        "elemento": 7,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "701",
+        "denominacion": "Mercaderías",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "702",
+        "denominacion": "Productos terminados",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "703",
+        "denominacion": "Subproductos, desechos y desperdicios",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "704",
+        "denominacion": "Prestación de servicios",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "709",
+        "denominacion": "Devoluciones sobre ventas",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "71",
+        "denominacion": "VARIACIÓN DE LA PRODUCCIÓN ALMACENADA",
+        "elemento": 7,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "711",
+        "denominacion": "Variación de productos terminados",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "712",
+        "denominacion": "Variación de subproductos, desechos y desperdicios",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "713",
+        "denominacion": "Variación de productos en proceso",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "714",
+        "denominacion": "Variación de envases y embalajes",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "715",
+        "denominacion": "Variación de existencias de servicios",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "72",
+        "denominacion": "PRODUCCIÓN DE ACTIVO INMOVILIZADO",
+        "elemento": 7,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "721",
+        "denominacion": "Inversiones inmobiliarias",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "722",
+        "denominacion": "Inmuebles, maquinaria y equipo",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "723",
+        "denominacion": "Intangibles",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "724",
+        "denominacion": "Activos biológicos",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "725",
+        "denominacion": "Costos de financiación capitalizados",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "73",
+        "denominacion": "DESCUENTOS, REBAJAS Y BONIFICACIONES OBTENIDOS",
+        "elemento": 7,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "731",
+        "denominacion": "Descuentos, rebajas y bonificaciones obtenidos",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "74",
+        "denominacion": "DESCUENTOS, REBAJAS Y BONIFICACIONES CONCEDIDOS",
+        "elemento": 7,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "741",
+        "denominacion": "Descuentos, rebajas y bonificaciones concedidos",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "75",
+        "denominacion": "OTROS INGRESOS DE GESTIÓN",
+        "elemento": 7,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "751",
+        "denominacion": "Servicios en beneficio del personal",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "752",
+        "denominacion": "Comisiones y corretajes",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "753",
+        "denominacion": "Regalías",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "754",
+        "denominacion": "Alquileres",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "755",
+        "denominacion": "Recuperación de cuentas de valuación",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "756",
+        "denominacion": "Enajenación de activos inmovilizados",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "757",
+        "denominacion": "Recuperación de deterioro de cuentas de activos inmovilizados",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "759",
+        "denominacion": "Otros ingresos de gestión",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "76",
+        "denominacion": "GANANCIA POR MEDICIÓN DE ACTIVOS NO FINANCIEROS AL VALOR RAZONABLE",
+        "elemento": 7,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "761",
+        "denominacion": "Activo realizable",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "762",
+        "denominacion": "Activo inmovilizado",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "77",
+        "denominacion": "INGRESOS FINANCIEROS",
+        "elemento": 7,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "771",
+        "denominacion": "Ganancia por instrumento financiero derivado",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "772",
+        "denominacion": "Rendimientos ganados",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "773",
+        "denominacion": "Dividendos",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "774",
+        "denominacion": "Ingresos en operaciones de factoraje (factoring)",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "775",
+        "denominacion": "Descuentos obtenidos por pronto pago",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "776",
+        "denominacion": "Diferencia en cambio",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "777",
+        "denominacion": "Ganancia por medición de activos y pasivos financieros al valor razonable",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "778",
+        "denominacion": "Participación en resultados de entidades relacionadas",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "779",
+        "denominacion": "Otros ingresos financieros",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "78",
+        "denominacion": "CARGAS CUBIERTAS POR PROVISIONES",
+        "elemento": 7,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "781",
+        "denominacion": "Cargas cubiertas por provisiones",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "79",
+        "denominacion": "CARGAS IMPUTABLES A CUENTAS DE COSTOS Y GASTOS",
+        "elemento": 7,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "791",
+        "denominacion": "Cargas imputables a cuentas de costos y gastos",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "792",
+        "denominacion": "Gastos financieros imputables a cuentas de existencias",
+        "elemento": 7,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "80",
+        "denominacion": "MARGEN COMERCIAL",
+        "elemento": 8,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "801",
+        "denominacion": "Margen comercial",
+        "elemento": 8,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "81",
+        "denominacion": "PRODUCCIÓN DEL EJERCICIO",
+        "elemento": 8,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "811",
+        "denominacion": "Producción de bienes",
+        "elemento": 8,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "812",
+        "denominacion": "Producción de servicios",
+        "elemento": 8,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "813",
+        "denominacion": "Producción de activo inmovilizado",
+        "elemento": 8,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "82",
+        "denominacion": "VALOR AGREGADO",
+        "elemento": 8,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "821",
+        "denominacion": "Valor agregado",
+        "elemento": 8,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "83",
+        "denominacion": "EXCEDENTE BRUTO (INSUFICIENCIA BRUTA) DE EXPLOTACIÓN",
+        "elemento": 8,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "831",
+        "denominacion": "Excedente bruto (insuficiencia bruta) de explotación",
+        "elemento": 8,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "84",
+        "denominacion": "RESULTADO DE EXPLOTACIÓN",
+        "elemento": 8,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "841",
+        "denominacion": "Resultado de explotación",
+        "elemento": 8,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "85",
+        "denominacion": "RESULTADO ANTES DE PARTICIPACIONES E IMPUESTOS",
+        "elemento": 8,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "851",
+        "denominacion": "Resultado antes de participaciones e impuestos",
+        "elemento": 8,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "87",
+        "denominacion": "PARTICIPACIONES DE LOS TRABAJADORES",
+        "elemento": 8,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "871",
+        "denominacion": "Participación de los trabajadores – Corriente",
+        "elemento": 8,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "872",
+        "denominacion": "Participación de los trabajadores – Diferida",
+        "elemento": 8,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "88",
+        "denominacion": "IMPUESTO A LA RENTA",
+        "elemento": 8,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "881",
+        "denominacion": "Impuesto a la renta – Corriente",
+        "elemento": 8,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "882",
+        "denominacion": "Impuesto a la renta – Diferido",
+        "elemento": 8,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "89",
+        "denominacion": "DETERMINACIÓN DEL RESULTADO DEL EJERCICIO",
+        "elemento": 8,
+        "nivel": 2,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "891",
+        "denominacion": "Utilidad",
+        "elemento": 8,
+        "nivel": 3,
+        "estado": true
+    },
+    {
+        "codigo_cuenta": "892",
+        "denominacion": "Pérdida",
+        "elemento": 8,
+        "nivel": 3,
+        "estado": true
+    }
+]

@@ -52,23 +52,16 @@ const form = useForm({
 
 const openNewCompraModal = () => {
     form.reset();
-    if (props.proveedores.length > 0) {
-        form.id_proveedor = props.proveedores[0].id_proveedor.toString();
-    }
+    form.id_proveedor = '';
     form.detalles = [];
-    addLine();
     form.clearErrors();
     isModalOpen.value = true;
 };
 
-const addLine = () => {
-    if (props.productos.length > 0) {
-        form.detalles.push({
-            id_producto: props.productos[0].id_producto.toString(),
-            cantidad: 1,
-            precio_unitario: Number(props.productos[0].precio_compra)
-        });
-    }
+const openProductPickerForNew = () => {
+    activeProductLineIndex.value = null;
+    productSearchQuery.value = '';
+    isProductPickerOpen.value = true;
 };
 
 const removeLine = (index: number) => {
@@ -155,6 +148,13 @@ const selectProduct = (prod: any) => {
         const idx = activeProductLineIndex.value;
         form.detalles[idx].id_producto = prod.id_producto.toString();
         form.detalles[idx].precio_unitario = Number(prod.precio_compra);
+    } else {
+        // Añadir nuevo ítem al comprobante
+        form.detalles.push({
+            id_producto: prod.id_producto.toString(),
+            cantidad: 1,
+            precio_unitario: Number(prod.precio_compra)
+        });
     }
     isProductPickerOpen.value = false;
     activeProductLineIndex.value = null;
@@ -175,8 +175,16 @@ const computedTotal = computed(() => {
 });
 
 const submitCompra = () => {
+    if (!form.id_proveedor) {
+        alert('Por favor, selecciona un proveedor para la compra.');
+        return;
+    }
     if (form.detalles.length === 0) {
-        alert('Debe agregar al menos un producto.');
+        alert('Debe agregar al menos un producto a la compra.');
+        return;
+    }
+    if (form.detalles.some(d => !d.id_producto)) {
+        alert('Hay ítems sin producto seleccionado.');
         return;
     }
     form.post('/compras', {
@@ -335,13 +343,28 @@ defineOptions({
                         <div class="border-t pt-4 border-zinc-100 dark:border-zinc-850">
                             <div class="flex justify-between items-center mb-3">
                                 <span class="text-sm font-semibold text-zinc-800 dark:text-zinc-200">Ítems de la Factura</span>
-                                <button type="button" @click="addLine" class="inline-flex items-center gap-1 text-xs font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400">
+                                <button type="button" @click="openProductPickerForNew" class="inline-flex items-center gap-1 text-xs font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 cursor-pointer">
                                     <Plus class="h-3.5 w-3.5" />
-                                    Agregar Producto
+                                    + Agregar Producto
                                 </button>
                             </div>
 
-                            <div class="space-y-2">
+                            <!-- Estado Vacío si no hay ítems -->
+                            <div v-if="form.detalles.length === 0" class="p-6 text-center border-2 border-dashed border-zinc-200 dark:border-zinc-800 rounded-xl bg-zinc-50/50 dark:bg-zinc-900/30 space-y-2.5 my-2">
+                                <div class="inline-flex p-2.5 rounded-full bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400">
+                                    <Package class="h-5 w-5" />
+                                </div>
+                                <div>
+                                    <p class="text-xs font-semibold text-zinc-700 dark:text-zinc-300">No hay productos agregados a la compra</p>
+                                    <p class="text-[11px] text-zinc-400">Haz clic en el botón para buscar y añadir productos del catálogo.</p>
+                                </div>
+                                <button type="button" @click="openProductPickerForNew" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-50 hover:bg-indigo-100 dark:bg-indigo-950/60 dark:hover:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 text-xs font-semibold transition-colors cursor-pointer">
+                                    <Plus class="h-3.5 w-3.5" />
+                                    + Seleccionar Primer Producto
+                                </button>
+                            </div>
+
+                            <div v-else class="space-y-2">
                                 <div v-for="(line, index) in form.detalles" :key="index" class="grid grid-cols-12 gap-2 items-center bg-zinc-50 dark:bg-zinc-800/40 p-2 rounded-lg border border-zinc-100 dark:border-zinc-800">
                                     
                                     <!-- Selector de Producto -->

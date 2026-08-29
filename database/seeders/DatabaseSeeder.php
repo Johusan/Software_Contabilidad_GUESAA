@@ -65,91 +65,34 @@ class DatabaseSeeder extends Seeder
         }
         echo "Usuarios de prueba sembrados con éxito.\n";
 
-        // 3. Seed Plan de Cuentas (PCGE)
-        $filePath = database_path('seeders/data/Plan_de_Cuentas_PCGE_2026_extracted.txt');
+        // 3. Seed Plan de Cuentas Oficial (PCGE 2026 desde archivo JSON incluido)
+        $jsonPath = database_path('seeders/data/pcge_2026.json');
         
-        if (file_exists($filePath)) {
-            $lines = file($filePath);
-            $accounts = [];
-            $currentCode = null;
-
-            foreach ($lines as $line) {
-                $line = trim($line);
-                if (empty($line)) continue;
-                
-                // Ignorar cabeceras y elementos
-                if (str_starts_with(strtoupper($line), 'ELEMENTO') || str_starts_with(strtoupper($line), '--- PAGE')) {
-                    continue;
-                }
-                
-                if (preg_match('/^([0-9]+)\s+(.*)$/', $line, $matches)) {
-                    $currentCode = $matches[1];
-                    // Filtrar para conservar únicamente cuentas de 2 y 3 dígitos
-                    if (strlen($currentCode) <= 3) {
-                        $denom = trim($matches[2]);
-                        $accounts[$currentCode] = [
-                            'codigo_cuenta' => $currentCode,
-                            'denominacion' => $denom,
-                            'elemento' => intval(substr($currentCode, 0, 1)),
-                            'estado' => true
-                        ];
-                    } else {
-                        $currentCode = null;
+        if (file_exists($jsonPath)) {
+            $accounts = json_decode(file_get_contents($jsonPath), true);
+            
+            if (is_array($accounts)) {
+                DB::beginTransaction();
+                try {
+                    foreach ($accounts as $acc) {
+                        CuentaPcge::updateOrCreate(
+                            ['codigo_cuenta' => (string)$acc['codigo_cuenta']],
+                            [
+                                'denominacion' => substr(trim($acc['denominacion']), 0, 150),
+                                'elemento' => intval($acc['elemento']),
+                                'estado' => true
+                            ]
+                        );
                     }
-                } else {
-                    if ($currentCode && isset($accounts[$currentCode]) && !str_contains($line, 'Curso:') && !str_contains($line, 'CUADRO DE CLASIFICACIÓN') && !str_contains($line, 'Elaborado por:')) {
-                        $accounts[$currentCode]['denominacion'] .= ' ' . $line;
-                    }
+                    DB::commit();
+                    echo "Plan de Cuentas Oficial (PCGE 2026) sembrado con éxito (" . count($accounts) . " cuentas/subcuentas).\n";
+                } catch (\Exception $e) {
+                    DB::rollBack();
+                    echo "Error al sembrar el plan de cuentas: " . $e->getMessage() . "\n";
                 }
-            }
-
-            // Cuentas contables específicas de 3 dígitos para compras, ventas, caja e IGV
-            $requiredAccounts = [
-                '101' => ['denominacion' => 'Caja', 'elemento' => 1],
-                '104' => ['denominacion' => 'Cuentas corrientes en instituciones financieras', 'elemento' => 1],
-                '105' => ['denominacion' => 'Otros equivalentes de efectivo', 'elemento' => 1],
-                '121' => ['denominacion' => 'Facturas, boletas y otros comprobantes por cobrar', 'elemento' => 1],
-                '201' => ['denominacion' => 'Mercaderías', 'elemento' => 2],
-                '401' => ['denominacion' => 'Gobierno central', 'elemento' => 4],
-                '421' => ['denominacion' => 'Facturas, boletas y otros comprobantes por pagar', 'elemento' => 4],
-                '501' => ['denominacion' => 'Capital social', 'elemento' => 5],
-                '601' => ['denominacion' => 'Mercaderías', 'elemento' => 6],
-                '611' => ['denominacion' => 'Mercaderías', 'elemento' => 6],
-                '659' => ['denominacion' => 'Otros gastos de gestión', 'elemento' => 6],
-                '701' => ['denominacion' => 'Mercaderías', 'elemento' => 7],
-                '704' => ['denominacion' => 'Prestación de servicios', 'elemento' => 7],
-            ];
-
-            foreach ($requiredAccounts as $code => $data) {
-                $accounts[$code] = [
-                    'codigo_cuenta' => $code,
-                    'denominacion' => $data['denominacion'],
-                    'elemento' => $data['elemento'],
-                    'estado' => true
-                ];
-            }
-
-            // Insertar/actualizar en la base de datos
-            DB::beginTransaction();
-            try {
-                foreach ($accounts as $code => $acc) {
-                    CuentaPcge::updateOrCreate(
-                        ['codigo_cuenta' => $code],
-                        [
-                            'denominacion' => substr(trim($acc['denominacion']), 0, 150),
-                            'elemento' => $acc['elemento'],
-                            'estado' => true
-                        ]
-                    );
-                }
-                DB::commit();
-                echo "Plan de cuentas (PCGE) sembrado con éxito (" . count($accounts) . " cuentas a 3 dígitos).\n";
-            } catch (\Exception $e) {
-                DB::rollBack();
-                echo "Error al sembrar el plan de cuentas: " . $e->getMessage() . "\n";
             }
         } else {
-            echo "No se encontró el archivo del plan de cuentas en la ruta indicada: $filePath\n";
+            echo "No se encontró el archivo del plan de cuentas en: $jsonPath\n";
         }
 
         // 4. Sembrar Categorías

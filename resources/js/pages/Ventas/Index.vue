@@ -100,26 +100,17 @@ const openNewVentaModal = () => {
     }
     showCajaCerradaNotification.value = false;
     form.reset();
-    if (props.clientes.length > 0) {
-        form.id_cliente = props.clientes[0].id_cliente.toString();
-    }
+    form.id_cliente = '';
     form.detalles = [];
-    addLine();
     autoGenerateNumComprobante();
     form.clearErrors();
     isModalOpen.value = true;
 };
 
-const addLine = () => {
-    if (props.productos.length > 0) {
-        const prod = props.productos.find(p => p.stock_actual > 0) || props.productos[0];
-        form.detalles.push({
-            id_producto: prod.id_producto.toString(),
-            cantidad: 1,
-            precio_unitario: Number(prod.precio_venta),
-            descuento: 0
-        });
-    }
+const openProductPickerForNew = () => {
+    activeProductLineIndex.value = null;
+    productSearchQuery.value = '';
+    isProductPickerOpen.value = true;
 };
 
 const removeLine = (index: number) => {
@@ -242,6 +233,14 @@ const selectProduct = (prod: any) => {
         form.detalles[idx].cantidad = 1;
         form.detalles[idx].precio_unitario = getEffectiveUnitPrice(prod.id_producto.toString(), 1);
         form.detalles[idx].descuento = 0;
+    } else {
+        // Añadir como nuevo ítem
+        form.detalles.push({
+            id_producto: prod.id_producto.toString(),
+            cantidad: 1,
+            precio_unitario: getEffectiveUnitPrice(prod.id_producto.toString(), 1),
+            descuento: 0
+        });
     }
     isProductPickerOpen.value = false;
     activeProductLineIndex.value = null;
@@ -285,12 +284,20 @@ const submitVenta = () => {
         alert('Debe abrir caja para poder vender.');
         return;
     }
+    if (!form.id_cliente) {
+        alert('Por favor, selecciona un cliente para la venta.');
+        return;
+    }
     if (form.detalles.length === 0) {
-        alert('Debe agregar al menos un producto.');
+        alert('Debe agregar al menos un producto al comprobante.');
+        return;
+    }
+    if (form.detalles.some(d => !d.id_producto)) {
+        alert('Hay líneas sin producto seleccionado.');
         return;
     }
     if (hasStockError.value) {
-        alert('Hay productos con cantidades que superan el stock disponible. Por favor corrijalos.');
+        alert('Hay productos con cantidades que superan el stock disponible. Por favor corríjalos.');
         return;
     }
     form.post('/ventas', {
@@ -500,13 +507,28 @@ defineOptions({
                         <div class="border-t pt-4 border-zinc-100 dark:border-zinc-850">
                             <div class="flex justify-between items-center mb-3">
                                 <span class="text-sm font-semibold text-zinc-800 dark:text-zinc-200">Productos seleccionados</span>
-                                <button type="button" @click="addLine" class="inline-flex items-center gap-1 text-xs font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400">
+                                <button type="button" @click="openProductPickerForNew" class="inline-flex items-center gap-1 text-xs font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 cursor-pointer">
                                     <Plus class="h-3.5 w-3.5" />
-                                    Agregar Producto
+                                    + Agregar Producto
                                 </button>
                             </div>
 
-                            <div class="space-y-2">
+                            <!-- Estado Vacío si no hay ítems -->
+                            <div v-if="form.detalles.length === 0" class="p-6 text-center border-2 border-dashed border-zinc-200 dark:border-zinc-800 rounded-xl bg-zinc-50/50 dark:bg-zinc-900/30 space-y-2.5 my-2">
+                                <div class="inline-flex p-2.5 rounded-full bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400">
+                                    <ShoppingCart class="h-5 w-5" />
+                                </div>
+                                <div>
+                                    <p class="text-xs font-semibold text-zinc-700 dark:text-zinc-300">El comprobante no tiene productos agregados</p>
+                                    <p class="text-[11px] text-zinc-400">Haz clic en el botón para buscar y añadir productos con stock disponible.</p>
+                                </div>
+                                <button type="button" @click="openProductPickerForNew" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-50 hover:bg-indigo-100 dark:bg-indigo-950/60 dark:hover:bg-indigo-900/60 text-indigo-600 dark:text-indigo-400 text-xs font-semibold transition-colors cursor-pointer">
+                                    <Plus class="h-3.5 w-3.5" />
+                                    + Seleccionar Producto del Catálogo
+                                </button>
+                            </div>
+
+                            <div v-else class="space-y-2">
                                 <div v-for="(line, index) in form.detalles" :key="index" class="grid grid-cols-12 gap-2 items-center bg-zinc-50 dark:bg-zinc-800/40 p-2 rounded-lg border border-zinc-100 dark:border-zinc-800">
                                     
                                     <!-- Selector Producto -->
