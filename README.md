@@ -1,273 +1,229 @@
-# GUESAA SIC - Sistema de Información Contable
+# GUESAA SIC - Sistema de Información Contable y Comercial
 
-Sistema de Información Contable (SIC) desarrollado para la empresa **GUESAA PERÚ E.I.R.L.** Diseñado bajo arquitectura **MVC** con **Laravel 11/12**, **Inertia.js (Vue 3 + TypeScript)** y base de datos **PostgreSQL**.
+[![Laravel](https://img.shields.io/badge/Laravel-11.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)](https://laravel.com)
+[![Vue.js](https://img.shields.io/badge/Vue.js-3.x-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white)](https://vuejs.org)
+[![Inertia.js](https://img.shields.io/badge/Inertia.js-2.x-9553E9?style=for-the-badge&logo=inertia&logoColor=white)](https://inertiajs.com)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16.x-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org)
+[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com)
 
-El software integra las operaciones comerciales de la empresa (Ventas POS, Compras, Inventarios y Caja Chica) con la **generación automática de asientos contables en el Libro Diario** bajo el catálogo del **Plan Contable General Empresarial (PCGE 2026)**.
+Sistema de Información Contable y Comercial web (GUESAA SIC) desarrollado para la empresa **GUESAA PERÚ E.I.R.L.** Diseñado bajo una moderna arquitectura monolítica SPA (Single Page Application) impulsada por **Laravel 11**, **Inertia.js**, **Vue 3 con TypeScript** y motor de base de datos **PostgreSQL 16**.
+
+El software automatiza e integra el ciclo operativo comercial completo (Ventas POS con tarifario mayorista, Compras a proveedores, Control de existencias e inventario valorizado, Apertura/Cierre de Caja Diaria y Gastos de Caja Chica) con la **generación contable automática de asientos de Partida Doble en el Libro Diario**, **Libro Mayor interactivo**, **Balance de Comprobación**, **Estados Financieros oficiales** y **Ratios Gerenciales** bajo el marco del **Plan Contable General Empresarial (PCGE 2026)**.
 
 ---
 
 ## 🚀 Módulos del Sistema
 
-1. **Dashboard (Panel Principal)**: Métricas KPI en tiempo real (clientes, proveedores, stock crítico, total de ventas y compras) y visualización de los últimos asientos contables generados.
-2. **Clientes y Proveedores (Terceros)**: Gestión unificada de personas naturales y jurídicas (RUC/DNI), con control de estado (Activo/Inactivo).
-3. **Inventario / Kardex**: Catálogo de productos, control de precios (compra/venta), gestión de categorías y sistema de alertas automáticas para productos con stock menor o igual al mínimo.
-4. **Registro de Compras**: Ingreso de facturas/boletas de compras de mercadería con incremento automático de stock en inventario y contabilización automática por naturaleza (`601-401-421`) y destino (`201-611`).
-5. **Punto de Venta (POS)**: Módulo interactivo para ventas en mostrador, emisión de comprobantes, cálculo automático de IGV (18%), cobro inmediato en Caja Chica y contabilización de venta (`121-401-701`).
-6. **Caja Chica**: Control de caja diaria con saldo inicial, aperturas, cierres, recepción automática de cobros POS y contabilización de egresos menores (`659-101`).
-7. **Plan de Cuentas (PCGE 2026)**: Catálogo oficial a 3 dígitos (423 cuentas precargadas) conforme al PCGE 2026, con funcionalidad para que los Administradores agreguen subcuentas personalizadas.
-8. **Gestión de Usuarios y Roles**: Panel administrativo para registrar personal, asignar roles (*Administrador*, *Cajero*, *Almacenero*) y controlar los accesos.
+1. **Dashboard Principal (Panel de Control)**:
+   - Resumen ejecutivo de KPIs en tiempo real (total de ventas, compras, saldo en caja y alertas de stock bajo).
+   - Acceso rápido a las operaciones frecuentes y visualización de los últimos asientos contables generados.
+
+2. **Gestión de Terceros (Clientes y Proveedores)**:
+   - Mantenimiento CRUD unificado de clientes y proveedores con validación de tipo de documento (DNI, RUC, CE).
+   - Búsqueda predictiva y control de estado (Activo/Inactivo).
+
+3. **Inventario de Mercaderías y Kardex**:
+   - Catálogo de productos organizado por categorías con código de barras único.
+   - Configuración de tarifas duales: **Precio Minorista** y **Precio Mayorista** con activación automática por cuota de volumen (`cant_mayorista`).
+   - Alertas visuales destacadas para artículos con existencias menores o iguales al stock mínimo programado.
+
+4. **Registro de Compras a Proveedores**:
+   - Registro de facturas y boletas de compra con desglose de Base Imponible e IGV (18%).
+   - Incremento automático de existencias en el inventario e inserción inmediata de asientos contables de compra por naturaleza (`601-401-421`) y destino (`201-611`).
+
+5. **Punto de Venta POS (Registro de Ventas)**:
+   - Modal interactivo de facturación rápida con selector de productos y cliente.
+   - Aplicación reactiva de precios al por mayor con etiqueta destacada *"¡Mayorista!"*.
+   - Generador automático de numeración correlativa (`B001-XXXXXXXX` y `F001-XXXXXXXX`).
+   - Descuento de stock en tiempo real y contabilización de venta (`121-401-701`) y cobro (`101-121`).
+
+6. **Control de Caja Diaria y Caja Chica**:
+   - Gestión de turnos de caja comercial con registro de monto inicial para vuelto.
+   - Acumulación en tiempo real de los cobros en efectivo provenientes del POS.
+   - Panel independiente **Caja Chica & Gastos Menores** para registrar salidas imprevistas (`659-101`) con validación de saldo disponible.
+   - Arqueo final y cierre de turno.
+
+7. **Plan Contable General Empresarial (PCGE 2026)**:
+   - Árbol jerárquico navegable con más de 420 cuentas y subcuentas oficiales adaptadas al PCGE 2026 peruano.
+   - Módulo para que el Administrador o Contador incorpore subcuentas contables personalizadas.
+
+8. **Módulo de Contabilidad Oficial y Estados Financieros**:
+   - **Libro Diario General:** Grilla cronológica con número de asiento, fecha, código PCGE, glosa, Debe y Haber con verificación de Partida Doble y filtros avanzados por rango de fechas.
+   - **Libro Mayor Interactivo:** Layout dual incompresible *side-by-side* (selector de cuentas a la izquierda y extracto de débitos, créditos y saldo acumulado dinámico a la derecha).
+   - **Balance de Comprobación:** Balanza de 8 columnas que totaliza las sumas del mayor y clasifica los saldos deudores y acreedores con comprobación de balance.
+   - **Estado de Resultados:** Reporte financiero que enfrenta ingresos (Cuentas 70) vs. costos/gastos (Cuentas 60, 61, 65) determinando la Utilidad Neta del Ejercicio.
+   - **Estado de Cambios en el Patrimonio Neto:** Conciliación de saldos iniciales, capital social, utilidades retenidas y resultado del ejercicio.
+   - **Balance General (Estado de Situación Financiera):** Presentación clasificada en Activo, Pasivo y Patrimonio Neto con validación matemática de la igualdad `Activo = Pasivo + Patrimonio`.
+   - **Panel de Ratios Financieros:** Indicadores en tiempo real de Liquidez (Razón Corriente, Prueba Ácida), Solvencia (Endeudamiento) y Rentabilidad (Margen Neto, ROE).
+   - **Asiento Contable Manual:** Formulario interactivo para asientos de ajuste y reclasificación con botón inteligente **Igualar Saldos**.
+
+9. **Gestión de Usuarios y Roles (RBAC)**:
+   - Control de accesos y seguridad con contraseñas encriptadas mediante **Bcrypt**.
+   - Asignación de roles operativos: *Administrador*, *Contador*, *Cajero* y *Almacenero*.
 
 ---
 
 ## 🔐 Matriz de Permisos por Rol
 
-El sistema cuenta con un middleware dinámico (`CheckRole`) que restringe tanto la navegación lateral como el acceso por URL backend:
+El sistema incorpora el middleware `CheckRole` que restringe el menú lateral y las rutas backend según el perfil autenticado:
 
-| Módulo | Ruta | Administrador (`id_rol = 1`) | Cajero (`id_rol = 2`) | Almacenero (`id_rol = 3`) |
-|---|---|:---:|:---:|:---:|
-| **Dashboard** | `/dashboard` | ✅ Acceso | ✅ Acceso | ✅ Acceso |
-| **Clientes y Prov.** | `/terceros` | ✅ Acceso | ✅ Acceso | ✅ Acceso |
-| **Inventario / Kardex** | `/inventario` | ✅ Acceso | ❌ Oculto | ✅ Acceso |
-| **Registro Compras** | `/compras` | ✅ Acceso | ❌ Oculto | ✅ Acceso |
-| **Punto de Venta (POS)** | `/ventas` | ✅ Acceso | ✅ Acceso | ❌ Oculto |
-| **Caja Chica** | `/caja` | ✅ Acceso | ✅ Acceso | ❌ Oculto |
-| **Plan de Cuentas** | `/plan-cuentas` | ✅ Acceso | ❌ Oculto | ❌ Oculto |
-| **Usuarios y Roles** | `/usuarios` | ✅ Acceso | ❌ Oculto | ❌ Oculto |
+| Módulo | Ruta | Administrador (`id_rol=1`) | Contador (`id_rol=4`) | Cajero (`id_rol=2`) | Almacenero (`id_rol=3`) |
+|:---|:---|:---:|:---:|:---:|:---:|
+| **Dashboard** | `/dashboard` | ✅ Acceso | ✅ Acceso | ✅ Acceso | ✅ Acceso |
+| **Contactos (Terceros)** | `/terceros` | ✅ Acceso | ✅ Acceso | ✅ Acceso | ✅ Acceso |
+| **Inventario / Kardex** | `/inventario` | ✅ Acceso | 👁️ Consulta | ❌ Oculto | ✅ Acceso |
+| **Registro Compras** | `/compras` | ✅ Acceso | 👁️ Consulta | ❌ Oculto | ✅ Acceso |
+| **Punto de Venta POS** | `/ventas` | ✅ Acceso | ❌ Oculto | ✅ Acceso | ❌ Oculto |
+| **Control de Caja** | `/caja` | ✅ Acceso | ❌ Oculto | ✅ Acceso | ❌ Oculto |
+| **Plan de Cuentas** | `/plan-cuentas` | ✅ Acceso | ✅ Acceso | ❌ Oculto | ❌ Oculto |
+| **Contabilidad Oficial** | `/contabilidad` | ✅ Acceso | ✅ Acceso | ❌ Oculto | ❌ Oculto |
+| **Usuarios y Roles** | `/usuarios` | ✅ Acceso | ❌ Oculto | ❌ Oculto | ❌ Oculto |
 
 ---
 
-## 📁 Estructura del Proyecto y Leyenda de Componentes
-
-La siguiente estructura detalla los componentes del proyecto, clasificando entre los **generados por el framework/starter kit** y los **desarrollados a medida** para GUESAA PERÚ E.I.R.L.:
+## 📁 Estructura del Proyecto
 
 ```text
 Software_Contabilidad_GUESAA/
-├── app/                                    # Código fuente principal de la aplicación Backend (PHP)
+├── app/                                    # Lógica Backend (PHP / Laravel 11)
 │   ├── Http/
 │   │   ├── Controllers/
-│   │   │   ├── [CREADO] CajaController.php         # Gestión de aperturas, cierres y egresos de caja chica
-│   │   │   ├── [CREADO] CompraController.php       # Registro de compras e integración de asientos 60-40-42 y 20-61
-│   │   │   ├── [CREADO] PlanCuentasController.php   # Consulta del PCGE 2026 y creación de subcuentas
-│   │   │   ├── [CREADO] ProductoController.php     # Kardex, stock mínimo y categorías
-│   │   │   ├── [CREADO] TerceroController.php      # Clientes y Proveedores
-│   │   │   ├── [CREADO] UsuarioController.php      # Administración de usuarios y asignación de roles
-│   │   │   └── [CREADO] VentaController.php        # Punto de venta POS e integración de asientos 12-40-70
-│   │   ├── Middleware/
-│   │   │   ├── [CREADO] CheckRole.php              # Middleware de autorización backend por Matriz de Roles
-│   │   │   └── [FRAMEWORK] HandleInertiaRequests.php # Middleware para compartir props de usuario y rol a Vue
-│   ├── Models/
-│   │   ├── [CREADO] AsientoContable.php            # Modelo de Cabecera del Libro Diario
-│   │   ├── [CREADO] CajaChica.php                  # Modelo de Cajas Diarias
-│   │   ├── [CREADO] Categoria.php                  # Modelo de Categorías de productos
-│   │   ├── [CREADO] Cliente.php                    # Helpers/Scopes para Terceros tipo Cliente
-│   │   ├── [CREADO] Compra.php                     # Modelo de Cabecera de Compras
-│   │   ├── [CREADO] CuentaPcge.php                 # Modelo del Plan Contable PCGE
-│   │   ├── [CREADO] DetalleAsiento.php             # Modelo de Líneas de Debe/Haber
-│   │   ├── [CREADO] DetalleCompra.php              # Modelo de Detalle de ítems de compra
-│   │   ├── [CREADO] DetalleVenta.php               # Modelo de Detalle de ítems de venta
-│   │   ├── [CREADO] MovimientoCaja.php             # Modelo de Ingresos y Egresos de efectivo
-│   │   ├── [CREADO] Producto.php                   # Modelo de Productos e Inventario
-│   │   ├── [CREADO] Proveedor.php                  # Helpers/Scopes para Terceros tipo Proveedor
-│   │   ├── [CREADO] Rol.php                        # Modelo de Roles (Administrador, Cajero, Almacenero)
-│   │   ├── [CREADO] Tercero.php                    # Modelo de Clientes / Proveedores
-│   │   ├── [CREADO] Usuario.php                    # Modelo de Usuario personalizado adaptado a id_usuario e id_rol
-│   │   ├── [CREADO] Venta.php                      # Modelo de Cabecera de Ventas POS
-│   │   └── [FRAMEWORK] User.php                    # Modelo predeterminado de Laravel
-│   └── Providers/                                  # [FRAMEWORK] Proveedores de servicios de Laravel
-├── config/                                         # [FRAMEWORK] Archivos de configuración de Laravel
-├── database/                                       # Migraciones y datos iniciales de PostgreSQL
-│   ├── migrations/                                 # [CREADO / FRAMEWORK] Migraciones de tablas contables y del sistema
-│   └── seeders/
-│       └── [CREADO] DatabaseSeeder.php             # Sembrador inicial (Roles, Usuarios, 423 cuentas PCGE, productos)
-├── public/                                         # [FRAMEWORK / CREATED] Punto de entrada web y compilados de Vite
+│   │   │   ├── CajaController.php         # Control de Caja Diaria y Caja Chica
+│   │   │   ├── CompraController.php       # Compras e integración contable (60-40-42 / 20-61)
+│   │   │   ├── ContabilidadController.php # Diario, Mayor, Balanza, Estados Financieros y Ratios
+│   │   │   ├── PlanCuentasController.php   # Catálogo del PCGE 2026
+│   │   │   ├── ProductoController.php     # Inventario, precios mayoristas y categorías
+│   │   │   ├── TerceroController.php      # Clientes y Proveedores
+│   │   │   ├── UsuarioController.php      # Gestión de usuarios y roles
+│   │   │   └── VentaController.php        # POS, correlativos SUNAT y asientos de venta
+│   │   └── Middleware/
+│   │       ├── CheckRole.php              # Control de acceso por roles (RBAC)
+│   │       └── HandleInertiaRequests.php  # Compartición de props reactivos con Vue 3
+│   └── Models/
+│       ├── AsientoContable.php            # Cabecera de Libro Diario
+│       ├── CajaDiaria.php                 # Sesiones de Caja Diaria
+│       ├── Categoria.php                  # Categorías de productos
+│       ├── Cliente.php                    # Catálogo de Clientes
+│       ├── Compra.php                     # Comprobantes de compra
+│       ├── CuentaPcge.php                 # Cuentas contables PCGE 2026
+│       ├── DetalleAsiento.php             # Apuntes contables Debe / Haber
+│       ├── DetalleCompra.php              # Ítems de compra
+│       ├── DetalleVenta.php               # Ítems de venta
+│       ├── Producto.php                   # Mercaderías y tarifarios
+│       ├── Proveedor.php                  # Catálogo de Proveedores
+│       ├── Rol.php                        # Roles del sistema
+│       ├── Usuario.php                    # Usuarios autenticados
+│       └── Venta.php                      # Comprobantes de venta POS
+├── database/
+│   ├── migrations/                        # Definición de las 14 tablas en PostgreSQL
+│   └── seeders/                           # Sembradores de Roles, Usuarios y PCGE 2026
 ├── resources/
-│   ├── js/                                         # Código fuente Frontend (Vue 3 + TypeScript)
-│   │   ├── components/
-│   │   │   ├── [CREADO] AppSidebar.vue             # Barra lateral con filtrado dinámico según id_rol
-│   │   │   ├── [CREADO] AppSidebarHeader.vue       # Header con avatar, datos y nombre de rol dinámico
-│   │   │   └── ui/                                 # [FRAMEWORK] Componentes Shadcn Vue (Button, Dialog, Dropdown, etc.)
-│   │   ├── composables/                            # [FRAMEWORK] Helpers de UI (useAppearance, useInitials)
-│   │   ├── layouts/                                # [FRAMEWORK] Layouts de la aplicación (AppLayout, AuthLayout)
-│   │   ├── pages/
-│   │   │   ├── [CREADO] Dashboard.vue              # Vista principal con métricas KPI y asientos recientes
-│   │   │   ├── [CREADO] Caja/Index.vue             # Vista de Caja Chica (Apertura, Egresos, Cierre)
-│   │   │   ├── [CREADO] Compras/Index.vue          # Vista de Registro de Compras y pre-asiento contable
-│   │   │   ├── [CREADO] Inventario/Index.vue       # Vista de Control de Stock y Categorías
-│   │   │   ├── [CREADO] PlanCuentas/Index.vue      # Vista del Catálogo PCGE 2026 a 3 dígitos
-│   │   │   ├── [CREADO] Terceros/Index.vue         # Vista de Gestión de Clientes y Proveedores
-│   │   │   ├── [CREADO] Usuarios/Index.vue         # Vista de Administración de Usuarios y Roles
-│   │   │   ├── [CREADO] Ventas/Index.vue           # Vista del Punto de Venta (POS) y pre-asiento contable
-│   │   │   ├── auth/                               # [FRAMEWORK] Vistas de Login, Registro y Autenticación
-│   │   │   └── settings/                           # [FRAMEWORK] Vistas de Configuración de Perfil
-│   │   ├── app.ts                                  # [FRAMEWORK] Punto de entrada Frontend de Inertia.js
-│   │   └── ssr.ts                                  # [FRAMEWORK] Servidor Render Side Server de Inertia
-│   └── views/
-│       └── app.blade.php                           # [FRAMEWORK] Plantilla HTML raíz de Laravel Inertia
-├── routes/
-│   ├── [CREADO] web.php                            # Rutas web del sistema con grupos de middleware CheckRole
-│   ├── [FRAMEWORK] console.php                     # Rutas de comandos Artisan
-│   └── [FRAMEWORK] settings.php                    # Rutas de configuración de perfil y seguridad
-├── .env.example                                    # [FRAMEWORK] Plantilla de variables de entorno
-├── .gitignore                                      # [CREADO / FRAMEWORK] Reglas de exclusión de Git
-├── package.json                                    # [FRAMEWORK] Dependencias de Node.js (Vue, Inertia, Tailwind, Lucide)
-├── composer.json                                   # [FRAMEWORK] Dependencias de PHP (Laravel, Fortify, Inertia)
-├── vite.config.ts                                  # [FRAMEWORK] Configuración del empaquetador Vite
-└── README.md                                       # [CREADO] Manual técnico y comercial del proyecto
+│   ├── js/                                # Frontend (Vue 3 + TypeScript + Tailwind CSS)
+│   │   ├── components/                    # Componentes reutilizables (Sidebar, Modales, UI)
+│   │   └── pages/                         # Vistas de la aplicación
+│   │       ├── Dashboard.vue              # Panel central con métricas comerciales
+│   │       ├── Caja/Index.vue             # Panel de Caja Diaria y Caja Chica
+│   │       ├── Compras/Index.vue          # Registro de Compras
+│   │       ├── Contabilidad/Index.vue     # Módulo Contable (Diario, Mayor, Balanza, EEFF, Ratios)
+│   │       ├── Inventario/Index.vue       # Catálogo de Productos y Precios Mayoristas
+│   │       ├── PlanCuentas/Index.vue      # Árbol de cuentas del PCGE 2026
+│   │       ├── Terceros/Index.vue         # Clientes y Proveedores
+│   │       ├── Usuarios/Index.vue         # Administración de Usuarios y Roles
+│   │       └── Ventas/Index.vue           # Punto de Venta POS
+├── docker-compose.yml                     # Orquestación de contenedores Docker (App + PostgreSQL)
+├── Dockerfile                             # Imagen optimizada de PHP 8.2 + Nginx
+└── README.md                              # Documentación oficial del proyecto
 ```
 
-### 🏷️ Resumen de Origen de Componentes:
-- **`[FRAMEWORK]`**: Archivos base generados por Laravel 11/12, Inertia.js starter kit, Shadcn/UI, Fortify y Tailwind CSS.
-- **`[CREADO]`**: Archivos desarrollados 100% a medida para implementar las reglas de negocio contables y operativas de **GUESAA PERÚ E.I.R.L.**
+---
+
+## 🛠️ Guías de Instalación y Despliegue
+
+### Opción 1: Despliegue con Docker (Recomendado para Producción)
+
+1. Asegúrate de tener **Docker Desktop** o **Docker Engine** en ejecución.
+2. Abre la terminal en la raíz del proyecto y ejecuta:
+   ```bash
+   docker compose up -d --build
+   ```
+3. Inicializa las tablas y el catálogo del PCGE 2026:
+   ```bash
+   docker compose exec app php artisan migrate --seed
+   ```
+4. Abre tu navegador en: `http://localhost:8000`
 
 ---
 
-## 🛠️ Guía de Instalación y Requisitos
+### Opción 2: Instalación Manual en Servidor o Entorno Local
 
-### Requisitos Previos
-- **PHP** >= 8.2 con extensiones `pdo_pgsql`, `pgsql`, `bcmath`, `mbstring`.
+#### Requisitos Previos:
+- **PHP** >= 8.2 con extensiones `pdo_pgsql`, `pgsql`, `mbstring`, `openssl`, `bcmath`, `curl`, `xml`, `fileinfo`.
 - **Composer** >= 2.x
-- **Node.js** >= 18.x y **npm** >= 9.x
-- Servidor de Base de Datos **PostgreSQL** instalado y corriendo localmente en el puerto `5432`.
+- **Node.js** >= 20.x y **NPM**
+- **PostgreSQL** 15/16 corriendo en el puerto `5432`.
+- **Git**
 
----
+#### Pasos de Instalación:
 
-### Pasos de Instalación
-
-1. **Clonar el Repositorio Privado**:
+1. **Clonar el Repositorio:**
    ```bash
    git clone https://github.com/Johusan/Software_Contabilidad_GUESAA.git
    cd Software_Contabilidad_GUESAA
    ```
 
-2. **Instalar Dependencias de Backend (PHP)**:
+2. **Instalar Dependencias:**
    ```bash
    composer install
-   ```
-
-3. **Instalar Dependencias de Frontend (Node.js)**:
-   ```bash
    npm install
    ```
 
-4. **Configurar el Archivo de Entorno (`.env`)**:
-   Crea una copia de `.env.example` con el nombre `.env`:
+3. **Configurar el Archivo de Entorno (`.env`):**
    ```bash
    cp .env.example .env
    ```
-   Asegúrate de configurar la conexión a PostgreSQL:
-   ```env
+   Configura las credenciales de tu base de datos PostgreSQL:
+   ```ini
    DB_CONNECTION=pgsql
    DB_HOST=127.0.0.1
    DB_PORT=5432
    DB_DATABASE=bd_guesaa_sic
    DB_USERNAME=postgres
-   DB_PASSWORD=tu_contraseña
+   DB_PASSWORD=tu_password_postgres
    ```
 
-5. **Generar la Clave de Aplicación**:
+4. **Generar Clave de Cifrado y Migrar Base de Datos:**
    ```bash
    php artisan key:generate
+   php artisan migrate --seed
    ```
 
-6. **Ejecutar Migraciones y Sembrar la Base de Datos**:
-   Este comando creará las tablas en PostgreSQL e insertará automáticamente los roles, usuarios de prueba, las 423 cuentas del PCGE 2026 a 3 dígitos, categorías y productos iniciales:
-   ```bash
-   php artisan migrate:fresh --seed
-   ```
-
-7. **Compilar los Archivos Frontend**:
+5. **Compilar Activos de Frontend:**
    ```bash
    npm run build
    ```
 
----
-
-## ⚙️ Ejecución en Entorno de Desarrollo
-
-Para iniciar el sistema en modo desarrollo, ejecuta los dos servidores en terminales independientes:
-
-1. **Servidor Backend (Laravel)**:
+6. **Iniciar el Servidor de la Aplicación:**
    ```bash
-   php artisan serve
+   php artisan serve --port=8000
    ```
-   *El backend estará escuchando en: `http://127.0.0.1:8000`*
-
-2. **Servidor Frontend / HMR (Vite)**:
-   ```bash
-   npm run dev
-   ```
+   Ingresa en tu navegador a: `http://localhost:8000`
 
 ---
 
-## 🔑 Cuentas de Acceso de Prueba
+## 🔑 Credenciales de Acceso de Prueba
 
-El seeder precarga los siguientes usuarios de prueba para verificar los permisos por rol:
+El sistema incluye las siguientes cuentas predeterminadas para pruebas de validación por rol:
 
-| Rol | Correo Electrónico | Contraseña | Permisos / Acceso |
-|---|---|---|---|
-| **Administrador** | `admin@guesaa.com` | `password` | Acceso Total (8 Módulos + Creación de Subcuentas PCGE) |
-| **Cajero** | `cajero@guesaa.com` | `password` | Dashboard, Clientes/Prov., POS y Caja Chica |
-| **Almacenero** | `almacenero@guesaa.com` | `password` | Dashboard, Clientes/Prov., Inventario/Kardex y Compras |
-
----
-
-## 🛠️ Solución de Problemas Comunes
-
-### Error de Ejecución de Scripts en PowerShell (npm / vite)
-Si al ejecutar comandos como `npm -v` o `npm run dev` en PowerShell recibes un error de seguridad que indica que **"la ejecución de scripts está deshabilitada en este sistema"** (UnauthorizedAccess / PSSecurityException), debes habilitar los permisos ejecutando el siguiente comando en tu PowerShell:
-```powershell
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-```
-Escribe **`S`** (Sí) y presiona Enter para confirmar. Si no deseas cambiar las políticas de seguridad, puedes optar por utilizar la terminal convencional de Windows (**CMD / Símbolo del Sistema**), la cual no está sujeta a estas restricciones.
-
----
-
-## 🐙 Comandos Útiles de Git y GitHub
-
-Para colaborar y mantener el código actualizado entre diferentes entornos de trabajo, utiliza los siguientes comandos:
-
-* **Descargar los últimos cambios del repositorio**:
-  ```bash
-  git pull origin main
-  ```
-* **Ver el estado actual del repositorio (archivos modificados o nuevos)**:
-  ```bash
-  git status
-  ```
-* **Preparar los archivos modificados para confirmación**:
-  ```bash
-  git add .
-  ```
-* **Confirmar los cambios con un mensaje descriptivo**:
-  ```bash
-  git commit -m "feat: descripción de tus cambios"
-  ```
-* **Subir tus cambios al repositorio remoto**:
-  ```bash
-  git push origin main
-  ```
-
----
-
-## 📱 Conexión Remota y App Móvil Android
-
-El sistema permite vincular dispositivos móviles o tablets dentro de la misma red local Wi-Fi o de forma remota mediante un túnel seguro:
-
-### 1. Acceso Local en Red Wi-Fi
-1. En el sistema web, presiona el botón **`Conexión Remota`** en la barra superior.
-2. Abre la aplicación móvil **`GUESSA_APP`** en tu celular (conectado al mismo Wi-Fi).
-3. La aplicación detectará automáticamente el servidor en la red local. Si no lo encuentra, presiona **`Escanear Código QR`** y enfoca la pantalla de tu computadora.
-
-### 2. Acceso Remoto Seguro (Cloudflare Quick Tunnel - 100% Automático)
-Para permitir que la aplicación móvil se conecte desde cualquier lugar fuera del local con datos móviles (sin abrir puertos ni configurar routers):
-1. En tu terminal ejecuta el comando integrado (descarga y arranca el túnel automáticamente):
-   ```bash
-   npm run tunnel
-   ```
-2. El script detectará la URL remota en 1 segundo y la sincronizará automáticamente con el sistema.
-3. En el sistema web, presiona el botón **`Conexión Remota`** y selecciona la pestaña **`Túnel Remoto`**: el Código QR aparecerá generado en tiempo real listo para escanear desde la App Android.
+| Rol | Correo Electrónico | Contraseña | Alcance de Permisos |
+|:---|:---|:---:|:---|
+| **Administrador** | `admin@guesaa.com` | `password` | Acceso total al sistema y configuración general. |
+| **Contador** | `admin@guesaa.com` | `password` | Acceso a Libros Contables, Balanza, Estados Financieros y Ratios. |
+| **Cajero** | `cajero@guesaa.com` | `password` | Punto de Venta POS, Clientes y Control de Caja. |
+| **Almacenero** | `almacenero@guesaa.com` | `password` | Inventario de Mercaderías, Stock y Registro de Compras. |
 
 ---
 
 ## 👨‍💻 Créditos
-Desarrollado para la empresa **GUESAA PERÚ E.I.R.L.**
+Desarrollado para la empresa **GUESAA PERÚ E.I.R.L.**  
+Sistema de Información Contable bajo el marco del **PCGE 2026**.
